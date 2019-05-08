@@ -4,6 +4,7 @@
     left:0;
     right:0;
     bottom:0;
+    background-image: url('/assets/backgrounds/hex-light.png')
 }
 
 .container .mat-drawer {
@@ -20,6 +21,8 @@
     padding-left:20px;
     padding-right:20px;
     padding-top:20px;
+    width: 80%;
+    margin:auto;
 }
 
 .drawer-content {

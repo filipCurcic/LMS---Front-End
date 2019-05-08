@@ -14,15 +14,18 @@ import {MatToolbarModule} from '@angular/material/toolbar';
 import {MatMenuModule} from '@angular/material/menu';
 import { MatTableModule} from '@angular/material/table';
 import { MatPaginatorModule, MatSortModule } from '@angular/material';
+import {MatButtonToggleModule} from '@angular/material/button-toggle';
 //Services
 import { ProfessorsService } from 'src/app/services/professors-service/professors.service';
 //Components
 import { ProfessorsComponent } from './components/professors/professors.component';
+import { StudentsComponent } from './components/students/students.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    ProfessorsComponent
+    ProfessorsComponent,
+    StudentsComponent
   ],
   imports: [
     BrowserModule,
@@ -39,7 +42,8 @@ import { ProfessorsComponent } from './components/professors/professors.componen
     MatMenuModule,
     MatTableModule,
     MatPaginatorModule,
-    MatSortModule
+    MatSortModule,
+    MatButtonToggleModule
     
   ],
   providers: [ProfessorsService],

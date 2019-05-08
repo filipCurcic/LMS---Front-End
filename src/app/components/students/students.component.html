@@ -1,0 +1,43 @@
+<div>
+  <mat-table [dataSource]="dataSource">
+
+  <ng-container matColumnDef="id">
+    <mat-header-cell *matHeaderCellDef>Id</mat-header-cell>
+    <mat-cell *matCellDef="let student">{{student.id}}</mat-cell>
+  </ng-container>
+
+  <ng-container matColumnDef="name">
+      <mat-header-cell *matHeaderCellDef>Name</mat-header-cell>
+      <mat-cell *matCellDef="let student">{{student.name}}</mat-cell>
+  </ng-container>
+
+  <ng-container matColumnDef="email">
+      <mat-header-cell *matHeaderCellDef>Email</mat-header-cell>
+      <mat-cell *matCellDef="let student">{{student.email}}</mat-cell>
+  </ng-container>
+
+  <ng-container matColumnDef="phone">
+      <mat-header-cell *matHeaderCellDef>Phone</mat-header-cell>
+      <mat-cell *matCellDef="let student">{{student.phone}}</mat-cell>
+  </ng-container>
+
+  <ng-container matColumnDef="actionsEdit">
+      <mat-header-cell  *matHeaderCellDef > Edit </mat-header-cell>
+      <mat-cell *matCellDef="let row" >
+           <button mat-raised-button color="primary" >Edit</button>
+      </mat-cell>
+    </ng-container>
+
+    <ng-container matColumnDef="actionsDelete">
+        <mat-header-cell  *matHeaderCellDef > Delete </mat-header-cell>
+        <mat-cell *matCellDef="let row" >
+             <button mat-raised-button color="warn" >Delete</button>
+        </mat-cell>
+      </ng-container>
+
+  <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+  <mat-row *matRowDef="let row; columns: displayedColumns"></mat-row>
+
+</mat-table>
+
+</div>
