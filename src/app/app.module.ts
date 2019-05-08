@@ -3,7 +3,7 @@ import { NgModule } from '@angular/core';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import {FormsModule} from '@angular/forms';
+import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http'; 
 //Material modules
 import {MatCheckboxModule} from '@angular/material/checkbox';
@@ -15,23 +15,28 @@ import {MatMenuModule} from '@angular/material/menu';
 import { MatTableModule} from '@angular/material/table';
 import { MatPaginatorModule, MatSortModule } from '@angular/material';
 import {MatButtonToggleModule} from '@angular/material/button-toggle';
+import {MatCardModule} from '@angular/material/card'
+import { MatInputModule } from '@angular/material/input'
 //Services
 import { ProfessorsService } from 'src/app/services/professors-service/professors.service';
 //Components
 import { ProfessorsComponent } from './components/professors/professors.component';
 import { StudentsComponent } from './components/students/students.component';
+import { LoginComponent } from './components/login/login.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     ProfessorsComponent,
-    StudentsComponent
+    StudentsComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
     AppRoutingModule,
     HttpClientModule,
+    ReactiveFormsModule,
     //Material modules
     BrowserAnimationsModule,
     MatCheckboxModule,
@@ -43,7 +48,9 @@ import { StudentsComponent } from './components/students/students.component';
     MatTableModule,
     MatPaginatorModule,
     MatSortModule,
-    MatButtonToggleModule
+    MatButtonToggleModule, 
+    MatCardModule,
+    MatInputModule
     
   ],
   providers: [ProfessorsService],
