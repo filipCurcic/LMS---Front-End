@@ -14,4 +14,8 @@ export class ProfessorsService {
   getProfessors():Observable<Professor[]> {
     return this.http.get<Professor[]>(this.serviceUrl);
   }
+
+  getProfessor(id:number):Observable<Professor[]> {
+    return this.http.get<Professor[]>(`https://jsonplaceholder.typicode.com/users/${id}`);
+  }
 }

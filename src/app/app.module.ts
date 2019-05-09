@@ -15,17 +15,27 @@ import {MatMenuModule} from '@angular/material/menu';
 import { MatTableModule} from '@angular/material/table';
 import { MatPaginatorModule, MatSortModule } from '@angular/material';
 import {MatButtonToggleModule} from '@angular/material/button-toggle';
+import {MatTreeModule} from '@angular/material/tree';
+import {MatDividerModule} from '@angular/material/divider';
+import {MatCardModule} from '@angular/material/card';
+import {MatListModule} from '@angular/material/list';
+import {MatTabsModule} from '@angular/material/tabs';
+import {MatInputModule} from '@angular/material/input';
+import {DragDropModule} from '@angular/cdk/drag-drop';
+
 //Services
 import { ProfessorsService } from 'src/app/services/professors-service/professors.service';
 //Components
 import { ProfessorsComponent } from './components/professors/professors.component';
 import { StudentsComponent } from './components/students/students.component';
+import { ProfessorProfileComponent } from './components/professor-profile/professor-profile.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     ProfessorsComponent,
-    StudentsComponent
+    StudentsComponent,
+    ProfessorProfileComponent
   ],
   imports: [
     BrowserModule,
@@ -43,7 +53,14 @@ import { StudentsComponent } from './components/students/students.component';
     MatTableModule,
     MatPaginatorModule,
     MatSortModule,
-    MatButtonToggleModule
+    MatButtonToggleModule,
+    MatTreeModule,
+    MatDividerModule,
+    MatCardModule,
+    MatListModule,
+    MatTabsModule,
+    MatInputModule,
+    DragDropModule
     
   ],
   providers: [ProfessorsService],

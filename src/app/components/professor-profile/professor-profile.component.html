@@ -1,0 +1,60 @@
+<div>
+    <mat-tab-group>
+        <mat-tab label="Profile"> 
+            <mat-card class="example-card">
+                <mat-card-header>
+                  <div mat-card-avatar class="example-header-image"></div>
+                  <mat-card-title>{{professor.name}}</mat-card-title>
+                  <mat-card-subtitle>Profesor</mat-card-subtitle>
+                </mat-card-header>
+                <img style="width: 25vw; " mat-card-image src="https://material.angular.io/assets/img/examples/shiba2.jpg" alt="Photo of a Shiba Inu">
+                <mat-card-content>
+                  <mat-list>
+                    <mat-list-item> <strong>Username: </strong> {{professor.username}} </mat-list-item>
+                    <mat-divider style="width:20vw; margin-left:22px"></mat-divider>
+                    <mat-list-item>  <strong>Email: </strong>{{professor.email}} </mat-list-item>
+                    <mat-divider style="width:20vw; margin-left:22px"></mat-divider>
+                    <mat-list-item> <strong>Phone: </strong>{{professor.phone}} </mat-list-item>
+                   </mat-list>
+                </mat-card-content>
+                <mat-card-actions>
+                  <button mat-button>LIKE</button>
+                  <button mat-button>SHARE</button>
+                </mat-card-actions>
+              </mat-card>
+        </mat-tab>
+        <mat-tab label="Edit"> Content 2 </mat-tab>
+        <mat-tab label="D&D"> 
+          
+            <div class="example-container">
+                <h2>To do</h2>
+              
+                <div
+                  cdkDropList
+                  #todoList="cdkDropList"
+                  [cdkDropListData]="todo"
+                  [cdkDropListConnectedTo]="[doneList]"
+                  class="example-list"
+                  (cdkDropListDropped)="drop($event)">
+                  <div class="example-box" *ngFor="let item of todo" cdkDrag>{{item}}</div>
+                </div>
+              </div>
+              
+              <div class="example-container">
+                <h2>Done</h2>
+              
+                <div
+                  cdkDropList
+                  #doneList="cdkDropList"
+                  [cdkDropListData]="done"
+                  [cdkDropListConnectedTo]="[todoList]"
+                  class="example-list"
+                  (cdkDropListDropped)="drop($event)">
+                  <div class="example-box" *ngFor="let item of done" cdkDrag>{{item}}</div>
+                </div>
+              </div>
+        
+        </mat-tab>
+      </mat-tab-group>
+
+</div>

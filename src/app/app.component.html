@@ -1,7 +1,18 @@
 <mat-drawer-container class="container" autosize>
   <mat-drawer #drawer class="sidenav" mode="side" style="background-color:#3f51b5;">
     <div class="drawer-content" >
-     <img src="assets/logo/logo.png" style="width:200px; height:auto">
+      <img src="assets/logo/logo.png" style="width:250px; height:auto; border-radius: 15%">
+      
+      <div class="menu-items">
+          <button mat-button [matMenuTriggerFor]="animals">Animal index</button>
+          <mat-menu #animals="matMenu">
+            <button mat-menu-item [matMenuTriggerFor]="vertebrates">Vertebrates</button>
+            <button mat-menu-item [matMenuTriggerFor]="invertebrates">Invertebrates</button>
+          </mat-menu>
+          <br>
+          <mat-divider></mat-divider>
+          
+      </div>
     </div>
   </mat-drawer>
   <div class="sidenav-content">
@@ -40,6 +51,7 @@
     
       <br>
       <router-outlet></router-outlet>
+      
   </div>
   
 </mat-drawer-container>

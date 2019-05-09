@@ -3,7 +3,7 @@
 
   <ng-container matColumnDef="id">
     <mat-header-cell *matHeaderCellDef>Id</mat-header-cell>
-    <mat-cell *matCellDef="let professor">{{professor.id}}</mat-cell>
+    <mat-cell *matCellDef="let professor"><a routerLink="/professor/{{professor.id}}">{{professor.id}}</a></mat-cell>
   </ng-container>
 
   <ng-container matColumnDef="name">
