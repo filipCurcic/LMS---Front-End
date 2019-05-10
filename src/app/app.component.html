@@ -1,20 +1,11 @@
 <mat-drawer-container class="container" autosize>
   <mat-drawer #drawer class="sidenav" mode="side" style="background-color:#3f51b5;">
     <div class="drawer-content" >
-      <img src="assets/logo/logo.png" style="width:250px; height:auto; border-radius: 15%">
+      <img src="assets/logo/logo.png" style="width:10vw; height:auto; border-radius: 15%">
       
-      <div class="menu-items">
-          <button mat-button [matMenuTriggerFor]="animals">Animal index</button>
-          <mat-menu #animals="matMenu">
-            <button mat-menu-item [matMenuTriggerFor]="vertebrates">Vertebrates</button>
-            <button mat-menu-item [matMenuTriggerFor]="invertebrates">Invertebrates</button>
-          </mat-menu>
-          <br>
-          <mat-divider></mat-divider>
-          
-      </div>
+      <button color="white" style="margin-top: 2vw"mat-button routerLink="/login">Login</button>
     </div>
-    <button color="white" mat-button routerLink="/login">Login</button>
+    
   </mat-drawer>
   <div class="sidenav-content">
 
@@ -44,20 +35,12 @@
     
   </div>
   
-  <div class="table-container">
-    <mat-button-toggle-group name="fontStyle" aria-label="Font Style">
-      <mat-button-toggle routerLink="/students">Students</mat-button-toggle>
-      <mat-button-toggle routerLink="/professors">Professors</mat-button-toggle>
-    </mat-button-toggle-group>
+  <div class="table-container"  [class.mat-elevation-z8]="true">
+   
     
-<<<<<<< HEAD
       <br>
       <router-outlet></router-outlet>
       
-=======
-    <br>
-    <router-outlet></router-outlet>
->>>>>>> 4fb4942088a21e201547154343f619d932180993
   </div>
   
 </mat-drawer-container>
