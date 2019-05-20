@@ -22,6 +22,10 @@ import {MatListModule} from '@angular/material/list';
 import {MatTabsModule} from '@angular/material/tabs';
 import {MatInputModule} from '@angular/material/input';
 import {DragDropModule} from '@angular/cdk/drag-drop';
+import {MatFormFieldModule} from '@angular/material/form-field';
+import {MatStepperModule} from '@angular/material/stepper'
+import {MatAutocompleteModule} from '@angular/material/autocomplete'
+import {MatSelectModule} from '@angular/material/select'
 
 //Services
 import { ProfessorsService } from 'src/app/services/professors-service/professors.service';
@@ -30,7 +34,8 @@ import { ProfessorsComponent } from './components/professors/professors.componen
 import { StudentsComponent } from './components/students/students.component';
 import { ProfessorProfileComponent } from './components/professor-profile/professor-profile.component';
 import {LoginComponent} from './components/login/login.component';
-import { AdminComponent } from './components/admin/admin.component'
+import { AdminComponent } from './components/admin/admin.component';
+import { RegisterComponent } from './components/register/register.component'
 
 @NgModule({
   declarations: [
@@ -39,7 +44,8 @@ import { AdminComponent } from './components/admin/admin.component'
     StudentsComponent,
     ProfessorProfileComponent,
     LoginComponent,
-    AdminComponent
+    AdminComponent,
+    RegisterComponent
   ],
   imports: [
     BrowserModule,
@@ -65,7 +71,11 @@ import { AdminComponent } from './components/admin/admin.component'
     MatListModule,
     MatTabsModule,
     MatInputModule,
-    DragDropModule
+    DragDropModule,
+    MatStepperModule,
+    MatFormFieldModule,
+    MatAutocompleteModule,
+    MatSelectModule
     
   ],
   providers: [ProfessorsService],

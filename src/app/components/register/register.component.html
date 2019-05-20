@@ -1,0 +1,78 @@
+<div id="reg">
+<mat-horizontal-stepper labelPosition="bottom" [linear]="true" #stepper>
+    <mat-step [stepControl]="firstFormGroup">
+        <form [formGroup]="firstFormGroup">
+            <ng-template matStepLabel>Fill out your name</ng-template>
+            <mat-form-field>
+                <input matInput placeholder="Full name" formControlName="nameCtrl" required>
+            </mat-form-field>
+            <br>
+            <mat-form-field>
+                <input matInput placeholder="JMBG" formControlName="jmbgCtrl" required>
+            </mat-form-field>
+            <br>
+            <mat-form-field>
+                <input matInput placeholder="Address" formControlName="addressCtrl" required>
+            </mat-form-field>
+            <div>
+                <button mat-button matStepperNext><mat-icon>arrow_forward_ios</mat-icon></button>
+            </div>
+        </form>
+    </mat-step>
+    <mat-step [stepControl]="secondFormGroup" >
+        <form [formGroup]="secondFormGroup">
+            <ng-template matStepLabel>Specifics</ng-template>
+            <mat-form-field>
+                <mat-label>User Type</mat-label>
+                <mat-select [(value)]="selected" formControlName="userCtrl" required>
+                  <mat-option value="professor">Professor</mat-option>
+                  <mat-option value="student">Student</mat-option>
+          
+                </mat-select>
+            </mat-form-field>
+              
+    
+            <div *ngIf="selected=='professor' ? true : false">
+              <mat-form-field>
+                  <textarea matInput placeholder="Bio" formControlName="bioCtrl" required></textarea>
+              </mat-form-field>
+              <br>
+              <mat-form-field >
+                  <mat-label>Title</mat-label>
+                  <mat-select formControlName="titleCtrl" multiple required>
+                    <mat-option *ngFor="let title of titleList" [value]="title" >{{title}}</mat-option>
+                  </mat-select>
+              </mat-form-field>
+              <br>
+            </div>
+
+            <div *ngIf="selected=='student' ? true : false">
+                
+                <mat-form-field>
+                    <mat-label>Student on year</mat-label>
+                    <mat-select [(value)]="sYear" formControlName="sYearCtrl" required>
+                      <mat-option value="1">1</mat-option>
+                      <mat-option value="2">2</mat-option>
+                      <mat-option value="3">3</mat-option>
+                      <mat-option value="4">4</mat-option>
+                    </mat-select>
+                </mat-form-field>
+                <br>
+              </div>
+           
+            <div>
+                <button mat-button matStepperPrevious><mat-icon>arrow_back_ios</mat-icon></button>
+                <button mat-button matStepperNext><mat-icon>arrow_forward_ios</mat-icon></button>
+            </div>
+        </form>
+    </mat-step>
+    <mat-step>
+        <ng-template matStepLabel>Done</ng-template>
+        Success!
+        <div>
+            <button mat-button matStepperPrevious><mat-icon>arrow_back_ios</mat-icon></button>
+            <button mat-button (click)="stepper.reset()"><mat-icon>refresh</mat-icon></button>
+        </div>
+    </mat-step>
+</mat-horizontal-stepper>
+</div>
