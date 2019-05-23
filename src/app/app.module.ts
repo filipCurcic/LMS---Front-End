@@ -35,7 +35,9 @@ import { StudentsComponent } from './components/students/students.component';
 import { ProfessorProfileComponent } from './components/professor-profile/professor-profile.component';
 import {LoginComponent} from './components/login/login.component';
 import { AdminComponent } from './components/admin/admin.component';
-import { RegisterComponent } from './components/register/register.component'
+import { RegisterComponent } from './components/register/register.component';
+import {MatExpansionModule} from '@angular/material/expansion';
+import { AdminPanelComponent } from './admin-panel/admin-panel.component';
 
 @NgModule({
   declarations: [
@@ -45,7 +47,8 @@ import { RegisterComponent } from './components/register/register.component'
     ProfessorProfileComponent,
     LoginComponent,
     AdminComponent,
-    RegisterComponent
+    RegisterComponent,
+    AdminPanelComponent
   ],
   imports: [
     BrowserModule,
@@ -75,7 +78,8 @@ import { RegisterComponent } from './components/register/register.component'
     MatStepperModule,
     MatFormFieldModule,
     MatAutocompleteModule,
-    MatSelectModule
+    MatSelectModule,
+    MatExpansionModule
     
   ],
   providers: [ProfessorsService],

@@ -21,12 +21,155 @@
 
               <mat-tab-group>
                   <mat-tab label="Basic info"> 
-                    
-                    
+                    <mat-list>
+                        <br>
+                        <mat-list-item> 
+                          <div class="list-flex-container">
+                          <mat-icon>assignment_ind</mat-icon>
+                          <div class="info-darkened">First Name</div>
+                          <div class="info-main">{{professor.name}}</div>  
+                          </div>
+                        </mat-list-item>
+
+                        <mat-divider></mat-divider>
+                        <mat-list-item> 
+                            <div class="list-flex-container">
+                            <mat-icon>fingerprint</mat-icon>
+                            <div class="info-darkened">Unique Citizen Number</div>
+                            <div class="info-main">{{professor.id}}</div>   
+                            </div>
+                        </mat-list-item>
+
+                        <mat-divider></mat-divider>
+                        <mat-accordion>
+                            <mat-expansion-panel>
+                              <mat-expansion-panel-header>
+                                
+                                <mat-panel-title>
+                                    
+                                    Address
+                                </mat-panel-title>
+                              
+                              </mat-expansion-panel-header>
+                              <mat-list>
+                                  <mat-list-item> 
+                                      <div class="list-flex-container">
+                                      <mat-icon>home</mat-icon>
+                                      <div class="info-darkened">City</div>
+                                      <div class="info-main-address">{{professor.address.city}}</div> 
+                                    </div>  
+                                  </mat-list-item>
+          
+                                  <mat-divider></mat-divider>
+                                  <mat-list-item> 
+                                      <div class="list-flex-container">
+                                      <mat-icon>place</mat-icon>
+                                      <div class="info-darkened">Street</div>
+                                      <div class="info-main-address">{{professor.address.street}}, {{professor.address.suite}}</div>   
+                                      </div>
+                                  </mat-list-item>   
+                              </mat-list>
+                              
+                            </mat-expansion-panel>
+              
+                          </mat-accordion>
+
+                        
+
+                        
+
+                      </mat-list>
                   </mat-tab>
                     
                   <mat-tab label="Scholastic info">
-                    
+
+                      <mat-list>
+                          <mat-list-item>
+                            <div class="list-flex-container">
+                            <mat-icon>fingerprint</mat-icon>
+                            <div class="info-darkened">University</div>
+                            <div class="info-main-address">{{professor.company.name}}</div> 
+                          </div>
+                          </mat-list-item>
+
+
+                          <mat-list-item>
+                              <div class="list-flex-container">
+                            <mat-icon>fingerprint</mat-icon>
+                            <div class="info-darkened">Faculty</div>
+                            <div class="info-main-address">{{professor.company.name}}</div>
+                            </div>
+                          </mat-list-item>
+                          
+
+
+                        </mat-list>
+
+
+                      <mat-accordion>
+                          <mat-expansion-panel>
+                            <mat-expansion-panel-header>
+                              <mat-panel-title>
+                                Titles
+                              </mat-panel-title>
+                              
+                            </mat-expansion-panel-header>
+                            <mat-list>
+                                <mat-list-item> 
+                                    <div class="list-flex-container">
+                                    <mat-icon>fingerprint</mat-icon>
+                                    <div class="info-darkened">Unique Citizen Number</div>
+                                    <div class="info-main">{{professor.id}}</div>   
+                                    </div>
+                                </mat-list-item>
+                            </mat-list>
+                            
+                          </mat-expansion-panel>
+
+
+                          <mat-expansion-panel>
+                              <mat-expansion-panel-header>
+                                <mat-panel-title>
+                                  Courses
+                                </mat-panel-title>
+                                
+                              </mat-expansion-panel-header>
+                              <mat-list>
+                                  <mat-list-item> 
+                                      <div class="list-flex-container">
+                                      <mat-icon>fingerprint</mat-icon>
+                                      <div class="info-darkened">Course name</div>
+                                      <div class="info-main">{{professor.id}}</div>   
+                                      </div>
+                                  </mat-list-item>
+                              </mat-list>
+                              
+                            </mat-expansion-panel>
+
+                          
+
+
+                          <mat-expansion-panel (opened)="panelOpenState = true"
+                                               (closed)="panelOpenState = false">
+                            <mat-expansion-panel-header>
+                              <mat-panel-title>
+                                Course Realizations
+                              </mat-panel-title>
+                              
+                            </mat-expansion-panel-header>
+                            <mat-list>
+                                <mat-list-item> 
+                                    <div class="list-flex-container">
+                                    <mat-icon>fingerprint</mat-icon>
+                                    <div class="info-darkened">Unique Citizen Number</div>
+                                    <div class="info-main">{{professor.id}}</div> 
+                                  </div>  
+                                </mat-list-item>
+                            </mat-list>
+                          </mat-expansion-panel>
+                        </mat-accordion>
+
+                        
                       
                   </mat-tab>
                 </mat-tab-group>
@@ -34,29 +177,36 @@
 
         </div>
         </mat-tab>
+
+
+
+
+
+
+
+
+
+
         <mat-tab label="Edit"> 
-          <div style="padding-top:3vw; padding-left: 3vw; padding-right:3vw; padding-bottom: 3vw">
+          <div style="padding-top:3vw; padding-left: 3vw; padding-right:3vw; padding-bottom: 3vw" class="edit-flex-container">
+
+
+            <div>
             <form class="example-form">
-                <mat-form-field class="example-full-width">
-                  <input matInput placeholder="Company (disabled)" disabled value="Google">
-                </mat-form-field>
-              
                 <table class="example-full-width" cellspacing="0"><tr>
                   <td><mat-form-field class="example-full-width">
                     <input matInput placeholder="First name">
                   </mat-form-field></td>
                   <td><mat-form-field class="example-full-width">
-                    <input matInput placeholder="Long Last Name That Will Be Truncated">
+                    <input matInput placeholder="Last Name">
                   </mat-form-field></td>
                 </tr></table>
               
                 <p>
                   <mat-form-field class="example-full-width">
-                    <textarea matInput placeholder="Address">1600 Amphitheatre Pkwy</textarea>
+                    <textarea matInput placeholder="Address"></textarea>
                   </mat-form-field>
-                  <mat-form-field class="example-full-width">
-                    <textarea matInput placeholder="Address 2"></textarea>
-                  </mat-form-field>
+                  
                 </p>
               
                 <table class="example-full-width" cellspacing="0"><tr>
@@ -64,16 +214,57 @@
                     <input matInput placeholder="City">
                   </mat-form-field></td>
                   <td><mat-form-field class="example-full-width">
-                    <input matInput placeholder="State">
+                    <input matInput placeholder="Street">
                   </mat-form-field></td>
-                  <td><mat-form-field class="example-full-width">
-                    <input matInput #postalCode maxlength="5" placeholder="Postal Code" value="94043">
-                    <mat-hint align="end">{{postalCode.value.length}} / 5</mat-hint>
-                  </mat-form-field></td>
+                  
                 </tr></table>
               </form>
             </div>
+
+
+            <div>
+              <form class="example-form">
+                  <table class="example-full-width" cellspacing="0"><tr>
+                    <td><mat-form-field class="example-full-width">
+                      <input matInput placeholder="University">
+                    </mat-form-field></td>
+                    <td><mat-form-field class="example-full-width">
+                      <input matInput placeholder="Faculty">
+                    </mat-form-field></td>
+                  </tr></table>
+                
+                  <p>
+                    <mat-form-field class="example-full-width">
+                      <textarea matInput placeholder="Address"></textarea>
+                    </mat-form-field>
+                    
+                  </p>
+                
+                  <table class="example-full-width" cellspacing="0"><tr>
+                    <td><mat-form-field class="example-full-width">
+                      <input matInput placeholder="City">
+                    </mat-form-field></td>
+                    <td><mat-form-field class="example-full-width">
+                      <input matInput placeholder="Street">
+                    </mat-form-field></td>
+                    
+                  </tr></table>
+                </form>
+              </div>
+
+
+
+
+
+
+
+
+            </div>
         </mat-tab>
+
+
+
+
         <mat-tab label="D&D"> 
           
             <div class="example-container">
@@ -103,7 +294,9 @@
                   <div class="example-box" *ngFor="let item of done" cdkDrag>{{item}}</div>
                 </div>
               </div>
-        
+        <div *ngIf="dragged">
+          <button mat-raised-button color="primary"(click)="saveChanges()">Save</button>
+        </div>
         </mat-tab>
       </mat-tab-group>
 

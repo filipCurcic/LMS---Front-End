@@ -56,6 +56,26 @@
   flex-wrap: nowrap;
 }
 
+.edit-flex-container {
+  display: flex;
+  flex-wrap: nowrap;
+}
+
+.list-flex-container {
+  display:flex;
+  flex-wrap: nowrap;
+}
+
+.list-flex-container > div {
+  width: 24vw;
+
+}
+
+.edit-flex-container > div{
+  width: 40vw;
+  margin-left: 8vw;
+}
+
 .flex-container > div {
   width: 12vw;
   margin-top:25px;
@@ -127,4 +147,25 @@ border: none;
 
 .example-list.cdk-drop-list-dragging .example-box:not(.cdk-drag-placeholder) {
 transition: transform 250ms cubic-bezier(0, 0, 0.2, 1);
+}
+
+.info-darkened {
+  color: grey;
+  text-align: left;
+  padding: 1px;
+  font-size: 0.7vw;
+}
+
+.info-main {
+  text-align: right;
+  padding: 1px;
+  font-size: 1vw;
+  
+  
+}
+
+.info-main-address {
+  text-align: right;
+  padding: 1px;
+  font-size: 0.7vw;
 }

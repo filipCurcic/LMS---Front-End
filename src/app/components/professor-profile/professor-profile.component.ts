@@ -15,6 +15,7 @@ export class ProfessorProfileComponent implements OnInit {
     ,private route: ActivatedRoute) { }
 
     professor:any;
+    dragged:boolean;
 
     ngOnInit() {
       this.professor = this.ProfessorsService.getProfessor(+this.route.snapshot.paramMap.get('id')).subscribe((data: Professor[]) => {
@@ -36,6 +37,10 @@ export class ProfessorProfileComponent implements OnInit {
       'Check e-mail',
       'Walk dog'
     ];
+
+    saveChanges():void {
+      this.dragged = false;
+    }
   
     drop(event: CdkDragDrop<string[]>) {
       if (event.previousContainer === event.container) {
@@ -46,6 +51,8 @@ export class ProfessorProfileComponent implements OnInit {
                           event.previousIndex,
                           event.currentIndex);
       }
+
+      this.dragged = true;
     }
 
 }
