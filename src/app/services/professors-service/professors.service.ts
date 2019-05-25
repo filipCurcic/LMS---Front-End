@@ -1,7 +1,14 @@
 import { Injectable } from '@angular/core';
 import Professor from 'src/app/models/professor';
-import {HttpClient} from '@angular/common/http';
+import {HttpClient, HttpHeaders} from '@angular/common/http';
 import { Observable } from 'rxjs';
+
+const httpOptions = {
+  headers: new HttpHeaders({
+    'Content-Type': 'application/json'
+  })
+}
+
 @Injectable({
   providedIn: 'root'
 })
@@ -11,6 +18,8 @@ export class ProfessorsService {
 
   private professorUrl = 'http://localhost:8080/teacher';
 
+  private serviceUrl1 = 'http://localhost:8080/profesori';
+
   getProfessors():Observable<Professor[]> {
     return this.http.get<Professor[]>(this.professorUrl+`/all`);
   }
@@ -19,6 +28,7 @@ export class ProfessorsService {
     return this.http.get<Professor[]>(this.professorUrl+`/${id}`);
   }
 
+<<<<<<< HEAD
   addProfessor(professor:Professor, image:File) {
     const postData = new FormData();
     postData.append("profileImage", image, image.name);
@@ -35,4 +45,11 @@ export class ProfessorsService {
   }
 
 
+=======
+
+  addProfessor(professor:Professor):Observable<Professor> {
+    console.log("servis")
+    return this.http.post<Professor>(this.serviceUrl1, professor, httpOptions);
+  }
+>>>>>>> 1279ef53b83da4ac32351347b12b8333af05e435
 }

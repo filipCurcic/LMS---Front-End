@@ -1,78 +1,145 @@
 <div id="reg">
-<mat-horizontal-stepper labelPosition="bottom" [linear]="true" #stepper>
-    <mat-step [stepControl]="firstFormGroup">
-        <form [formGroup]="firstFormGroup">
-            <ng-template matStepLabel>Fill out your name</ng-template>
-            <mat-form-field>
-                <input matInput placeholder="Full name" formControlName="nameCtrl" required>
-            </mat-form-field>
-            <br>
-            <mat-form-field>
-                <input matInput placeholder="JMBG" formControlName="jmbgCtrl" required>
-            </mat-form-field>
-            <br>
-            <mat-form-field>
-                <input matInput placeholder="Address" formControlName="addressCtrl" required>
-            </mat-form-field>
-            <div>
-                <button mat-button matStepperNext><mat-icon>arrow_forward_ios</mat-icon></button>
-            </div>
-        </form>
-    </mat-step>
-    <mat-step [stepControl]="secondFormGroup" >
-        <form [formGroup]="secondFormGroup">
-            <ng-template matStepLabel>Specifics</ng-template>
-            <mat-form-field>
-                <mat-label>User Type</mat-label>
-                <mat-select [(value)]="selected" formControlName="userCtrl" required>
-                  <mat-option value="professor">Professor</mat-option>
-                  <mat-option value="student">Student</mat-option>
-          
-                </mat-select>
-            </mat-form-field>
-              
-    
-            <div *ngIf="selected=='professor' ? true : false">
-              <mat-form-field>
-                  <textarea matInput placeholder="Bio" formControlName="bioCtrl" required></textarea>
-              </mat-form-field>
-              <br>
-              <mat-form-field >
-                  <mat-label>Title</mat-label>
-                  <mat-select formControlName="titleCtrl" multiple required>
-                    <mat-option *ngFor="let title of titleList" [value]="title" >{{title}}</mat-option>
-                  </mat-select>
-              </mat-form-field>
-              <br>
-            </div>
+    <mat-tab-group>
+        
+        <mat-tab label="Professor">
+            <mat-card-content>
+                <form [formGroup]="firstFormGroup" (ngSubmit)="onSubmitProfessor(registerPForm)" #registerPForm="ngForm">
+                    <ng-template matStepLabel>Fill out your name</ng-template>
+                    <mat-form-field>
+                        <input matInput placeholder="Full name" [(ngModel)]="professorName" formControlName="pnameCtrl" required>
+                        <mat-error *ngIf="professorName != '' ? true : false">Please enter full name.</mat-error>
+                    </mat-form-field>
+                    <br>
+                    <mat-form-field>
+                        <input matInput placeholder="JMBG" [(ngModel)]="professorJmbg" formControlName="pjmbgCtrl" required>
+                        <mat-error *ngIf="professorJmbg != '' ? true : false">Please enter JMBG.</mat-error>
+                    </mat-form-field>
+                    <br>
+                    <mat-form-field class="street">
+                        <input matInput placeholder="Street" [(ngModel)]="professorStreet" formControlName="pstreetCtrl" required>
+                        <mat-error *ngIf="professorStreet != '' ? true : false">Please enter street name.</mat-error>
+                    </mat-form-field>
+                    <mat-form-field class="number">
+                        <input matInput placeholder="Number" [(ngModel)]="professorNumber" formControlName="pnumberCtrl" required>
+                        <mat-error *ngIf="professorNumber != '' ? true : false">Please enter street number.</mat-error>
+                    </mat-form-field>
+                    <mat-form-field class="city">
+                        <input matInput placeholder="City" [(ngModel)]="professorCity" formControlName="pcityCtrl" required>
+                        <mat-error *ngIf="professorCity != '' ? true : false">Please enter city.</mat-error>
+                    </mat-form-field>
+                    <br>
+                    <mat-form-field>
+                        <textarea matInput placeholder="Bio" [(ngModel)]="professorBio" formControlName="bioCtrl" required></textarea>
+                        <mat-error *ngIf="professorBio != '' ? true : false">Please enter bio.</mat-error>
+                    </mat-form-field>
+                    <br>
+                    
+                    <mat-form-field class="title">
+                        <mat-label>Title</mat-label>
+                        <mat-select formControlName="titleCtrl" [(value)]="professorTitle" [(ngModel)]="professorTitle"  required>
+                            <mat-option value="Master">Master</mat-option>
+                            <mat-option value="Doctor">Doctor</mat-option>
+                        </mat-select>
+                        <mat-error *ngIf="professorTitle != '' ? true : false">Please choose a title.</mat-error>
+                    </mat-form-field>
+                    <mat-form-field class="title">
+                        <mat-label>Scientific field</mat-label>
+                        <mat-select formControlName="titleTypeCtrl" [(value)]="professorTitleType" [(ngModel)]="professorTitleType"  required>
+                            <mat-option value="Physics">Physics</mat-option>
+                            <mat-option value="Chemistry">Chemistry</mat-option>
+                            <mat-option value="Biology">Biology</mat-option>
+                        </mat-select>
+                        <mat-error *ngIf="professorTitleType != '' ? true : false">Please choose a title type.</mat-error>
+                    </mat-form-field>
+                    <br>
+                    <mat-form-field class="date">
+                        <input matInput placeholder="Datum izbora" [matDatepicker]="simpleDate">
+                        <mat-datepicker-toggle matSuffic [for]="simpleDate"></mat-datepicker-toggle>
+                        <mat-datepicker #simpleDate></mat-datepicker>
+                    </mat-form-field>
+                    <mat-form-field class="date">
+                            <input matInput placeholder="Datum prestanka" [matDatepicker]="simpleDate1">
+                            <mat-datepicker-toggle matSuffic [for]="simpleDate1"></mat-datepicker-toggle>
+                            <mat-datepicker #simpleDate1></mat-datepicker>
+                        </mat-form-field>
+                   
+                    <br>        
+                    <mat-form-field>
+                        <mat-label>University</mat-label>
+                        <mat-select [(value)]="university" [(ngModel)]="university" formControlName="universityCtrl" required>
+                            <mat-option value="Novi Sad">Novi Sad</mat-option>
+                            <mat-option value="Beograd">Beograd</mat-option>
+                            <mat-option value="Nis">Nis</mat-option>
+                            <mat-option value="Subotica">Subotica</mat-option>
+                        </mat-select>
+                        <mat-error *ngIf="university != '' ? true : false">Please choose a university.</mat-error>
 
-            <div *ngIf="selected=='student' ? true : false">
-                
-                <mat-form-field>
-                    <mat-label>Student on year</mat-label>
-                    <mat-select [(value)]="sYear" formControlName="sYearCtrl" required>
-                      <mat-option value="1">1</mat-option>
-                      <mat-option value="2">2</mat-option>
-                      <mat-option value="3">3</mat-option>
-                      <mat-option value="4">4</mat-option>
-                    </mat-select>
-                </mat-form-field>
-                <br>
-              </div>
-           
-            <div>
-                <button mat-button matStepperPrevious><mat-icon>arrow_back_ios</mat-icon></button>
-                <button mat-button matStepperNext><mat-icon>arrow_forward_ios</mat-icon></button>
-            </div>
-        </form>
-    </mat-step>
-    <mat-step>
-        <ng-template matStepLabel>Done</ng-template>
-        Success!
-        <div>
-            <button mat-button matStepperPrevious><mat-icon>arrow_back_ios</mat-icon></button>
-            <button mat-button (click)="stepper.reset()"><mat-icon>refresh</mat-icon></button>
-        </div>
-    </mat-step>
-</mat-horizontal-stepper>
+                   
+                    </mat-form-field>
+                    <br>
+                    <mat-form-field>
+                        <mat-label>Faculty</mat-label>
+                        <mat-select [(value)]="faculty" [(ngModel)]="faculty" formControlName="facultyCtrl" required>
+                            <mat-option value="Tehnicki">Tehnicki</mat-option>
+                            <mat-option value="Turisticki">Turisticki</mat-option>
+                            <mat-option value="Poslovni">Poslovni</mat-option>
+                            <mat-option value="Informatika i racunarstvo">Informatika i racunarstvo</mat-option>
+                        </mat-select>
+                        <mat-error *ngIf="faculty != '' ? true : false">Please choose a faculty.</mat-error>
+                       
+                    </mat-form-field>
+                    <br>
+                    <mat-card-actions>
+                        <button type="submit" mat-raised-button color="primary" value="Submit">Save</button>
+                    </mat-card-actions>
+                </form>
+            </mat-card-content>
+        </mat-tab>
+
+        <mat-tab label="Student">
+            <mat-card-content>
+                <form [formGroup]="secondFormGroup" (ngSubmit)="onSubmitStudent(registerForm)" #registerForm="ngForm">
+                    <ng-template matStepLabel>Fill out your name</ng-template>
+                    <mat-form-field>
+                        <input matInput placeholder="Full name" [(ngModel)]="StudentName" formControlName="snameCtrl" required>
+                        <mat-error *ngIf="StudentName != '' ? true : false">Please enter full name.</mat-error>
+                    </mat-form-field>
+                    <br>
+                    <mat-form-field>
+                        <input matInput placeholder="JMBG" [(ngModel)]="StudentJmbg" formControlName="sjmbgCtrl" required>
+                        <mat-error *ngIf="StudentJmbg != '' ? true : false">Please enter JMBG.</mat-error>
+                    </mat-form-field>
+                    <br>
+                    <mat-form-field class="street">
+                        <input matInput placeholder="Street" [(ngModel)]="StudentStreet" formControlName="sstreetCtrl" required>
+                        <mat-error *ngIf="StudentStreet != '' ? true : false">Please enter street name.</mat-error>
+                    </mat-form-field>
+                    <mat-form-field class="number">
+                        <input matInput placeholder="Number" [(ngModel)]="StudentNumber" formControlName="snumberCtrl" required>
+                        <mat-error *ngIf="StudentNumber != '' ? true : false">Please enter street number.</mat-error>
+                    </mat-form-field>
+                    <mat-form-field class="city">
+                        <input matInput placeholder="City" [(ngModel)]="StudentCity" formControlName="scityCtrl" required>
+                        <mat-error *ngIf="StudentCity != '' ? true : false">Please enter city.</mat-error>
+                    </mat-form-field>
+                    <br>
+                    <mat-form-field>
+                        <mat-label>Student on year</mat-label>
+                        <mat-select [(value)]="sYear" [(ngModel)]="StudentSYear" formControlName="sYearCtrl" required>
+                            <mat-option value="1">1</mat-option>
+                            <mat-option value="2">2</mat-option>
+                            <mat-option value="3">3</mat-option>
+                            <mat-option value="4">4</mat-option>
+                        </mat-select>
+                        <mat-error *ngIf="StudentSYear != '' ? true : false">Please choose a year.</mat-error>
+                    </mat-form-field>
+                    <br>
+                    <mat-card-actions>
+                        <button type="submit" mat-raised-button color="primary" value="Submit">Save</button>
+                    </mat-card-actions>
+                </form>
+            </mat-card-content>
+            
+        </mat-tab>
+    </mat-tab-group>
 </div>

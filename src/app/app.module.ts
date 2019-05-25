@@ -26,6 +26,8 @@ import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatStepperModule} from '@angular/material/stepper'
 import {MatAutocompleteModule} from '@angular/material/autocomplete'
 import {MatSelectModule} from '@angular/material/select'
+import {MatMomentDateModule} from '@angular/material-moment-adapter'
+import {MatDatepickerModule} from '@angular/material/datepicker'
 
 //Services
 import { ProfessorsService } from 'src/app/services/professors-service/professors.service';
@@ -81,7 +83,9 @@ import { UsersComponent } from './components/users/users.component';
     MatFormFieldModule,
     MatAutocompleteModule,
     MatSelectModule,
-    MatExpansionModule
+    MatExpansionModule,
+    MatMomentDateModule,
+    MatDatepickerModule
     
   ],
   providers: [ProfessorsService],
