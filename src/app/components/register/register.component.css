@@ -6,6 +6,40 @@
 
 
 .mat-form-field{
-    
+    margin-top:1vw;
     width: 25vw;
 }
+
+.mat-tab-group{
+    margin-top:1vw;
+    margin-bottom:1vw;
+}
+
+.button{
+    margin-top:1vw;
+    
+}
+
+.street{
+    width:10vw;
+}
+
+
+.number{
+    width:5vw;
+}
+
+.city{
+    width:10vw;
+}
+
+.title{
+    width:13vw;
+}
+
+.date{
+    
+    width:10vw;
+}
+
+

@@ -1,7 +1,11 @@
 export default interface Professor {
     id:number;
     name:string;
-    email:string;
-    phone:string;
+    jmbg:string;
+    address:string;
+    bio:string;
+    faculty:string;
+    university:string;
+    title:string;
 
 }

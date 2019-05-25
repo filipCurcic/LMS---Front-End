@@ -1,7 +1,8 @@
 export default interface Student {
     id:number;
     name:string;
-    email:string;
-    phone:string;
+    jmbg:string;
+    address:string;
+    studentYears:string;
 
 }

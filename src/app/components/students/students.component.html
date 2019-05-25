@@ -1,25 +1,31 @@
+
 <div>
   <mat-table [dataSource]="dataSource">
-
+    
   <ng-container matColumnDef="id">
     <mat-header-cell *matHeaderCellDef>Id</mat-header-cell>
     <mat-cell *matCellDef="let student">{{student.id}}</mat-cell>
   </ng-container>
-
+  
   <ng-container matColumnDef="name">
       <mat-header-cell *matHeaderCellDef>Name</mat-header-cell>
       <mat-cell *matCellDef="let student">{{student.name}}</mat-cell>
   </ng-container>
 
-  <ng-container matColumnDef="email">
-      <mat-header-cell *matHeaderCellDef>Email</mat-header-cell>
-      <mat-cell *matCellDef="let student">{{student.email}}</mat-cell>
+  <ng-container matColumnDef="jmbg">
+      <mat-header-cell *matHeaderCellDef>JMBG</mat-header-cell>
+      <mat-cell *matCellDef="let student">{{student.jmbg}}</mat-cell>
   </ng-container>
 
-  <ng-container matColumnDef="phone">
-      <mat-header-cell *matHeaderCellDef>Phone</mat-header-cell>
-      <mat-cell *matCellDef="let student">{{student.phone}}</mat-cell>
+  <ng-container matColumnDef="address">
+      <mat-header-cell *matHeaderCellDef>Address</mat-header-cell>
+      <mat-cell *matCellDef="let student">{{student.address}}</mat-cell>
   </ng-container>
+
+  <ng-container matColumnDef="studentYears">
+    <mat-header-cell *matHeaderCellDef>Student on year</mat-header-cell>
+    <mat-cell *matCellDef="let student">{{student.studentYears}}</mat-cell>
+</ng-container>
 
   <ng-container matColumnDef="actionsEdit">
       <mat-header-cell  *matHeaderCellDef > Edit </mat-header-cell>
