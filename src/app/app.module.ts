@@ -37,7 +37,8 @@ import {LoginComponent} from './components/login/login.component';
 import { AdminComponent } from './components/admin/admin.component';
 import { RegisterComponent } from './components/register/register.component';
 import {MatExpansionModule} from '@angular/material/expansion';
-import { AdminPanelComponent } from './admin-panel/admin-panel.component';
+import { AdminPanelComponent } from './components/admin-panel/admin-panel.component';
+import { UsersComponent } from './components/users/users.component';
 
 @NgModule({
   declarations: [
@@ -48,7 +49,8 @@ import { AdminPanelComponent } from './admin-panel/admin-panel.component';
     LoginComponent,
     AdminComponent,
     RegisterComponent,
-    AdminPanelComponent
+    AdminPanelComponent,
+    UsersComponent
   ],
   imports: [
     BrowserModule,

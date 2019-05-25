@@ -1,7 +1,7 @@
-export default interface Student {
+export default class Student {
     id:number;
+    jmbg:number;
     name:string;
-    email:string;
-    phone:string;
+    
 
 }

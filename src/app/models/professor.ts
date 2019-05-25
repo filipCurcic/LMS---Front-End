@@ -1,7 +1,23 @@
-export default interface Professor {
+import Title from './title';
+import TeacherOnRealization from './teacherOnRealization';
+import University from './university';
+import StudyCourseTeacher from './studyCourseTeacher';
+import Faculty from './faculty';
+import Address from './address';
+import User from './user';
+
+export default class Professor {
     id:number;
     name:string;
-    email:string;
-    phone:string;
+    biography:string;
+    jmbg:string;
+    profilePicturePath:string;
+    titles:Title[];
+    teachersOnRealization:TeacherOnRealization[];
+    university:University;
+    studyCourseTeacher:StudyCourseTeacher;
+    faculty:Faculty;
+    address:Address;
+    user:User;
 
 }

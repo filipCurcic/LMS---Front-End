@@ -1,6 +1,6 @@
-import { RegisteredUser } from './registeredUser';
+import User from './user';
 
 export class Administrator {
     id: number;
-    registeredUser: RegisteredUser;
+    user: User;
 }

@@ -9,13 +9,30 @@ export class ProfessorsService {
 
   constructor(private http: HttpClient) { }
 
-  private serviceUrl = 'https://jsonplaceholder.typicode.com/users';
+  private professorUrl = 'http://localhost:8080/teacher';
 
   getProfessors():Observable<Professor[]> {
-    return this.http.get<Professor[]>(this.serviceUrl);
+    return this.http.get<Professor[]>(this.professorUrl+`/all`);
   }
 
   getProfessor(id:number):Observable<Professor[]> {
-    return this.http.get<Professor[]>(`https://jsonplaceholder.typicode.com/users/${id}`);
+    return this.http.get<Professor[]>(this.professorUrl+`/${id}`);
   }
+
+  addProfessor(professor:Professor, image:File) {
+    const postData = new FormData();
+    postData.append("profileImage", image, image.name);
+    postData.append("data", JSON.stringify(professor));
+    return this.http.post(this.professorUrl+'/add', postData);
+  }
+
+  deleteprofessor(id: String) {
+    return this.http.delete(this.professorUrl+`/${id}`);
+  }
+
+  updateprofessor(id:string, professor:Professor) {
+    return this.http.put(this.professorUrl+`/${id}`, professor)
+  }
+
+
 }

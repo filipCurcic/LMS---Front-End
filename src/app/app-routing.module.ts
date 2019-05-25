@@ -8,6 +8,7 @@ import { ProfessorProfileComponent } from './components/professor-profile/profes
 import { LoginComponent } from './components/login/login.component';
 import { AdminComponent } from './components/admin/admin.component';
 import {RegisterComponent} from './components/register/register.component'
+import { AdminPanelComponent } from './components/admin-panel/admin-panel.component';
 const routes: Routes = [
   { path: '', redirectTo: '/admin_panel', pathMatch: 'full' },
   {path: 'students', component:StudentsComponent},
@@ -15,7 +16,9 @@ const routes: Routes = [
   {path:'professor/:id', component:ProfessorProfileComponent},
   {path:'login', component:LoginComponent},
   {path:'register', component:RegisterComponent},
-  {path:'admin_panel', component:AdminComponent}
+  {path:'admin_tables', component:AdminComponent},
+  {path:'admin_panel', component:AdminPanelComponent},
+
 ];
 
 @NgModule({

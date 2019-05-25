@@ -9,10 +9,29 @@ export class StudentsService {
 
   constructor(private http: HttpClient) { }
 
-  private serviceUrl = 'https://jsonplaceholder.typicode.com/users';
+  private studentUrl = 'http://localhost:8080/student';
 
   getStudents():Observable<Student[]> {
-    return this.http.get<Student[]>(this.serviceUrl);
+    return this.http.get<Student[]>(this.studentUrl+`/all`);
+  }
+
+  getStudent(id:number):Observable<Student> {
+    return this.http.get<Student>(this.studentUrl+`/${id}`);
+  }
+
+  deleteStudent(id: number) {
+    return this.http.delete(this.studentUrl+`/${id}`);
+  }
+
+  addStudent(student:Student, image:File) {
+    const postData = new FormData();
+    postData.append("profileImage", image, image.name);
+    postData.append("data", JSON.stringify(student));
+    return this.http.post(this.studentUrl+'/add', postData);
+  }
+
+  updateStudent(id:string, student:Student) {
+    return this.http.put(this.studentUrl+`/${id}`, student)
   }
 
 

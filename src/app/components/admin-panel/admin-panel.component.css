@@ -1,0 +1,33 @@
+.flex-panel-container {
+    display:flex;
+    flex-wrap: nowrap;
+    justify-content: center;
+}
+
+.flex-panel-container > div {
+    width: 10vw;
+    background-color: rgba(238, 238, 238, 0.596);
+    height: 25vw;
+    margin: 1vw;
+}
+
+.admin-panel-header {
+    padding-left: 0.7vw;
+    font-size: 1vw;
+}
+
+.admin-panel-content {
+    display:flex;
+    flex-wrap: nowrap;
+    align-items: center;
+    flex-direction: column;
+}
+
+.admin-panel-content > button {
+    width: 8vw;
+    height: 2vw;
+    font-size: 0.75vw;
+    margin-top: 0.45vw;
+    margin-bottom: 0.3vw;
+}
+

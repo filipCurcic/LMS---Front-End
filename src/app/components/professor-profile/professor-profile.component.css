@@ -23,7 +23,7 @@
 .profile-information-tabs {
   margin-left: 1.5vw; 
   margin-bottom: 0.5vw;
-  width: 100%;
+  width: auto;
   margin-right: 1vw;
 }
 
@@ -37,7 +37,7 @@
   padding-bottom: 0.1vw;
   padding-right: 0.5vw;
   padding-left: 0.85vw;
-  text-overflow: hidden;
+  overflow: auto;
   margin-bottom: 0.5vw; 
 }
 
@@ -77,14 +77,14 @@
 }
 
 .flex-container > div {
-  width: 12vw;
+  width: 16vw;
   margin-top:25px;
   margin-bottom: 10px;
   margin-left: 10px;
   margin-right: 10px;
   text-align: center;
   line-height: auto;
-  font-size: 1.5vw;
+  font-size: 1.2vw;
   font-family:Roboto, Arial, sans-serif;
   color: rgb(97, 97, 97)
 }
