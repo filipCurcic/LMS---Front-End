@@ -5,29 +5,6 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http'; 
-//Material modules
-import {MatCheckboxModule} from '@angular/material/checkbox';
-import {MatSidenavModule} from '@angular/material/sidenav';
-import {MatButtonModule} from '@angular/material/button';
-import {MatIconModule} from '@angular/material/icon';
-import {MatToolbarModule} from '@angular/material/toolbar';
-import {MatMenuModule} from '@angular/material/menu';
-import { MatTableModule} from '@angular/material/table';
-import { MatPaginatorModule, MatSortModule } from '@angular/material';
-import {MatButtonToggleModule} from '@angular/material/button-toggle';
-import {MatTreeModule} from '@angular/material/tree';
-import {MatDividerModule} from '@angular/material/divider';
-import {MatCardModule} from '@angular/material/card';
-import {MatListModule} from '@angular/material/list';
-import {MatTabsModule} from '@angular/material/tabs';
-import {MatInputModule} from '@angular/material/input';
-import {DragDropModule} from '@angular/cdk/drag-drop';
-import {MatFormFieldModule} from '@angular/material/form-field';
-import {MatStepperModule} from '@angular/material/stepper'
-import {MatAutocompleteModule} from '@angular/material/autocomplete'
-import {MatSelectModule} from '@angular/material/select'
-import {MatMomentDateModule} from '@angular/material-moment-adapter'
-import {MatDatepickerModule} from '@angular/material/datepicker'
 
 //Services
 import { ProfessorsService } from 'src/app/services/professors-service/professors.service';
@@ -41,6 +18,9 @@ import { RegisterComponent } from './components/register/register.component';
 import {MatExpansionModule} from '@angular/material/expansion';
 import { AdminPanelComponent } from './components/admin-panel/admin-panel.component';
 import { UsersComponent } from './components/users/users.component';
+import { CalendarMainComponent } from './components/calendar-main/calendar-main.component';
+import { Material } from './material';
+import { DayComponent } from './components/day/day.component';
 
 @NgModule({
   declarations: [
@@ -52,7 +32,9 @@ import { UsersComponent } from './components/users/users.component';
     AdminComponent,
     RegisterComponent,
     AdminPanelComponent,
-    UsersComponent
+    UsersComponent,
+    CalendarMainComponent,
+    DayComponent
   ],
   imports: [
     BrowserModule,
@@ -60,32 +42,7 @@ import { UsersComponent } from './components/users/users.component';
     AppRoutingModule,
     HttpClientModule,
     ReactiveFormsModule,
-    //Material modules
-    BrowserAnimationsModule,
-    MatCheckboxModule,
-    MatSidenavModule,
-    MatButtonModule,
-    MatIconModule,
-    MatToolbarModule,
-    MatMenuModule,
-    MatTableModule,
-    MatPaginatorModule,
-    MatSortModule,
-    MatButtonToggleModule,
-    MatTreeModule,
-    MatDividerModule,
-    MatCardModule,
-    MatListModule,
-    MatTabsModule,
-    MatInputModule,
-    DragDropModule,
-    MatStepperModule,
-    MatFormFieldModule,
-    MatAutocompleteModule,
-    MatSelectModule,
-    MatExpansionModule,
-    MatMomentDateModule,
-    MatDatepickerModule
+    Material // Material file with all dependencies
     
   ],
   providers: [ProfessorsService],

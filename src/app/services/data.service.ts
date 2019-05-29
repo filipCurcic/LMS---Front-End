@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { BehaviorSubject } from 'rxjs/internal/BehaviorSubject';
 import Student from '../models/student';
+import * as moment from 'moment';
 
 @Injectable({
   providedIn: 'root'
@@ -8,6 +9,12 @@ import Student from '../models/student';
 export class DataService {
 
   student:Student;
+  private messageSource = new BehaviorSubject<moment.Moment>(moment());
+  currentMessage = this.messageSource.asObservable();
 
-  constructor() { }
+  constructor(){}
+
+  changeMessage(date: moment.Moment){
+      this.messageSource.next(date);
+  }
 }

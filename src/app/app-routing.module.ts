@@ -9,6 +9,9 @@ import { LoginComponent } from './components/login/login.component';
 import { AdminComponent } from './components/admin/admin.component';
 import {RegisterComponent} from './components/register/register.component'
 import { AdminPanelComponent } from './components/admin-panel/admin-panel.component';
+import { CalendarMainComponent } from './components/calendar-main/calendar-main.component';
+import { DayComponent } from './components/day/day.component';
+
 const routes: Routes = [
   { path: '', redirectTo: '/admin_panel', pathMatch: 'full' },
   {path: 'students', component:StudentsComponent},
@@ -18,6 +21,8 @@ const routes: Routes = [
   {path:'register', component:RegisterComponent},
   {path:'admin_tables', component:AdminComponent},
   {path:'admin_panel', component:AdminPanelComponent},
+  {path:'calendar', component:CalendarMainComponent},
+  {path:'day', component:DayComponent}
 
 ];
 

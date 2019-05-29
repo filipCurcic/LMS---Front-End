@@ -28,7 +28,6 @@ export class ProfessorsService {
     return this.http.get<Professor[]>(this.professorUrl+`/${id}`);
   }
 
-<<<<<<< HEAD
   addProfessor(professor:Professor, image:File) {
     const postData = new FormData();
     postData.append("profileImage", image, image.name);
@@ -45,11 +44,4 @@ export class ProfessorsService {
   }
 
 
-=======
-
-  addProfessor(professor:Professor):Observable<Professor> {
-    console.log("servis")
-    return this.http.post<Professor>(this.serviceUrl1, professor, httpOptions);
-  }
->>>>>>> 1279ef53b83da4ac32351347b12b8333af05e435
 }

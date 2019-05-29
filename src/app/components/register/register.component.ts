@@ -89,8 +89,8 @@ export class RegisterComponent implements OnInit {
      
     }
 
-    this.StudentsService.addStudent(student).subscribe(student => {
-      this.students});
+    // this.StudentsService.addStudent(student).subscribe(student => {
+    //   this.students});
 
       this.StudentName = ''
       this.StudentJmbg='';
@@ -123,8 +123,8 @@ export class RegisterComponent implements OnInit {
     }
 
     console.log("register")
-    this.ProfessorsService.addProfessor(professor).subscribe(professor => {
-      this.professors});
+    // this.ProfessorsService.addProfessor(professor).subscribe(professor => {
+    //   this.professors});
 
       this.professorName = ''
       this.professorJmbg='';
