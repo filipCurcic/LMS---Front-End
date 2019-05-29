@@ -89,8 +89,8 @@ export class RegisterComponent implements OnInit {
      
   //   }
 
-  //   this.StudentsService.addStudent(student).subscribe(student => {
-  //     this.students});
+    // this.StudentsService.addStudent(student).subscribe(student => {
+    //   this.students});
 
   //     this.StudentName = ''
   //     this.StudentJmbg='';
@@ -135,7 +135,22 @@ export class RegisterComponent implements OnInit {
   //     this.university='';
   //     this.faculty='';
   //     this.professorTitle='';
+    }
+
+    console.log("register")
+    // this.ProfessorsService.addProfessor(professor).subscribe(professor => {
+    //   this.professors});
+
+      this.professorName = ''
+      this.professorJmbg='';
+      this.professorBio='';
+      this.professorStreet='';
+      this.professorNumber='';
+      this.professorCity='';
+      this.university='';
+      this.faculty='';
+      this.professorTitle='';
     
   // }
 
-}
+

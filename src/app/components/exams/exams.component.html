@@ -1,0 +1,61 @@
+<div id="exams">
+  <mat-table [dataSource]="dataSource">
+    
+  <ng-container matColumnDef="id">
+    <mat-header-cell *matHeaderCellDef>Id</mat-header-cell>
+    <mat-cell *matCellDef="let exam">{{exam.id}}</mat-cell>
+  </ng-container>
+  
+  <ng-container matColumnDef="name">
+      <mat-header-cell *matHeaderCellDef>Subject</mat-header-cell>
+      <mat-cell *matCellDef="let exam">{{exam.name}}</mat-cell>
+  </ng-container>
+
+  <ng-container matColumnDef="examTerm">
+      <mat-header-cell *matHeaderCellDef>Exam term</mat-header-cell>
+      <mat-cell *matCellDef="let exam">{{exam.examTerm}}</mat-cell>
+  </ng-container>
+
+  <ng-container matColumnDef="startTime">
+    <mat-header-cell *matHeaderCellDef>Start time</mat-header-cell>
+    <mat-cell *matCellDef="let exam">{{exam.startTime}}</mat-cell>
+</ng-container>
+
+<ng-container matColumnDef="endTime">
+  <mat-header-cell *matHeaderCellDef>End time</mat-header-cell>
+  <mat-cell *matCellDef="let exam">{{exam.endTime}}</mat-cell>
+</ng-container>
+
+<ng-container matColumnDef="duration">
+  <mat-header-cell *matHeaderCellDef>Duration</mat-header-cell>
+  <mat-cell *matCellDef="let exam">{{exam.duration}}</mat-cell>
+</ng-container>
+
+  <ng-container matColumnDef="points">
+      <mat-header-cell *matHeaderCellDef>Points</mat-header-cell>
+      <mat-cell *matCellDef="let exam">{{exam.points}}</mat-cell>
+  </ng-container>
+
+  <ng-container matColumnDef="grade">
+    <mat-header-cell *matHeaderCellDef>Grade</mat-header-cell>
+    <mat-cell *matCellDef="let exam">{{exam.grade}}</mat-cell>
+</ng-container>
+
+  <ng-container matColumnDef="actionsSubmit">
+      <mat-header-cell  *matHeaderCellDef > Submit </mat-header-cell>
+      <mat-cell *matCellDef="let row" >
+           <button mat-raised-button color="primary" >submit</button>
+      </mat-cell>
+    </ng-container>
+
+  <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+  <mat-row *matRowDef="let row; columns: displayedColumns"></mat-row>
+
+</mat-table>
+
+<div class="grade">
+  Average grade: {{getAverage()}}
+</div>
+
+
+</div>

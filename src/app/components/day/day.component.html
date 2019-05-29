@@ -1,0 +1,33 @@
+<div class="container width-50">
+  <h1>DAY: {{clicked | date:'mediumDate'}}</h1>
+  <div *ngFor="let event of listOfEvents">
+    <mat-tab-group animationDuration="600ms">
+      <mat-tab label="Name">{{event.header}}</mat-tab>
+      <mat-tab label="Event Type">{{event.type}}</mat-tab>
+      <mat-tab label="Date">{{event.date}}</mat-tab>
+      </mat-tab-group>
+  </div>
+  <br>
+  <div>
+    <h1>Add Event</h1>
+    <div class="example-container">
+      <mat-form-field>
+        <input matInput placeholder="Date: {{clicked | date:'mediumDate'}}" disabled>
+      </mat-form-field>
+    
+      <mat-form-field>
+        <input matInput placeholder="Header" [(ngModel)]="addEvent.header">
+      </mat-form-field>
+
+      <mat-form-field>
+        <input matInput placeholder="Info" [(ngModel)]="addEvent.info">
+      </mat-form-field>
+    
+      <mat-form-field>
+        <input matInput placeholder="Type" [(ngModel)]="addEvent.type">
+      </mat-form-field>
+      <button mat-raised-button color="primary" (click)="newEvent()">Add Event</button>
+    </div>
+  </div>
+</div>
+

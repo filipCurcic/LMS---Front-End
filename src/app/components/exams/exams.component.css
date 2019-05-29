@@ -1,0 +1,14 @@
+
+
+#exams{
+    margin: auto;
+    width: 70vw;
+    display: flex;
+    flex-direction: column;
+}
+.grade{
+    position: relative;
+    margin-top: 3vw;
+    
+    
+}

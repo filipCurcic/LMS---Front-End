@@ -45,6 +45,14 @@ export class StudentsService {
     return this.http.put(this.studentUrl+`/${id}`, student)
   }
 
+  // getStudent(id: number): Observable<Student>{
+  //   const url = `${this.serviceUrl}/${id}`;
+  //   return this.http.get<Student>(url);
+  // }
+
+  // addStudent(student:Student):Observable<Student> {
+  //   return this.http.post<Student>(this.serviceUrl, student, httpOptions);
+  // }
 
 
 }

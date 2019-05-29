@@ -14,6 +14,10 @@ import { UsersComponent } from './components/users/users.component';
 import { CourseRegistrationComponent } from './components/course-registration/course-registration.component';
 import { AdminProfessorProfileOverviewComponent } from './components/admin-professor-profile-overview/admin-professor-profile-overview.component';
 import { AdminStudentProfileOverviewComponent } from './components/admin-student-profile-overview/admin-student-profile-overview.component';
+import { CalendarMainComponent } from './components/calendar-main/calendar-main.component';
+import { DayComponent } from './components/day/day.component';
+import {ExamsComponent} from './components/exams/exams.component'
+
 const routes: Routes = [
   { path: '', redirectTo: '/admin_panel', pathMatch: 'full' },
   {path: 'admin_panel/students', component:StudentsComponent},
@@ -28,6 +32,9 @@ const routes: Routes = [
   {path:'admin_panel', component:AdminPanelComponent},
   {path:'admin_panel/professors/:id', component:AdminProfessorProfileOverviewComponent},
   {path:'admin_panel/students/:id', component:AdminStudentProfileOverviewComponent},
+  {path:'calendar', component:CalendarMainComponent},
+  {path:'day', component:DayComponent},
+  {path:'exams', component:ExamsComponent}
 
 ];
 
