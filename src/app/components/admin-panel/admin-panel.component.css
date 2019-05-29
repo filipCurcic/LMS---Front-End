@@ -5,8 +5,8 @@
 }
 
 .flex-panel-container > div {
-    width: 10vw;
-    background-color: rgba(238, 238, 238, 0.596);
+    width: 20vw;
+    background-color: rgba(238, 238, 238);
     height: 25vw;
     margin: 1vw;
 }
@@ -24,7 +24,7 @@
 }
 
 .admin-panel-content > button {
-    width: 8vw;
+    width: 12vw;
     height: 2vw;
     font-size: 0.75vw;
     margin-top: 0.45vw;

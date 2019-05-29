@@ -1,0 +1,61 @@
+<div class="course-registration-flex-container">
+
+  <div>
+    <div class="form-container">
+      <mat-form-field appearance="outline">
+        <mat-label>Course Name</mat-label>
+        <input matInput placeholder="Name" #name maxlength="256" placeholder="Name">
+        <mat-hint align="start"><strong>Names have to be unique</strong> </mat-hint>
+        <mat-hint align="end">{{name.value.length}} / 256</mat-hint>
+      </mat-form-field>
+
+      <mat-form-field appearance="outline">
+        <mat-label>Course EPSB </mat-label>
+        <input matInput placeholder="Epsb" type="number">
+      </mat-form-field>
+
+      <mat-form-field appearance="outline">
+        <mat-label>Number of Lectures</mat-label>
+        <input matInput placeholder="Lectures" type="number">
+      </mat-form-field>
+
+      <mat-form-field appearance="outline">
+        <mat-label>Number of Exercises</mat-label>
+        <input matInput placeholder="Exercises" type="number">
+      </mat-form-field>
+
+
+
+
+    </div>
+
+  </div>
+
+  <div>
+    <div class="form-container">
+
+      <mat-form-field appearance="outline">
+        <mat-label>Other Types of Teachings</mat-label>
+        <input matInput placeholder="Other Teachings" type="number">
+      </mat-form-field>
+
+      <mat-form-field appearance="outline">
+        <mat-label>Research Work Amount</mat-label>
+        <input matInput placeholder="Research work" type="number">
+      </mat-form-field>
+
+      <mat-form-field appearance="outline">
+        <mat-label>Number Of Other Classes</mat-label>
+        <input matInput placeholder="Other Classes" type="number">
+      </mat-form-field>
+
+      <mat-form-field appearance="outline">
+        <mat-label>Course Precondition</mat-label>
+        <input matInput placeholder="Precondition">
+      </mat-form-field>
+
+    </div>
+
+  </div>
+
+</div>

@@ -1,0 +1,90 @@
+
+<mat-tab-group>
+
+    <mat-tab label="Basic Information">
+        <div class="profile-edit-flex-container"> 
+        <div>  
+            <div class="form-container" style="border: 0.05vw solid rgb(167, 167, 167);border-radius: 1.5%;">
+        
+              <mat-form-field appearance="outline">
+                <mat-label>First Name </mat-label>
+                <input matInput placeholder="{{professor.name}}">
+              </mat-form-field>
+        
+              <mat-form-field appearance="outline">
+                <mat-label>Last Name </mat-label>
+                <input matInput placeholder="{{professor.lastName}}">
+              </mat-form-field>
+        
+              <mat-form-field appearance="outline">
+                  <mat-label>JMBG</mat-label>
+                  <input matInput placeholder="{{professor.umcn}}" type="number">
+                </mat-form-field>
+            </div>
+            <button mat-raised-button style="width: 5vw; margin-top: 1vw;">Save</button>
+          </div>
+        </div>
+    </mat-tab>
+
+    <mat-tab label="User Information">
+        <div class="profile-edit-flex-container">
+        <div>
+
+            <div class="form-container" style="border: 0.05vw solid rgb(167, 167, 167);border-radius: 1.5%;">
+                
+        
+        
+                <mat-form-field appearance="outline">
+                    <mat-label>Username</mat-label>
+                    <input matInput placeholder="{{professor.registeredUserDto.username}}" #name maxlength="256"
+                      placeholder="{{professor.registeredUserDto.username}}">
+                    <mat-hint align="start"><strong>Usernames have to be unique</strong> </mat-hint>
+                    <mat-hint align="end">{{name.value.length}} / 256</mat-hint>
+                  </mat-form-field>
+            
+                  
+            
+                  <mat-form-field appearance="outline">
+                    <mat-label>Email</mat-label>
+                    <input matInput placeholder="{{professor.registeredUserDto.email}}">
+                  </mat-form-field>
+            
+        
+            </div>
+            <button mat-raised-button style="width: 5vw; margin-top: 1vw;">Save</button>
+          </div>
+          </div>
+    </mat-tab>
+
+    <mat-tab label="Sholastic information">
+        <div class="profile-edit-flex-container">
+        <div>
+            
+            <div class="form-container" style="border: 0.05vw solid rgb(167, 167, 167);border-radius: 1.5%;">
+                
+            
+              <mat-form-field appearance="outline">
+                <mat-label>University</mat-label>
+                <input matInput placeholder="{{professor.universityDto.name}}">
+              </mat-form-field>
+            
+                  
+        
+              <mat-form-field appearance="outline">
+                <mat-label>Faculty</mat-label>
+                <input matInput placeholder="{{professor.facultyDto.name}}">
+              </mat-form-field>
+      
+              
+        
+            </div>
+            <button mat-raised-button style="width: 5vw; margin-top: 1vw;">Save</button>
+        
+          </div>
+        </div>
+      
+    </mat-tab>
+
+  </mat-tab-group>
+
+

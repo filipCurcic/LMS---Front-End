@@ -7,24 +7,29 @@
   </ng-container>
 <!-- <a routerLink="/professor/{{professor.id}}">{{professor.id}}</a> -->
   <ng-container matColumnDef="name">
-      <mat-header-cell *matHeaderCellDef>Name</mat-header-cell>
+      <mat-header-cell *matHeaderCellDef>First Name</mat-header-cell>
       <mat-cell *matCellDef="let professor">{{professor.name}}</mat-cell>
+  </ng-container>
+
+  <ng-container matColumnDef="lastName">
+      <mat-header-cell *matHeaderCellDef> Last Name</mat-header-cell>
+      <mat-cell *matCellDef="let professor">{{professor.lastName}}</mat-cell>
   </ng-container>
 
   <ng-container matColumnDef="email">
       <mat-header-cell *matHeaderCellDef>Email</mat-header-cell>
-      <mat-cell *matCellDef="let professor">{{professor.email}}</mat-cell>
+      <mat-cell *matCellDef="let professor">{{professor.registeredUserDto.email}}</mat-cell>
   </ng-container>
 
-  <ng-container matColumnDef="phone">
-      <mat-header-cell *matHeaderCellDef>Phone</mat-header-cell>
-      <mat-cell *matCellDef="let professor">{{professor.phone}}</mat-cell>
+  <ng-container matColumnDef="username">
+      <mat-header-cell *matHeaderCellDef>Username</mat-header-cell>
+      <mat-cell *matCellDef="let professor">{{professor.registeredUserDto.username}}</mat-cell>
   </ng-container>
 
   <ng-container matColumnDef="actionsEdit">
       <mat-header-cell  *matHeaderCellDef > Edit </mat-header-cell>
       <mat-cell *matCellDef="let professor" >
-           <button mat-raised-button color="primary" routerLink="/professor/{{professor.id}}">Edit</button>
+           <button mat-raised-button color="primary" routerLink="/admin_panel/professors/{{professor.id}}">Edit</button>
       </mat-cell>
     </ng-container>
 

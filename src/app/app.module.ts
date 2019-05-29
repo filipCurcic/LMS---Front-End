@@ -28,6 +28,7 @@ import {MatAutocompleteModule} from '@angular/material/autocomplete'
 import {MatSelectModule} from '@angular/material/select'
 import {MatMomentDateModule} from '@angular/material-moment-adapter'
 import {MatDatepickerModule} from '@angular/material/datepicker'
+import {MatRadioModule} from '@angular/material/radio';
 
 //Services
 import { ProfessorsService } from 'src/app/services/professors-service/professors.service';
@@ -41,6 +42,11 @@ import { RegisterComponent } from './components/register/register.component';
 import {MatExpansionModule} from '@angular/material/expansion';
 import { AdminPanelComponent } from './components/admin-panel/admin-panel.component';
 import { UsersComponent } from './components/users/users.component';
+import { CoursesComponent } from './components/courses/courses.component';
+import { CourseRegistrationComponent } from './components/course-registration/course-registration.component';
+import { AdminStudentProfileOverviewComponent } from './components/admin-student-profile-overview/admin-student-profile-overview.component';
+import { AdminProfessorProfileOverviewComponent } from './components/admin-professor-profile-overview/admin-professor-profile-overview.component';
+import { AdminEditProfileComponent } from './components/admin-professor-profile-overview/admin-edit-profile/admin-edit-profile.component';
 
 @NgModule({
   declarations: [
@@ -52,7 +58,12 @@ import { UsersComponent } from './components/users/users.component';
     AdminComponent,
     RegisterComponent,
     AdminPanelComponent,
-    UsersComponent
+    UsersComponent,
+    CoursesComponent,
+    CourseRegistrationComponent,
+    AdminStudentProfileOverviewComponent,
+    AdminProfessorProfileOverviewComponent,
+    AdminEditProfileComponent
   ],
   imports: [
     BrowserModule,
@@ -85,7 +96,8 @@ import { UsersComponent } from './components/users/users.component';
     MatSelectModule,
     MatExpansionModule,
     MatMomentDateModule,
-    MatDatepickerModule
+    MatDatepickerModule,
+    MatRadioModule
     
   ],
   providers: [ProfessorsService],

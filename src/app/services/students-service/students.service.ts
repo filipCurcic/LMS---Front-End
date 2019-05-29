@@ -18,12 +18,8 @@ export class StudentsService {
 
   constructor(private http: HttpClient) { }
 
-<<<<<<< HEAD
   private studentUrl = 'http://localhost:8080/student';
-=======
->>>>>>> 1279ef53b83da4ac32351347b12b8333af05e435
 
-  private serviceUrl = 'http://localhost:8080/studenti';
 
   
   getStudents():Observable<Student[]> {
@@ -49,14 +45,6 @@ export class StudentsService {
     return this.http.put(this.studentUrl+`/${id}`, student)
   }
 
-  getStudent(id: number): Observable<Student>{
-    const url = `${this.serviceUrl}/${id}`;
-    return this.http.get<Student>(url);
-  }
-
-  addStudent(student:Student):Observable<Student> {
-    return this.http.post<Student>(this.serviceUrl, student, httpOptions);
-  }
 
 
 }

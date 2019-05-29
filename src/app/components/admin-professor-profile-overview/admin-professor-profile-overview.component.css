@@ -1,0 +1,88 @@
+.professor-profile-flex-container {
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: center;
+}
+
+.professor-profile-flex-container > div {
+    width: 25vw;
+    margin: 2.5vw;
+    border-radius: 1%;
+    height: 30vw;
+}
+
+.profile-top-info {
+    display: flex;
+    flex-wrap: nowrap;
+    padding: 0.7vw;
+}
+
+.profile-top-info > div {
+    height: 7.5vw;
+     
+}
+
+.profile-picture-container {
+    width: 40%;
+}
+
+.top-info-right {
+    width: 100%;
+    margin-left: 0.7vw;
+}
+
+.profile-bottom-info {
+    margin-left: 0.7vw;
+    margin-right: 0.7vw;
+    margin-bottom: 0.7vw;
+    width: 88.5%;
+    height: 100%;
+    padding: 0.7vw;
+}
+
+.profile-info-container {
+    display: flex;
+    flex-wrap: nowrap;
+    flex-direction: column;
+}
+
+.info-container-right {
+    display: flex;
+    flex-wrap: nowrap;
+    flex-direction: column;
+
+}
+.info-container-right > div {
+    width: 100%;
+    height: 2.5vw;
+}
+
+.info-container-bottom {
+    display:flex;
+    flex-wrap: nowrap;
+    flex-direction: column;
+    
+}
+.info-container-bottom > div {
+    width: 70%;
+    margin-left: 2vw;
+    height: 1.7vw;
+}
+
+.spacer {
+    height: 1vw;
+}
+
+.right-profile-panel-flex-container {
+    display: flex;
+    flex-wrap: nowrap;
+    flex-direction: column;
+    border: 1px solid black;
+}
+
+.right-profile-panel-flex-container > div {
+    width: 25vw;
+    border-radius: 1%;
+    height: 30vw;
+    border: 1px solid black;
+}

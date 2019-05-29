@@ -74,68 +74,68 @@ export class RegisterComponent implements OnInit {
    
   }
 
-  onSubmitStudent(form: NgForm){
+  // onSubmitStudent(form: NgForm){
 
-    if (form.invalid) {
-      return;
-    }
+  //   if (form.invalid) {
+  //     return;
+  //   }
 
-    const student = {
-      id:this.StudentId,
-      name:this.StudentName,
-      jmbg:this.StudentJmbg,
-      address:this.StudentStreet + " " + this.StudentNumber + ", " + this.StudentCity,
-      studentYears:this.StudentSYear
+  //   const student = {
+  //     id:this.StudentId,
+  //     name:this.StudentName,
+  //     jmbg:this.StudentJmbg,
+  //     address:this.StudentStreet + " " + this.StudentNumber + ", " + this.StudentCity,
+  //     studentYears:this.StudentSYear
      
-    }
+  //   }
 
-    this.StudentsService.addStudent(student).subscribe(student => {
-      this.students});
+  //   this.StudentsService.addStudent(student).subscribe(student => {
+  //     this.students});
 
-      this.StudentName = ''
-      this.StudentJmbg='';
-      this.StudentStreet='';
-      this.StudentNumber='';
-      this.StudentCity='';
-      this.StudentSYear='';
+  //     this.StudentName = ''
+  //     this.StudentJmbg='';
+  //     this.StudentStreet='';
+  //     this.StudentNumber='';
+  //     this.StudentCity='';
+  //     this.StudentSYear='';
     
-  }
+  // }
 
 
 
 
-  onSubmitProfessor(form1: NgForm){
+  // onSubmitProfessor(form1: NgForm){
 
-    if (form1.invalid) {
-      return;
-    }
+  //   if (form1.invalid) {
+  //     return;
+  //   }
 
-    const professor = {
-      id:this.professorId,
-      name:this.professorName,
-      jmbg:this.professorJmbg,
-      bio:this.professorBio,
-      address:this.professorStreet + " " + this.professorNumber + ", " + this.professorCity,
-      university:this.university,
-      title:this.professorTitle,
-      faculty:this.faculty
+  //   const professor = {
+  //     id:this.professorId,
+  //     name:this.professorName,
+  //     jmbg:this.professorJmbg,
+  //     bio:this.professorBio,
+  //     address:this.professorStreet + " " + this.professorNumber + ", " + this.professorCity,
+  //     university:this.university,
+  //     title:this.professorTitle,
+  //     faculty:this.faculty
      
-    }
+  //   }
 
-    console.log("register")
-    this.ProfessorsService.addProfessor(professor).subscribe(professor => {
-      this.professors});
+  //   console.log("register")
+  //   this.ProfessorsService.addProfessor(professor).subscribe(professor => {
+  //     this.professors});
 
-      this.professorName = ''
-      this.professorJmbg='';
-      this.professorBio='';
-      this.professorStreet='';
-      this.professorNumber='';
-      this.professorCity='';
-      this.university='';
-      this.faculty='';
-      this.professorTitle='';
+  //     this.professorName = ''
+  //     this.professorJmbg='';
+  //     this.professorBio='';
+  //     this.professorStreet='';
+  //     this.professorNumber='';
+  //     this.professorCity='';
+  //     this.university='';
+  //     this.faculty='';
+  //     this.professorTitle='';
     
-  }
+  // }
 
 }

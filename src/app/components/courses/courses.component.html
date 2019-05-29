@@ -1,0 +1,74 @@
+<div>
+  <mat-table [dataSource]="dataSource">
+
+  <ng-container matColumnDef="id">
+    <mat-header-cell *matHeaderCellDef>Id</mat-header-cell>
+    <mat-cell *matCellDef="let course">{{course.id}}</mat-cell>
+  </ng-container>
+<!-- <a routerLink="/course/{{course.id}}">{{course.id}}</a> -->
+  <ng-container matColumnDef="name">
+      <mat-header-cell *matHeaderCellDef>Name</mat-header-cell>
+      <mat-cell *matCellDef="let course">{{course.name}}</mat-cell>
+  </ng-container>
+
+  <ng-container matColumnDef="epsb">
+      <mat-header-cell *matHeaderCellDef>Epsb</mat-header-cell>
+      <mat-cell *matCellDef="let course">{{course.epsb}}</mat-cell>
+  </ng-container>
+
+  <ng-container matColumnDef="mandatory">
+      <mat-header-cell *matHeaderCellDef>Mandatory</mat-header-cell>
+      <mat-cell *matCellDef="let course">{{course.mandatory}}</mat-cell>
+  </ng-container>
+
+  <ng-container matColumnDef="numberOfLectures">
+      <mat-header-cell  *matHeaderCellDef > Lectures </mat-header-cell>
+      <mat-cell *matCellDef="let course"> {{course.numberOfLectures}}</mat-cell>
+    </ng-container>
+
+    <ng-container matColumnDef="numberOfExercises">
+        <mat-header-cell  *matHeaderCellDef > Exercises </mat-header-cell>
+        <mat-cell *matCellDef="let course"> {{course.numberOfExercises}}</mat-cell>
+      </ng-container>
+
+    <ng-container matColumnDef="otherTypesOfTeachings">
+        <mat-header-cell  *matHeaderCellDef > Other Teachings </mat-header-cell>
+        <mat-cell *matCellDef="let course"> {{course.otherTypesOfTeachings}}</mat-cell>
+      </ng-container>
+
+      <ng-container matColumnDef="researchWork">
+          <mat-header-cell  *matHeaderCellDef > Research Work </mat-header-cell>
+          <mat-cell *matCellDef="let researchWork"> {{course.researchWork}}</mat-cell>
+        </ng-container>
+
+        <ng-container matColumnDef="otherClasses">
+            <mat-header-cell  *matHeaderCellDef > Other Classes </mat-header-cell>
+            <mat-cell *matCellDef="let otherClasses"> {{course.otherClasses}}</mat-cell>
+        </ng-container>
+
+        <ng-container matColumnDef="precondition">
+            <mat-header-cell  *matHeaderCellDef > Precondition </mat-header-cell>
+            <mat-cell *matCellDef="let precondition"> {{course.precondition}}</mat-cell>
+        </ng-container>
+        
+
+        <ng-container matColumnDef="actionsEdit">
+            <mat-header-cell  *matHeaderCellDef > Edit </mat-header-cell>
+            <mat-cell *matCellDef="let professor" >
+                 <button mat-raised-button color="primary" routerLink="/professor/{{professor.id}}">Edit</button>
+            </mat-cell>
+          </ng-container>
+      
+          <ng-container matColumnDef="actionsDelete">
+              <mat-header-cell  *matHeaderCellDef > Delete </mat-header-cell>
+              <mat-cell *matCellDef="let row" >
+                   <button mat-raised-button color="warn" >Delete</button>
+              </mat-cell>
+            </ng-container>
+
+  <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+  <mat-row *matRowDef="let row; columns: displayedColumns"></mat-row>
+
+</mat-table>
+
+</div>

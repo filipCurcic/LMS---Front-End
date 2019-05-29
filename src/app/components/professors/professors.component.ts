@@ -17,9 +17,10 @@ export class ProfessorsComponent implements OnInit {
   
 
   ngOnInit() {
+    this.ProfessorsService.getProfessors().subscribe(val => console.log(val));
   }
 
-  displayedColumns = ['id', 'name', 'email', 'phone', 'actionsEdit', 'actionsDelete'];
+  displayedColumns = ['id', 'name', 'lastName', 'email', 'username', 'actionsEdit', 'actionsDelete'];
 
   
 
@@ -32,6 +33,7 @@ export class ProfessorsDataSource extends DataSource<any> {
     
     connect(): Observable<Professor[]> {
       return this.ProfessorsService.getProfessors();
+      
     }
 
     disconnect() {
