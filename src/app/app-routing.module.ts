@@ -11,6 +11,7 @@ import {RegisterComponent} from './components/register/register.component'
 import { AdminPanelComponent } from './components/admin-panel/admin-panel.component';
 import { CalendarMainComponent } from './components/calendar-main/calendar-main.component';
 import { DayComponent } from './components/day/day.component';
+import {ExamsComponent} from './components/exams/exams.component'
 
 const routes: Routes = [
   { path: '', redirectTo: '/admin_panel', pathMatch: 'full' },
@@ -22,7 +23,8 @@ const routes: Routes = [
   {path:'admin_tables', component:AdminComponent},
   {path:'admin_panel', component:AdminPanelComponent},
   {path:'calendar', component:CalendarMainComponent},
-  {path:'day', component:DayComponent}
+  {path:'day', component:DayComponent},
+  {path:'exams', component:ExamsComponent}
 
 ];
 

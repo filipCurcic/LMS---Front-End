@@ -21,6 +21,7 @@ import { UsersComponent } from './components/users/users.component';
 import { CalendarMainComponent } from './components/calendar-main/calendar-main.component';
 import { Material } from './material';
 import { DayComponent } from './components/day/day.component';
+import {ExamsComponent} from './components/exams/exams.component'
 
 @NgModule({
   declarations: [
@@ -34,7 +35,8 @@ import { DayComponent } from './components/day/day.component';
     AdminPanelComponent,
     UsersComponent,
     CalendarMainComponent,
-    DayComponent
+    DayComponent,
+    ExamsComponent
   ],
   imports: [
     BrowserModule,
