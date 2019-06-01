@@ -14,10 +14,10 @@ export default class Professor {
     profilePicturePath:string;
     titles:Title[];
     teachersOnRealization:TeacherOnRealization[];
-    university:University;
+    universityDto:University[];
     studyCourseTeacher:StudyCourseTeacher;
-    faculty:Faculty;
+    facultyDto:Faculty[];
     address:Address;
-    user:User;
+    registeredUserDto:User;
 
 }

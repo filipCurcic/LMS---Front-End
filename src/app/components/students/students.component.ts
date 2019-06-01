@@ -18,7 +18,7 @@ export class StudentsComponent implements OnInit {
 
   dataSource = new StudentsDataSource(this.StudentsService);
 
-  displayedColumns = ['id', 'name', 'jmbg', 'address', 'studentYears', 'actionsEdit', 'actionsDelete'];
+  displayedColumns = ['id', 'name', 'lastName', 'jmbg', 'studentYears', 'actionsEdit', 'actionsDelete'];
 
   ngOnInit() {
     this.StudentsService.getStudents().subscribe(students => this.students = students);

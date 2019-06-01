@@ -20,7 +20,7 @@ import {ExamsComponent} from './components/exams/exams.component'
 
 const routes: Routes = [
   { path: '', redirectTo: '/admin_panel', pathMatch: 'full' },
-  {path: 'admin_panel/students', component:StudentsComponent},
+  {path:'admin_panel/students', component:StudentsComponent},
   {path:'admin_panel/professors', component:ProfessorsComponent},
   {path:'admin_panel/courses', component:CoursesComponent},
   {path:'admin_panel/users', component:UsersComponent},

@@ -40,6 +40,20 @@
     padding: 0.7vw;
 }
 
+.table-container {
+    padding-left:1vw;
+    padding-right:1vw;
+    padding-top:0.2vw;
+    width: 80%;
+    margin:auto;
+    position: relative;
+    top: 1.5vw;
+    background-color:white;margin-top:1vw; padding-bottom:1vw; 
+    /*  */
+    height: auto;
+}
+
+
 .profile-info-container {
     display: flex;
     flex-wrap: nowrap;

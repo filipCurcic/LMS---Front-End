@@ -137,20 +137,20 @@ export class RegisterComponent implements OnInit {
   //     this.professorTitle='';
     }
 
-    console.log("register")
-    // this.ProfessorsService.addProfessor(professor).subscribe(professor => {
-    //   this.professors});
+  //   console.log("register")
+  //   // this.ProfessorsService.addProfessor(professor).subscribe(professor => {
+  //   //   this.professors});
 
-      this.professorName = ''
-      this.professorJmbg='';
-      this.professorBio='';
-      this.professorStreet='';
-      this.professorNumber='';
-      this.professorCity='';
-      this.university='';
-      this.faculty='';
-      this.professorTitle='';
+  //     this.professorName = ''
+  //     this.professorJmbg='';
+  //     this.professorBio='';
+  //     this.professorStreet='';
+  //     this.professorNumber='';
+  //     this.professorCity='';
+  //     this.university='';
+  //     this.faculty='';
+  //     this.professorTitle='';
     
-  // }
+  // // }
 
 

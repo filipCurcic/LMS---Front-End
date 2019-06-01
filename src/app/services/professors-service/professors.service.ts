@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import Professor from 'src/app/models/professor';
 import {HttpClient, HttpHeaders} from '@angular/common/http';
 import { Observable } from 'rxjs';
+import EditTeacherDto from 'src/app/models/EditTeacherDto';
 
 const httpOptions = {
   headers: new HttpHeaders({
@@ -34,12 +35,12 @@ export class ProfessorsService {
     return this.http.post(this.professorUrl+'/add', postData);
   }
 
-  deleteprofessor(id: String) {
+  deleteprofessor(id: number) {
     return this.http.delete(this.professorUrl+`/${id}`);
   }
 
-  updateprofessor(id:string, professor:Professor) {
-    return this.http.put(this.professorUrl+`/${id}`, professor)
+  updateprofessor(id:number, profDto:EditTeacherDto) {
+    return this.http.put(this.professorUrl+`/${id}`, profDto)
   }
 
 

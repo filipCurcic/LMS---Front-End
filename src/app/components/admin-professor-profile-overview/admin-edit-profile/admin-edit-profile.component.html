@@ -7,21 +7,21 @@
             <div class="form-container" style="border: 0.05vw solid rgb(167, 167, 167);border-radius: 1.5%;">
         
               <mat-form-field appearance="outline">
-                <mat-label>First Name </mat-label>
-                <input matInput placeholder="{{professor.name}}">
+                <mat-label>First Name {{professor.registeredUserDto.id}}</mat-label>
+                <input matInput placeholder="{{professor.name}}" [(ngModel)]="professor.name">
               </mat-form-field>
         
               <mat-form-field appearance="outline">
                 <mat-label>Last Name </mat-label>
-                <input matInput placeholder="{{professor.lastName}}">
+                <input matInput placeholder="{{professor.lastName}}" [(ngModel)]="professor.lastName">
               </mat-form-field>
         
               <mat-form-field appearance="outline">
                   <mat-label>JMBG</mat-label>
-                  <input matInput placeholder="{{professor.umcn}}" type="number">
+                  <input matInput placeholder="{{professor.umcn}}" type="number" [(ngModel)]="professor.umcn">
                 </mat-form-field>
             </div>
-            <button mat-raised-button style="width: 5vw; margin-top: 1vw;">Save</button>
+            <button mat-raised-button style="width: 5vw; margin-top: 1vw;" (click)="update(professor.id, professor)">Save</button>
           </div>
         </div>
     </mat-tab>
@@ -36,7 +36,7 @@
         
                 <mat-form-field appearance="outline">
                     <mat-label>Username</mat-label>
-                    <input matInput placeholder="{{professor.registeredUserDto.username}}" #name maxlength="256"
+                    <input matInput placeholder="{{professor.registeredUserDto.username}}" #name maxlength="256" [(ngModel)]="professor.registeredUserDto.username"
                       placeholder="{{professor.registeredUserDto.username}}">
                     <mat-hint align="start"><strong>Usernames have to be unique</strong> </mat-hint>
                     <mat-hint align="end">{{name.value.length}} / 256</mat-hint>
@@ -46,45 +46,15 @@
             
                   <mat-form-field appearance="outline">
                     <mat-label>Email</mat-label>
-                    <input matInput placeholder="{{professor.registeredUserDto.email}}">
+                    <input matInput placeholder="{{professor.registeredUserDto.email}}" [(ngModel)]="professor.registeredUserDto.email">
                   </mat-form-field>
             
         
             </div>
-            <button mat-raised-button style="width: 5vw; margin-top: 1vw;">Save</button>
+            <button mat-raised-button style="width: 5vw; margin-top: 1vw;"  (click)="update(professor.id, professor)">Save</button>
           </div>
           </div>
     </mat-tab>
-
-    <mat-tab label="Sholastic information">
-        <div class="profile-edit-flex-container">
-        <div>
-            
-            <div class="form-container" style="border: 0.05vw solid rgb(167, 167, 167);border-radius: 1.5%;">
-                
-            
-              <mat-form-field appearance="outline">
-                <mat-label>University</mat-label>
-                <input matInput placeholder="{{professor.universityDto.name}}">
-              </mat-form-field>
-            
-                  
-        
-              <mat-form-field appearance="outline">
-                <mat-label>Faculty</mat-label>
-                <input matInput placeholder="{{professor.facultyDto.name}}">
-              </mat-form-field>
-      
-              
-        
-            </div>
-            <button mat-raised-button style="width: 5vw; margin-top: 1vw;">Save</button>
-        
-          </div>
-        </div>
-      
-    </mat-tab>
-
   </mat-tab-group>
 
 
