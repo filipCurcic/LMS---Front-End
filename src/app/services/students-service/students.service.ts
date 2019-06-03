@@ -20,6 +20,7 @@ export class StudentsService {
 
   private studentUrl = 'http://localhost:8080/student';
 
+  private serviceUrl = 'http://localhost:8080/studenti';
 
   
   getStudents():Observable<Student[]> {

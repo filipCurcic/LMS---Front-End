@@ -5,8 +5,8 @@
 }
 
 .flex-panel-container > div {
-    width: 20vw;
-    background-color: rgba(238, 238, 238);
+    width: 10vw;
+    background-color: rgba(238, 238, 238, 0.596);
     height: 25vw;
     margin: 1vw;
 }
@@ -24,22 +24,10 @@
 }
 
 .admin-panel-content > button {
-    width: 12vw;
+    width: 8vw;
     height: 2vw;
     font-size: 0.75vw;
     margin-top: 0.45vw;
     margin-bottom: 0.3vw;
 }
 
-.table-container {
-    padding-left:1vw;
-    padding-right:1vw;
-    padding-top:0.2vw;
-    width: 80%;
-    margin:auto;
-    position: relative;
-    top: 1.5vw;
-    background-color:white;margin-top:1vw; padding-bottom:1vw; 
-    /*  */
-    height: auto;
-}

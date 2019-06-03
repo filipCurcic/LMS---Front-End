@@ -1,6 +1,5 @@
-
 <div class="table-container"  [class.mat-elevation-z8]="true">
-<div class="flex-panel-container">
+  <div class="flex-panel-container">
 
 
     <div [class.mat-elevation-z4]="true">
@@ -10,11 +9,13 @@
         <mat-divider></mat-divider>
         <div class="admin-panel-content">
             
-                 <button routerLink="/admin_panel/students" mat-stroked-button>Overview</button> 
+                 <button routerLink="/students" mat-stroked-button>Overview</button> 
                 
 
-                 <button mat-stroked-button>Register new student</button> 
+                 <button mat-stroked-button>Register new user</button> 
                 
+
+                 <button mat-stroked-button>Basic</button> 
                 
 
                 
@@ -27,15 +28,36 @@
         </div>
         <mat-divider></mat-divider>
         <div class="admin-panel-content">
-             <button routerLink="/admin_panel/professors" mat-stroked-button>Overview</button> 
+             <button routerLink="/professors" mat-stroked-button>Overview</button> 
                 
 
                  <button mat-stroked-button>Register new prof.</button> 
                 
+
+                 <button  mat-stroked-button>Basic</button> 
                 
 
             
         </div>
+    </div>
+
+    <div [class.mat-elevation-z4]="true">
+        <div class="admin-panel-header">
+            <p>Users</p>
+        </div>
+        <mat-divider></mat-divider>
+        <div class="admin-panel-content">
+             <button routerLink="/professors" mat-stroked-button>Overview</button> 
+            
+
+             <button mat-stroked-button>Register new user</button> 
+            
+
+             <button mat-stroked-button>Basic</button> 
+                
+        </div>
+        
+
     </div>
 
     <div [class.mat-elevation-z4]="true">
@@ -44,10 +66,13 @@
             </div>
             <mat-divider></mat-divider>
             <div class="admin-panel-content">
-                 <button routerLink="/courses" mat-stroked-button>Overview</button> 
+                 <button routerLink="/professors" mat-stroked-button>Overview</button> 
                 
     
-                 <button routerLink="/newCourse" mat-stroked-button>Add new course</button> 
+                 <button mat-stroked-button>Add new course</button> 
+                
+    
+                 <button mat-stroked-button>Basic</button> 
                     
             </div>
             
@@ -73,5 +98,5 @@
         
             </div>
 
-</div>
+  </div>
 </div>

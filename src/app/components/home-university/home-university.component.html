@@ -1,0 +1,52 @@
+<div>
+
+  <div style="margin-bottom: 0%;"><img src="assets/img/students.jpg" class="photo" alt="students"></div>
+
+
+  <mat-grid-list cols="1" rowHeight="2:1">
+
+    <mat-grid-tile class="componentFirst">
+
+
+      <div *ngFor="let fac of faculties">
+
+        <div class="component1">           <!--   solve image -->
+          <img class="photoComponent" src="assets/img/philosophy.jpg" alt="philosophy">
+          <a routerLink="/facHome/{{fac.id}}"><div class="textContainer"><div class="text">{{fac.name}}</div></div></a>
+        </div>
+
+      </div>
+
+
+    </mat-grid-tile>
+
+  </mat-grid-list>
+
+  <div class="thinMiddle">
+    <div style="height: 100%; width: 100%;">
+      <p class="newsHeader">News</p>
+      <p class="locationHeader">Location</p>
+    </div>
+  </div>
+
+  <mat-grid-list cols="2" rowHeight="2:1">
+
+      <mat-grid-tile class="componentSecond">
+        NEWS
+      </mat-grid-tile>
+      <mat-grid-tile class="componentSecond">
+        <div class="location">
+          <div><app-osm></app-osm></div>
+        </div>
+      </mat-grid-tile>
+      
+
+
+  </mat-grid-list>
+
+  <div class="footer">FOOTER</div>
+  <div class="end">CREDITS</div>
+
+</div>
+
+

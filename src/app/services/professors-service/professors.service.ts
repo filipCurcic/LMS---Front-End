@@ -2,7 +2,6 @@ import { Injectable } from '@angular/core';
 import Professor from 'src/app/models/professor';
 import {HttpClient, HttpHeaders} from '@angular/common/http';
 import { Observable } from 'rxjs';
-import EditTeacherDto from 'src/app/models/EditTeacherDto';
 
 const httpOptions = {
   headers: new HttpHeaders({
@@ -19,6 +18,7 @@ export class ProfessorsService {
 
   private professorUrl = 'http://localhost:8080/teacher';
 
+  private serviceUrl1 = 'http://localhost:8080/profesori';
 
   getProfessors():Observable<Professor[]> {
     return this.http.get<Professor[]>(this.professorUrl+`/all`);
@@ -35,12 +35,12 @@ export class ProfessorsService {
     return this.http.post(this.professorUrl+'/add', postData);
   }
 
-  deleteprofessor(id: number) {
+  deleteprofessor(id: String) {
     return this.http.delete(this.professorUrl+`/${id}`);
   }
 
-  updateprofessor(id:number, profDto:EditTeacherDto) {
-    return this.http.put(this.professorUrl+`/${id}`, profDto)
+  updateprofessor(id:string, professor:Professor) {
+    return this.http.put(this.professorUrl+`/${id}`, professor)
   }
 
 

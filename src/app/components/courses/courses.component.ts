@@ -13,7 +13,7 @@ export class CoursesComponent implements OnInit {
 
   constructor(private courseService:CourseService) { }
 
-  dataSource = new CourseDataSource(this.courseService);
+  // dataSource = new CourseDataSource(this.courseService);
 
   ngOnInit() {
   }
@@ -24,17 +24,17 @@ export class CoursesComponent implements OnInit {
 
 }
 
-export class CourseDataSource extends DataSource<any> {
-  constructor(private courseService: CourseService) {
-    super();
-  }
+// export class CourseDataSource extends DataSource<any> {
+//   constructor(private courseService: CourseService) {
+//     super();
+//   }
 
   
-  connect(): Observable<Course[]> {
-    return this.courseService.getCourses();
-  }
+//   connect(): Observable<Course[]> {
+//     return this.courseService.getCourses();
+//   }
 
-  disconnect() {
+//   disconnect() {
 
-  }
-}
+//   }
+// }

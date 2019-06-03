@@ -7,5 +7,4 @@ export default class StudyCourse {
     faculty:Faculty;
     studyCourseTeacher:StudyCourseTeacher[];
 
-
 }

@@ -5,6 +5,8 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http'; 
+// import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
+// import { NgbdCarouselBasic } from './carousel-basic';
 
 //Services
 import { ProfessorsService } from 'src/app/services/professors-service/professors.service';
@@ -18,15 +20,12 @@ import { RegisterComponent } from './components/register/register.component';
 import {MatExpansionModule} from '@angular/material/expansion';
 import { AdminPanelComponent } from './components/admin-panel/admin-panel.component';
 import { UsersComponent } from './components/users/users.component';
-import { CoursesComponent } from './components/courses/courses.component';
-import { CourseRegistrationComponent } from './components/course-registration/course-registration.component';
-import { AdminStudentProfileOverviewComponent } from './components/admin-student-profile-overview/admin-student-profile-overview.component';
-import { AdminProfessorProfileOverviewComponent } from './components/admin-professor-profile-overview/admin-professor-profile-overview.component';
-import { AdminEditProfileComponent } from './components/admin-professor-profile-overview/admin-edit-profile/admin-edit-profile.component';
 import { CalendarMainComponent } from './components/calendar-main/calendar-main.component';
 import { Material } from './material';
 import { DayComponent } from './components/day/day.component';
-import {ExamsComponent} from './components/exams/exams.component'
+import { HomeUniversityComponent } from './components/home-university/home-university.component';
+import { HomeFacultyComponent } from './components/home-faculty/home-faculty.component';
+import { OsmComponent } from './components/osm/osm.component';
 
 @NgModule({
   declarations: [
@@ -39,14 +38,11 @@ import {ExamsComponent} from './components/exams/exams.component'
     RegisterComponent,
     AdminPanelComponent,
     UsersComponent,
-    CoursesComponent,
-    CourseRegistrationComponent,
-    AdminStudentProfileOverviewComponent,
-    AdminProfessorProfileOverviewComponent,
-    AdminEditProfileComponent,
     CalendarMainComponent,
     DayComponent,
-    ExamsComponent
+    HomeUniversityComponent,
+    HomeFacultyComponent,
+    OsmComponent
   ],
   imports: [
     BrowserModule,
@@ -55,7 +51,8 @@ import {ExamsComponent} from './components/exams/exams.component'
     HttpClientModule,
     ReactiveFormsModule,
     Material // Material file with all dependencies
-    
+    // NgbModule
+
   ],
   providers: [ProfessorsService],
   bootstrap: [AppComponent]

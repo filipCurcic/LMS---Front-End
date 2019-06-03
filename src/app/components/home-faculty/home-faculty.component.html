@@ -1,0 +1,55 @@
+<div>
+
+  <div style="margin-bottom: 0%;"><img src="assets/img/students.jpg" class="photo" alt="students"></div>
+
+
+  <mat-grid-list cols="1" rowHeight="2:1">
+  
+    
+      
+      
+    <!-- Srediti dobavljanje slika -->
+    <mat-grid-tile class="componentFirst">
+      <div *ngFor="let studyCourse of listOfCourses">
+        <div class="course" (click)="selectFaculty('philosophy')">
+          <img class="photoComponent" src="assets/img/philosophy.jpg" alt="philosophy"> 
+          <div class="textContainer"><div class="text">{{studyCourse.name}}</div></div>
+        </div>
+      </div>
+    </mat-grid-tile>
+      
+
+
+  </mat-grid-list>
+
+  <div class="thinMiddle">
+    <div style="height: 100%; width: 100%;">
+      <p class="newsHeader">News</p>
+      <p class="locationHeader">Location</p>
+    </div>
+  </div>
+
+  <mat-grid-list cols="2" rowHeight="2:1">
+
+      <mat-grid-tile class="componentSecond">
+        COMPONENT
+      </mat-grid-tile>
+      <mat-grid-tile class="componentSecond">        
+        <div class="location">
+          <div class="location">
+            <div><app-osm></app-osm></div>
+          </div>
+        </div>
+        
+      </mat-grid-tile>
+      
+
+
+  </mat-grid-list>
+
+  <div class="footer">FOOTER</div>
+  <div class="end">CREDITS</div>
+
+</div>
+
+

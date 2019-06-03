@@ -9,6 +9,7 @@ import {MatBadgeModule} from '@angular/material/badge';
 import {MatIconModule} from '@angular/material/icon';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatMomentDateModule } from '@angular/material-moment-adapter';
+import { MatGridListModule } from '@angular/material/grid-list';
 
 
 @NgModule({
@@ -55,7 +56,8 @@ import { MatMomentDateModule } from '@angular/material-moment-adapter';
         DragDropModule,
         MatTabsModule,
         MatBadgeModule,
-        MatIconModule
+        MatIconModule,
+        MatGridListModule
     ],
   })
   export class Material { }

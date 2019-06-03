@@ -20,18 +20,18 @@ export class UsersService {
     return this.http.get<User>(this.usersUrl+`/${id}`);
   }
 
-  deleteUser(id: number) {
+  deleteuser(id: number) {
     return this.http.delete(this.usersUrl+`/${id}`);
   }
 
-  addUser(user:User, image:File) {
+  adduser(user:User, image:File) {
     const postData = new FormData();
     postData.append("profileImage", image, image.name);
     postData.append("data", JSON.stringify(user));
     return this.http.post(this.usersUrl+'/add', postData);
   }
 
-  updateUser(id:number, user:User) {
+  updateuser(id:string, user:User) {
     return this.http.put(this.usersUrl+`/${id}`, user)
   }
 
