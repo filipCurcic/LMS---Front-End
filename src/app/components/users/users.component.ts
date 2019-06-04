@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { UsersService } from 'src/app/services/users-service/users.service';
 import { DataSource } from '@angular/cdk/table';
 import { Observable } from 'rxjs';
-import User from 'src/app/models/user';
+import RegisteredUser from 'src/app/models/registeredUser';
 
 @Component({
   selector: 'app-users',
@@ -25,7 +25,7 @@ export class UsersDataSource extends DataSource<any> {
     super();
   }
 
-  connect(): Observable<User[]> {
+  connect(): Observable<RegisteredUser[]> {
     return this.UserService.getUsers();
   }
 

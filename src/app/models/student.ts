@@ -1,6 +1,6 @@
 import Address from './address';
 import studentsOnYear from './studentsOnYear';
-import User from './user';
+import RegisteredUser from './registeredUser';
 
 export default class Student {
     id:number;
@@ -10,7 +10,7 @@ export default class Student {
     profilePicturePath:string;
     address:Address;
     studentYears:studentsOnYear[];
-    user:User;
+    user:RegisteredUser;
     
 
 }

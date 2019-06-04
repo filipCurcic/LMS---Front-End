@@ -1,4 +1,4 @@
-import User from './user';
+import RegisteredUser from './registeredUser';
 
 export default class AdministratorStaff {
     id:number;
@@ -6,6 +6,7 @@ export default class AdministratorStaff {
     surname:string;
     jmbg:string;
     profilePicturePath:string;
-    user:User;
+    user: RegisteredUser;
+    
     
 }
