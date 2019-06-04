@@ -17,19 +17,20 @@ import { OsmComponent } from './components/osm/osm.component';
 import { RolesService } from './services/login-service/roles.service';
 
 const routes: Routes = [
-  { path: '', redirectTo: '/uniHome', pathMatch: 'full' },
   {path: 'students', component:StudentsComponent},
   {path:'professors', component:ProfessorsComponent},
   {path:'professor/:id', component:ProfessorProfileComponent},
   {path:'login', component:LoginComponent},
   {path:'register', component:RegisterComponent},
   {path:'admin_tables', component:AdminComponent},
-  {path:'admin_panel', component:AdminPanelComponent, canActivate: [RolesService], data: {expextedRoles : ['ROLE_ADMINISTRATOR']}},
-  {path:'calendar', component:CalendarMainComponent},
+  {path:'admin_panel', component:AdminPanelComponent,
+         canActivate: [RolesService], data: { expectedRoles: ['ROLE_ADMINISTRATOR', 'ROLE_ADMINISTRATIVE_STAFF']}},
+  {path:'calendar', component:CalendarMainComponent,  canActivate: [RolesService], data: { expectedRoles: ['ROLE_STUDENT']}},
   {path:'uniHome', component:HomeUniversityComponent},
   {path:'facHome/:id', component:HomeFacultyComponent},
   {path:'map', component:OsmComponent},
-  {path:'day', component:DayComponent}
+  {path:'day', component:DayComponent},
+  { path: '', redirectTo: '/uniHome', pathMatch: 'full' }
 
 ];
 

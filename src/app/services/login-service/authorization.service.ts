@@ -18,7 +18,7 @@ export class AuthorizationService {
       if(response.token){
         localStorage.setItem('token', response.token);
         this.roleChanged.next(this.getCurrentRoles());
-        this.router.navigate(['/admin_panel']);
+        this.router.navigate(['admin_panel']);
         this.loggedInStatusChanged.next(true);
       }
     });
@@ -27,7 +27,7 @@ export class AuthorizationService {
   logout(){
     this.roleChanged.next([]);
     localStorage.removeItem('token');
-    this.router.navigate(['/register']);
+    this.router.navigate(['/']);
     this.loggedInStatusChanged.next(false);
   }
 

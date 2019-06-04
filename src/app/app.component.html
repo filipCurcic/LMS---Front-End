@@ -3,9 +3,15 @@
     <div class="drawer-content" >
       <img src="assets/logo/logo.png" style="width:10vw; height:auto; border-radius: 15%; margin:0vw;">
       
-      <button color="white" style="margin-top: 2vw"mat-button routerLink="/login">Login</button>
-      <button (click)="logout()" color="white" style="margin-top: 2vw" mat-button routerLink="/logout">Logout</button>
-      <button color="white" style="margin-top: 2vw"mat-button routerLink="/register">Register</button>
+      <ng-container *ngIf="isLoggedIn; else elseTemplate">
+        <button style="margin-top: 2vw" mat-button (click)="onLogout()">Logout</button>
+      </ng-container>
+      <ng-template #elseTemplate>
+        <button style="margin-top: 2vw" mat-button routerLink="login">Login</button>
+      </ng-template>
+      <button  color="white" style="margin-top: 2vw"mat-button routerLink="/register">Register</button>
+    
+      
     </div>
     
   </mat-drawer>

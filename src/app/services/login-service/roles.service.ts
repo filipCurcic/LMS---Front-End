@@ -7,9 +7,9 @@ import decode from 'jwt-decode';
 @Injectable({
   providedIn: 'root'
 })
+
 export class RolesService implements CanActivate {
 
-  
   constructor(private router: Router) { }
 
   canActivate(route: ActivatedRouteSnapshot): boolean {
@@ -37,4 +37,5 @@ export class RolesService implements CanActivate {
       return false;
     }
   }
+
 }
