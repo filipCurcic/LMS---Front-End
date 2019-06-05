@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { BehaviorSubject } from 'rxjs/internal/BehaviorSubject';
-import Student from '../models/student';
+import { Student } from '../models/student';
 import * as moment from 'moment';
 
 @Injectable({

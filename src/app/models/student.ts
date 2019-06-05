@@ -1,16 +1,11 @@
 import Address from './address';
-import studentsOnYear from './studentsOnYear';
 import RegisteredUser from './registeredUser';
 
-export default class Student {
+export class Student{
     id:number;
-    jmbg:number;
     name:string;
-    surname:string;
-    profilePicturePath:string;
-    address:Address;
-    studentYears:studentsOnYear[];
-    user:RegisteredUser;
-    
-
+    lastName: string;
+    jmbg: string;
+    registeredUser: RegisteredUser;
+    address: Address
 }

@@ -1,9 +1,10 @@
-import Student from './student';
+
 import CourseRealization from './courseRealization';
+import { Student } from './student';
 
 export default class CourseAttending {
     id:number;
-    student:Student;
+    student:Student
     courseRealization:CourseRealization;
     
 

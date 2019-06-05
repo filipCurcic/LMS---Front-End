@@ -26,6 +26,9 @@ import { DayComponent } from './components/day/day.component';
 import { HomeUniversityComponent } from './components/home-university/home-university.component';
 import { HomeFacultyComponent } from './components/home-faculty/home-faculty.component';
 import { OsmComponent } from './components/osm/osm.component';
+import { StudentAddComponent } from './components/students/student-add/student-add.component';
+import { UserAddComponent } from './components/users/user-add/user-add.component';
+import { AddressComponent } from './components/address/address.component';
 
 @NgModule({
   declarations: [
@@ -42,7 +45,10 @@ import { OsmComponent } from './components/osm/osm.component';
     DayComponent,
     HomeUniversityComponent,
     HomeFacultyComponent,
-    OsmComponent
+    OsmComponent,
+    StudentAddComponent,
+    UserAddComponent,
+    AddressComponent
   ],
   imports: [
     BrowserModule,

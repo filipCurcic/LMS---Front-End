@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {DataSource} from '@angular/cdk/collections';
-import Student from '../../models/student';
+import { Student } from '../../models/student';
 import { StudentsService } from 'src/app/services/students-service/students.service';
 import { Observable } from 'rxjs';
 
@@ -35,7 +35,11 @@ export class StudentsDataSource extends DataSource<any> {
   connect(): Observable<Student[]> {
     return this.StudentsService.getStudents();
   }
-
+  delete(id: string){
+    this.StudentsService.deleteStudent(id).subscribe((data: any) => {
+      this.StudentsService.getStudents();
+    });
+  }
   disconnect() {
 
   }

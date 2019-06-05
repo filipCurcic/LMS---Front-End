@@ -1,5 +1,5 @@
-import Student from './student';
 import StudyYear from './studyYear';
+import { Student } from './student';
 
 export default class StudentOnYear {
     id:number;

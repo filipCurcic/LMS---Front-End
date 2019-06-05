@@ -2,7 +2,7 @@ import { Component, OnInit,  EventEmitter, Output } from '@angular/core';
 import { FormGroup, FormBuilder, Validators, FormControl  } from '@angular/forms';
 import { StudentsService } from 'src/app/services/students-service/students.service';
 import { ProfessorsService } from 'src/app/services/professors-service/professors.service';
-import Student from 'src/app/models/student';
+import { Student } from 'src/app/models/student';
 import Professor from 'src/app/models/professor';
 import { NgForm } from '@angular/forms';
 

@@ -37,7 +37,7 @@
     <ng-container matColumnDef="actionsDelete">
         <mat-header-cell  *matHeaderCellDef > Delete </mat-header-cell>
         <mat-cell *matCellDef="let row" >
-             <button mat-raised-button color="warn" >Delete</button>
+             <button mat-raised-button color="warn" (click)="delete(student.id)" >Delete</button>
         </mat-cell>
       </ng-container>
 

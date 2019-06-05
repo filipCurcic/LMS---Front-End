@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import {HttpClient, HttpHeaders} from '@angular/common/http';
 import { Observable, of } from 'rxjs';
-import Student from 'src/app/models/student';
+import { Student } from '../../models/student';
 
 
 const httpOptions = {
@@ -20,40 +20,39 @@ export class StudentsService {
 
   private studentUrl = 'http://localhost:8080/student';
 
-  private serviceUrl = 'http://localhost:8080/studenti';
-
   
-  getStudents():Observable<Student[]> {
+  getStudents() {
     return this.http.get<Student[]>(this.studentUrl+`/all`);
   }
 
-  getStudent(id:number):Observable<Student> {
+  getStudent(id:String) {
     return this.http.get<Student>(this.studentUrl+`/${id}`);
   }
 
-  deleteStudent(id: number) {
+  getOneByUsername(username: String) {
+    return this.http.get<Student>(this.studentUrl+`/username/${username}`);
+  }
+
+  deleteStudent(id: String) {
     return this.http.delete(this.studentUrl+`/${id}`);
   }
 
   addStudent(student:Student, image:File) {
     const postData = new FormData();
-    postData.append("profileImage", image, image.name);
-    postData.append("data", JSON.stringify(student));
+    if(image) {
+      postData.append("profileImage", image, image.name);
+    } postData.append("data", JSON.stringify(student));
     return this.http.post(this.studentUrl+'/add', postData);
   }
 
-  updateStudent(id:string, student:Student) {
-    return this.http.put(this.studentUrl+`/${id}`, student)
+  updateStudent(username: string, student:Student, image: File) {
+    const postData = new FormData();
+    if(image) {
+      postData.append("profileImage", image, image.name);
+    }
+    postData.append("data", JSON.stringify(student));
+    return this.http.put(this.studentUrl+`/${username}`, postData)
   }
-
-  // getStudent(id: number): Observable<Student>{
-  //   const url = `${this.serviceUrl}/${id}`;
-  //   return this.http.get<Student>(url);
-  // }
-
-  // addStudent(student:Student):Observable<Student> {
-  //   return this.http.post<Student>(this.serviceUrl, student, httpOptions);
-  // }
-
+  
 
 }

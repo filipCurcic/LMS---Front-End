@@ -1,0 +1,19 @@
+<div [formGroup]="registeredUserDataForm">
+    <mat-form-field>
+        <input matInput type="email" placeholder="Email" name="email" formControlName="email"  required>
+        <mat-error>{{formError.mapErrors(registeredUserDataForm.get('email'), 'Email')}}</mat-error>
+    </mat-form-field>
+    <mat-form-field>
+        <input matInput type="text" placeholder="Username" name="username" formControlName="username"  required>
+        <mat-error>{{formError.mapErrors(registeredUserDataForm.get('username'), 'Username')}}</mat-error>
+    </mat-form-field>
+    <mat-form-field>
+        <input matInput type="password" placeholder="Password" name="password" formControlName="password"  required
+            (change)="registeredUserDataForm.get('confirmPassword').updateValueAndValidity()">
+        <mat-error>{{formError.mapErrors(registeredUserDataForm.get('password'), 'Password')}}</mat-error>
+    </mat-form-field>
+    <mat-form-field>
+        <input matInput type="password" placeholder="Password" name="confirmPassword" formControlName="confirmPassword"  required>
+        <mat-error>{{formError.mapErrors(registeredUserDataForm.get('confirmPassword'), 'Confirm password')}}</mat-error>
+    </mat-form-field>
+</div>
