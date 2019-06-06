@@ -1,0 +1,32 @@
+
+.example-viewport {
+  height: 100%;
+  width: 100%;
+  background: #2d89ef;
+  color: white;
+  
+}
+
+.example-item {
+  display: flex;
+  flex-direction: column;
+  height: 150px;
+  margin-top: 2vw;
+  margin-bottom: 1vw;
+  margin-left:1vw;
+  border-bottom: 1px solid black;
+}
+
+.headline{
+  display: flex;
+  flex-direction: row;
+}
+
+.name{
+  padding-left: 1vw;
+}
+
+.date{
+  position: absolute;
+  margin-left: 40vw;
+}

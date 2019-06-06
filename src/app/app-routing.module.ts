@@ -16,6 +16,7 @@ import { HomeFacultyComponent } from './components/home-faculty/home-faculty.com
 import { OsmComponent } from './components/osm/osm.component';
 import { RolesService } from './services/login-service/roles.service';
 import { StudentAddComponent } from './components/students/student-add/student-add.component'
+import { NewsPageComponent } from './components/news/news-page/news-page.component'
 
 const routes: Routes = [
   {path: 'students', component:StudentsComponent},
@@ -33,6 +34,7 @@ const routes: Routes = [
   {path:'day', component:DayComponent},
   {path: 'register-student', component: StudentAddComponent, 
       canActivate: [RolesService], data: { expectedRoles: ['ROLE_ADMINISTRATOR', 'ROLE_ADMINISTRATIVE_STAFF']}},
+  {path: 'news/:id', component: NewsPageComponent},
   { path: '', redirectTo: '/uniHome', pathMatch: 'full' }
 
 ];

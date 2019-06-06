@@ -5,6 +5,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http'; 
+import {ScrollingModule } from '@angular/cdk/scrolling'
 // import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 // import { NgbdCarouselBasic } from './carousel-basic';
 
@@ -29,6 +30,10 @@ import { OsmComponent } from './components/osm/osm.component';
 import { StudentAddComponent } from './components/students/student-add/student-add.component';
 import { UserAddComponent } from './components/users/user-add/user-add.component';
 import { AddressComponent } from './components/address/address.component';
+import { NewsComponent } from './components/news/news.component';
+import {ScrollDispatchModule} from  '@angular/cdk/scrolling';
+import { NewsPageComponent } from './components/news/news-page/news-page.component'
+
 
 @NgModule({
   declarations: [
@@ -48,14 +53,18 @@ import { AddressComponent } from './components/address/address.component';
     OsmComponent,
     StudentAddComponent,
     UserAddComponent,
-    AddressComponent
+    AddressComponent,
+    NewsComponent,
+    NewsPageComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
     AppRoutingModule,
     HttpClientModule,
+    ScrollingModule,
     ReactiveFormsModule,
+    ScrollDispatchModule,
     Material // Material file with all dependencies
     // NgbModule
 
