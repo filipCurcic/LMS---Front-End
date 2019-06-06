@@ -14,9 +14,9 @@ import { DayComponent } from './components/day/day.component';
 import { HomeUniversityComponent } from './components/home-university/home-university.component';
 import { HomeFacultyComponent } from './components/home-faculty/home-faculty.component';
 import { OsmComponent } from './components/osm/osm.component';
-import { RolesService } from './services/login-service/roles.service';
-import { StudentAddComponent } from './components/students/student-add/student-add.component'
-import { NewsPageComponent } from './components/news/news-page/news-page.component'
+import { RoleGuard } from './authorization/role.guard';
+import { StudentAddComponent } from './components/students/student-add/student-add.component';
+import { AdministratorStaffAddComponent } from './components/administrator-staff/administrator-staff-add/administrator-staff-add.component';
 
 const routes: Routes = [
   {path: 'students', component:StudentsComponent},
@@ -26,15 +26,17 @@ const routes: Routes = [
   {path:'register', component:RegisterComponent},
   {path:'admin_tables', component:AdminComponent},
   {path:'admin_panel', component:AdminPanelComponent,
-         canActivate: [RolesService], data: { expectedRoles: ['ROLE_ADMINISTRATOR', 'ROLE_ADMINISTRATIVE_STAFF']}},
-  {path:'calendar', component:CalendarMainComponent,  canActivate: [RolesService], data: { expectedRoles: ['ROLE_STUDENT']}},
+         canActivate: [RoleGuard], data: { expectedRoles: ['ROLE_ADMINISTRATOR', 'ROLE_ADMINISTRATIVE_STAFF']}},
+  {path:'calendar', component:CalendarMainComponent,  canActivate: [RoleGuard], data: { expectedRoles: ['ROLE_STUDENT']}},
   {path:'uniHome', component:HomeUniversityComponent},
   {path:'facHome/:id', component:HomeFacultyComponent},
   {path:'map', component:OsmComponent},
   {path:'day', component:DayComponent},
   {path: 'register-student', component: StudentAddComponent, 
-      canActivate: [RolesService], data: { expectedRoles: ['ROLE_ADMINISTRATOR', 'ROLE_ADMINISTRATIVE_STAFF']}},
-  {path: 'news/:id', component: NewsPageComponent},
+      canActivate: [RoleGuard], data: { expectedRoles: ['ROLE_ADMINISTRATOR', 'ROLE_ADMINISTRATIVE_STAFF']}},
+  {path: 'register-administrator-staff', component: AdministratorStaffAddComponent, 
+      canActivate: [RoleGuard], data: { expectedRoles: ['ROLE_ADMINISTRATOR']}},
+  
   { path: '', redirectTo: '/uniHome', pathMatch: 'full' }
 
 ];

@@ -5,10 +5,10 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http'; 
-import {ScrollingModule } from '@angular/cdk/scrolling'
 // import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 // import { NgbdCarouselBasic } from './carousel-basic';
-
+import { HTTP_INTERCEPTORS } from '@angular/common/http';
+import { AuthInterceptor } from './authorization/auth-interceptor'
 //Services
 import { ProfessorsService } from 'src/app/services/professors-service/professors.service';
 //Components
@@ -31,9 +31,10 @@ import { StudentAddComponent } from './components/students/student-add/student-a
 import { UserAddComponent } from './components/users/user-add/user-add.component';
 import { AddressComponent } from './components/address/address.component';
 import { NewsComponent } from './components/news/news.component';
-import {ScrollDispatchModule} from  '@angular/cdk/scrolling';
-import { NewsPageComponent } from './components/news/news-page/news-page.component'
-
+import { NewsPageComponent } from './components//news/news-page/news-page.component'
+import { AdministratorStaffComponent } from './components/administrator-staff/administrator-staff.component';
+import { AdministratorStaffAddComponent } from './components/administrator-staff/administrator-staff-add/administrator-staff-add.component';
+import { from } from 'rxjs';
 
 @NgModule({
   declarations: [
@@ -55,21 +56,22 @@ import { NewsPageComponent } from './components/news/news-page/news-page.compone
     UserAddComponent,
     AddressComponent,
     NewsComponent,
-    NewsPageComponent
+    NewsPageComponent,
+    AdministratorStaffComponent,
+    AdministratorStaffAddComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
     AppRoutingModule,
     HttpClientModule,
-    ScrollingModule,
     ReactiveFormsModule,
-    ScrollDispatchModule,
     Material // Material file with all dependencies
     // NgbModule
 
   ],
-  providers: [ProfessorsService],
+  providers: [ProfessorsService, { provide: HTTP_INTERCEPTORS, useClass: AuthInterceptor, multi: true }
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

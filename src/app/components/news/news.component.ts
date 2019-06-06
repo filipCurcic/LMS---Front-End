@@ -12,6 +12,7 @@ import {NewsService} from "../../services/news-service/news.service"
   styleUrls: ['./news.component.css'],
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
+
 export class NewsComponent implements OnInit {
 
 

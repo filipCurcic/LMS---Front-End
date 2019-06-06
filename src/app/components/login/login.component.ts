@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { AuthorizationService } from '../../services/login-service/authorization.service' ;
+import { AuthService } from '../../authorization/auth.service' ;
 import { NgForm } from '@angular/forms';
 
 
@@ -10,7 +10,7 @@ import { NgForm } from '@angular/forms';
 })
 export class LoginComponent implements OnInit {
 
-  constructor( private authorizationService : AuthorizationService) { }
+  constructor( private authorizationService : AuthService) { }
 
   ngOnInit() {
   }

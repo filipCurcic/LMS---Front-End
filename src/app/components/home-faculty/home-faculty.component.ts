@@ -5,7 +5,7 @@ import { ActivatedRoute } from '@angular/router';
 import { CourseService } from 'src/app/services/course-service/course.service';
 import Course from 'src/app/models/course';
 import { Subscription } from 'rxjs';
-import { AuthorizationService } from 'src/app/services/login-service/authorization.service';
+//import { AuthorizationService } from 'src/app/services/login-service/authorization.service';
 
 
 @Component({

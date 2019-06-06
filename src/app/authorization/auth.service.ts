@@ -1,13 +1,12 @@
-import { Injectable } from '@angular/core';
+import { Injectable } from "@angular/core";
 import { HttpClient } from "@angular/common/http";
 import { Router } from "@angular/router";
 import decode from 'jwt-decode';
 import { Subject } from 'rxjs';
 
-@Injectable({
-  providedIn: 'root'
-})
-export class AuthorizationService {
+@Injectable({ providedIn: "root" })
+export class AuthService {
+
   roleChanged = new Subject<any[]>();
   loggedInStatusChanged = new Subject<boolean>();
 
@@ -18,7 +17,7 @@ export class AuthorizationService {
       if(response.token){
         localStorage.setItem('token', response.token);
         this.roleChanged.next(this.getCurrentRoles());
-        this.router.navigate(['admin_panel']);
+        this.router.navigate(['/']);
         this.loggedInStatusChanged.next(true);
       }
     });
@@ -56,4 +55,5 @@ export class AuthorizationService {
     }
     return false;
   }
+
 }
