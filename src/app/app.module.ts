@@ -34,6 +34,9 @@ import { NewsComponent } from './components/news/news.component';
 import { NewsPageComponent } from './components//news/news-page/news-page.component'
 import { AdministratorStaffComponent } from './components/administrator-staff/administrator-staff.component';
 import { AdministratorStaffAddComponent } from './components/administrator-staff/administrator-staff-add/administrator-staff-add.component';
+import { ProfessorAddComponent } from './components/professors/professor-add/professor-add.component';
+import { StudyCourseAddComponent } from './components/study-course/study-course-add/study-course-add.component';
+import { FacultyAddComponent } from './components/home-faculty/faculty-add/faculty-add.component'
 import { from } from 'rxjs';
 
 @NgModule({
@@ -58,7 +61,10 @@ import { from } from 'rxjs';
     NewsComponent,
     NewsPageComponent,
     AdministratorStaffComponent,
-    AdministratorStaffAddComponent
+    AdministratorStaffAddComponent,
+    ProfessorAddComponent,
+    StudyCourseAddComponent,
+    FacultyAddComponent,
   ],
   imports: [
     BrowserModule,
@@ -70,7 +76,7 @@ import { from } from 'rxjs';
     // NgbModule
 
   ],
-  providers: [ProfessorsService, { provide: HTTP_INTERCEPTORS, useClass: AuthInterceptor, multi: true }
+  providers: [{ provide: HTTP_INTERCEPTORS, useClass: AuthInterceptor, multi: true }
   ],
   bootstrap: [AppComponent]
 })

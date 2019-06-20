@@ -1,0 +1,54 @@
+.image-preview {
+    height: 80px;
+    margin: 16px 0;
+}
+  
+.image-preview img {
+    height: 100%;
+}
+
+#reg{
+    margin: auto;
+    margin-top: 1vw;
+    width: 70%
+}
+
+
+.mat-form-field{
+    margin-top:1vw;
+    width: 25vw;
+}
+
+.mat-tab-group{
+    margin-top:1vw;
+    margin-bottom:1vw;
+}
+
+.button{
+    margin-top:1vw;
+    
+}
+
+.street{
+    width:10vw;
+}
+
+
+.number{
+    width:5vw;
+}
+
+.city{
+    width:10vw;
+}
+
+.title{
+    width:13vw;
+}
+
+.date{
+    
+    width:10vw;
+}
+
+

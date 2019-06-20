@@ -1,0 +1,28 @@
+<div class="example-container" [formGroup]="studyCourseAdd">
+
+    <mat-form-field>
+      <input matInput name="name" placeholder="Name" formControlName="name">
+      <!-- <mat-error *ngIf="form.get('name').invalid">Please enter the valid name.</mat-error> -->
+    </mat-form-field>
+  
+    <mat-form-field>
+      <mat-label>Faculty</mat-label>
+      <mat-select name = "faculty" formControlName="faculty" placeholder="Select faculty">
+        <mat-option *ngFor="let faculty of faculties" [value]="faculty" >
+          {{faculty.name}}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+  
+     <div>
+        <button mat-stroked-button type="button" (click)="filePicker.click()">Course Image</button>
+        <input hidden type="file" #filePicker (change)="onImagePicked($event)">
+        
+    </div>
+    <div class="image-preview" 
+        *ngIf="imagePreview && imagePreview !== '' && studyCourseAdd.get('courseImages').valid">
+        <img [src]="imagePreview" alt="Can't dispaly picture">
+    </div> 
+
+    <button mat-raised-button color="primary" (click)="add()" >Save</button>
+  </div>

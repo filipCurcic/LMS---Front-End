@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { UsersService } from 'src/app/services/users-service/users.service';
 import { DataSource } from '@angular/cdk/table';
 import { Observable } from 'rxjs';
-import RegisteredUser from 'src/app/models/registeredUser';
+import { RegisteredUser } from 'src/app/models/registeredUser';
 
 @Component({
   selector: 'app-users',

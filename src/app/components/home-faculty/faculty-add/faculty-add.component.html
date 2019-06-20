@@ -1,0 +1,31 @@
+<div class="example-container" [formGroup]="facultyAdd">
+
+  <mat-form-field>
+    <input matInput name="name" placeholder="Name" formControlName="name">
+  </mat-form-field>
+
+  <mat-form-field>
+    <input matInput name="contact" placeholder="Contact" formControlName="contact">
+  </mat-form-field>
+
+  <mat-form-field>
+    <input matInput name="email" placeholder="Email" formControlName="email">
+  </mat-form-field>
+
+  <mat-form-field>
+    <input matInput name="description" placeholder="Description" formControlName="description">
+  </mat-form-field>
+
+  
+ <!-- <mat-form-field>
+    <mat-label>University</mat-label>
+    <mat-select name = "university" formControlName="university">
+      <mat-option *ngFor="let university of universities" [value]="university" >
+        {{university.name}}
+      </mat-option>
+    </mat-select>
+  </mat-form-field> -->
+
+  
+  <button mat-raised-button color="primary" (click)="add()" >Add</button>
+</div>

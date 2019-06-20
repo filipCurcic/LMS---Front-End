@@ -1,69 +1,67 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { FormGroup, FormBuilder, Validators, AbstractControl, FormControl } from '@angular/forms';
 import { Observable, Observer } from "rxjs";
-import { Student } from '../../../models/student';
-import { StudentsService } from '../../../services/students-service/students.service';
 import { ActivatedRoute } from '@angular/router';
 import { FromErrorsService } from '../../../services/formErrors/from-errors.service'
-
+import Professor from 'src/app/models/professor';
+import { ProfessorsService } from 'src/app/services/professors-service/professors.service';
 
 @Component({
-  selector: 'app-student-add',
-  templateUrl: './student-add.component.html',
-  styleUrls: ['./student-add.component.css']
+  selector: 'app-professor-add',
+  templateUrl: './professor-add.component.html',
+  styleUrls: ['./professor-add.component.css']
 })
-export class StudentAddComponent implements OnInit {
+export class ProfessorAddComponent implements OnInit {
 
   @Input() public parrentForm: FormGroup;
-  public studentDataForm : FormGroup;
+  public administratorStaffDataForm : FormGroup;
   imagePreview: string;
 
   private edit = false;
   private username : string;
-  public student: Student;
+  public professor : Professor
   public form : FormGroup;
 
-  constructor(private route: ActivatedRoute, private studentService: StudentsService, public formError: FromErrorsService) { }
+  constructor(private route: ActivatedRoute, private professorService: ProfessorsService, public formError: FromErrorsService) { }
 
   ngOnInit() {
-  
     this.form = new FormGroup({
-      jmbg: new FormControl(''),
       name: new FormControl(''),
       lastName: new FormControl(''),
+      biography: new FormControl(''),
+      umcn: new FormControl(''),
       profilePicturePath: new FormControl(''),
       profileImage: new FormControl(['', {asyncValidators: [this.mimeTypeValidator]}])
     });
     if(this.route.snapshot.paramMap.get("username")){
       this.edit = true;
       this.username = this.route.snapshot.paramMap.get("username");
-      this.studentService.getOneByUsername(this.username).subscribe((data: Student) => {
-        this.student = data;
-        this.form.patchValue(this.student);
+      this.professorService.getProfessorByUsername(this.username).subscribe((data: Professor) => {
+        this.professor = data;
+        this.form.patchValue(this.professor);
       });
   }
 }
 
-add(){
+addProfessor(){
   if(this.form.invalid){
     this.formError.markFormGroupTouched(this.form);
   }else{
-    const std = this.form.value;
-    delete std['registeredUser']['confirmPassword'];
-    delete std['profileImage'];
-    // delete std['address']['city']['country'];
+    const prof = this.form.value;
+    delete prof['registeredUser']['confirmPassword'];
+    delete prof['profileImage'];
 
-    console.log(std)
+    console.log(prof)
     
     if(this.edit){
-      std.registeredUser.id = this.student.registeredUser.id
-      std.address.id = this.student.address.id;
-      this.student = std;
+      prof.registeredUser.id = this.professor.registeredUser.id
+      prof.address.id = this.professor.address.id;
+      this.professor = prof;
     
-      this.studentService.updateStudent(this.username, this.student, this.form.get('profileImage').value).subscribe();
+      this.professorService.updateProfessor(this.username, this.professor, this.form.get('profileImage').value).subscribe();
     }else{
-      this.student = std;
-      this.studentService.addStudent(std, this.form.get('profileImage').value).subscribe();
+      this.professor = prof;
+      this.professorService.addProfessor(prof, this.form.get('profileImage').value).subscribe();
     }
     
   }

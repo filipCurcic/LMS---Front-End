@@ -1,0 +1,33 @@
+<div id="reg">
+  <form [formGroup]="form" method="POST" >
+      <app-user-add [parrentForm]="form"></app-user-add>
+      <mat-form-field>
+          <input matInput type="text" placeholder="Name" name="name" formControlName="name"  required>
+          <!-- <mat-error>{{formError.mapErrors(studentDataForm.get('name'), 'Name')}}</mat-error> -->
+      </mat-form-field>
+      <br>
+      <mat-form-field>
+          <input matInput type="text" placeholder="Surname" name="lastName" formControlName="lastName"  required>
+          <!-- <mat-error>{{formError.mapErrors(studentDataForm.get('lastName'), 'Last Name')}}</mat-error> -->
+      </mat-form-field>
+      <br>
+      <mat-form-field>
+        <input matInput type="text" placeholder="Biography" name="biography" formControlName="biography"  required>
+        <!-- <mat-error>{{formError.mapErrors(studentDataForm.get('lastName'), 'Last Name')}}</mat-error> -->
+      </mat-form-field>
+      <mat-form-field>
+        <input matInput type="text" placeholder="Umcn" name="umcn" formControlName="umcn"  required>
+        <!-- <mat-error>{{formError.mapErrors(studentDataForm.get('lastName'), 'Last Name')}}</mat-error> -->
+      </mat-form-field>
+      <br>
+      <div>
+          <button mat-stroked-button type="button" (click)="filePicker.click()">Profile picture</button>
+          <input hidden type="file" #filePicker (change)="onImagePicked($event)">
+          <!-- <mat-error>{{formError.mapErrors(studentDataForm.get('profileImage'), 'First name')}}</mat-error> -->
+      </div>
+      <div class="image-preview" 
+          *ngIf="imagePreview && imagePreview !== '' && form.get('profileImage').valid">
+          <img [src]="imagePreview" alt="Can't dispaly picture">
+      </div>
+      <app-address [parrentForm]="form"></app-address>
+      <button mat-raised-button color="primary" (click)="addProfessor()" type="submit">Save</button>

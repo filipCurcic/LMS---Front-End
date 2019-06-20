@@ -1,0 +1,18 @@
+.example-container {
+    display: flex;
+    flex-direction: column;
+}
+  
+.example-container > * {
+    margin-left: 20%;
+    margin-right: 20%;
+}
+
+.image-preview {
+    height: 80px;
+    margin: 16px 0;
+}
+  
+.image-preview img {
+    height: 100%;
+}
