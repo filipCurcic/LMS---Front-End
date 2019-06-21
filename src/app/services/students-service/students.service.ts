@@ -34,7 +34,7 @@ export class StudentsService {
   }
 
   deleteStudent(id: String) {
-    return this.http.delete(this.studentUrl+`/delete/${id}`);
+    return this.http.delete(this.studentUrl+`/${id}`);
   }
 
   addStudent(student:Student, image:File) {
@@ -51,7 +51,11 @@ export class StudentsService {
       postData.append("profileImage", image, image.name);
     }
     postData.append("data", JSON.stringify(student));
-    return this.http.put(this.studentUrl+`/username/${username}`, postData)
+    return this.http.put(this.studentUrl+`/${username}`, postData)
+  }
+
+  getLoggedStudent(username: String){
+    return this.http.get<Student>(this.studentUrl + `/logged/${username}`);
   }
   
 

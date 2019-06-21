@@ -1,13 +1,15 @@
 import * as moment from 'moment';
 
 export class EventSend {
-    dateEvent: String;
+    startEvent: String;
+    endEvent: String;
     header: String;
     info: String;
     type: String;
   
-    constructor(date, header, info, type){
-      this.dateEvent = date;
+    constructor(startEvent, endEvent, header, info, type){
+      this.startEvent = startEvent;
+      this.endEvent = endEvent;
       this.header = header;
       this.info = info;
       this.type = type;

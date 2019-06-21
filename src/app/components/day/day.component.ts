@@ -22,7 +22,8 @@ export class DayComponent implements OnInit {
   listOfEvents = [];
 
   addEvent: Event = {
-    'date':this.clicked,
+    'startEvent':this.clicked,
+    'endEvent':this.clicked,
     'header':'',
     'info':'',
     'type':''
@@ -44,7 +45,6 @@ export class DayComponent implements OnInit {
     this.listOfEvents = [];
     this.dataEvents.getCurrentEvents(date.date(), date.month()+1, date.year()).subscribe((data) => {
       this.listOfEvents = data;
-      console.log(this.listOfEvents);
       this.converter(this.listOfEvents);
     })
   }
@@ -52,7 +52,7 @@ export class DayComponent implements OnInit {
   converter(list){
     this.listOfEvents = [];
     list.forEach(element => {
-      let ev = new Event(moment(element.dateEvent), element.header, element.type, element.info);
+      let ev = new Event(moment(element.startDate), moment(element.endDate), element.header, element.type, element.info);
       this.listOfEvents.push(ev);
     });
   }
@@ -60,7 +60,7 @@ export class DayComponent implements OnInit {
 
 
   newEvent(){  // FORMAT ?
-    let e = new EventSend(this.clicked.format("YYYY-MM-DD"), this.addEvent.header, this.addEvent.type, this.addEvent.info);
+    let e = new EventSend(this.clicked.format("YYYY-MM-DD"), this.clicked.format("YYYY-MM-DD"), this.addEvent.header, this.addEvent.type, this.addEvent.info);
     console.log(e);
     this.dataEvents.addNewEvent(e).subscribe(() => {
       this.ngOnInit();

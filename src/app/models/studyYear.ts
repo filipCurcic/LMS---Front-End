@@ -3,11 +3,10 @@ import StudyCourse from './studyCourse';
 
 export default class StudyYear {
     id:number;
-    startDate:Date;
-    endDate: Date;
+    year:Date;
     studyYear:number;
-    // studentsOnYear:studentsOnYear[];
-    studyCourse:StudyCourse;
+    studentsOnYear:studentsOnYear[];
+    studyCourse:StudyCourse[];
 
     
 }

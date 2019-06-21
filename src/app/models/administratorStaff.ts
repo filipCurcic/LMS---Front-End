@@ -1,4 +1,4 @@
-import { RegisteredUser } from './registeredUser';
+import RegisteredUser from './registeredUser';
 import Address from './address';
 
 export default class AdministratorStaff {

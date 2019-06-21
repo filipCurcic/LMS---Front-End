@@ -4,14 +4,13 @@ import University from './university';
 import StudyCourseTeacher from './studyCourseTeacher';
 import Faculty from './faculty';
 import Address from './address';
-import { RegisteredUser } from './registeredUser';
+import RegisteredUser from './registeredUser';
 
 export default class Professor {
     id:number;
     name:string;
-    lastName:string;
     biography:string;
-    umcn: string;
+    jmbg:string;
     profilePicturePath:string;
     titles:Title[];
     teachersOnRealization:TeacherOnRealization[];
@@ -19,6 +18,6 @@ export default class Professor {
     studyCourseTeacher:StudyCourseTeacher;
     faculty:Faculty;
     address:Address;
-    registeredUser:RegisteredUser;
+    user:RegisteredUser;
 
 }

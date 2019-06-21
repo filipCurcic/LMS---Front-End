@@ -18,9 +18,5 @@ export class UniversityService {
     return this.http.get<Faculty[]>(`http://localhost:8080/faculty/uni/${id}`);
   }
 
-  getUniversities() {
-    return this.http.get<University[]>(`http://localhost:8080/university/all`);
-  }
-
 
 }

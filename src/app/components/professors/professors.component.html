@@ -1,58 +1,43 @@
 <div>
- 
-<div>
   <mat-table [dataSource]="dataSource">
-    
+
   <ng-container matColumnDef="id">
-    <mat-header-cell *matHeaderCellDef>No.</mat-header-cell>
-    <mat-cell *matCellDef="let i = index;"> {{i+1}}</mat-cell>
+    <mat-header-cell *matHeaderCellDef>Id</mat-header-cell>
+    <mat-cell *matCellDef="let professor">{{professor.id}}</mat-cell>
   </ng-container>
-  
+<!-- <a routerLink="/professor/{{professor.id}}">{{professor.id}}</a> -->
   <ng-container matColumnDef="name">
       <mat-header-cell *matHeaderCellDef>Name</mat-header-cell>
       <mat-cell *matCellDef="let professor">{{professor.name}}</mat-cell>
   </ng-container>
 
-  <ng-container matColumnDef="lastName">
-      <mat-header-cell *matHeaderCellDef>Last Name</mat-header-cell>
-      <mat-cell *matCellDef="let professor">{{professor.lastName}}</mat-cell>
+  <ng-container matColumnDef="email">
+      <mat-header-cell *matHeaderCellDef>Email</mat-header-cell>
+      <mat-cell *matCellDef="let professor">{{professor.email}}</mat-cell>
   </ng-container>
 
-  <ng-container matColumnDef="jmbg">
-      <mat-header-cell *matHeaderCellDef>JMBG</mat-header-cell>
-      <mat-cell *matCellDef="let professor">{{professor.jmbg}}</mat-cell>
+  <ng-container matColumnDef="phone">
+      <mat-header-cell *matHeaderCellDef>Phone</mat-header-cell>
+      <mat-cell *matCellDef="let professor">{{professor.phone}}</mat-cell>
   </ng-container>
-
- 
-  <ng-container matColumnDef="registeredUser.username">
-    <mat-header-cell *matHeaderCellDef>Username</mat-header-cell>
-    <mat-cell *matCellDef="let professor">{{professor.registeredUser.username}}</mat-cell>
-</ng-container>
 
   <ng-container matColumnDef="actionsEdit">
       <mat-header-cell  *matHeaderCellDef > Edit </mat-header-cell>
       <mat-cell *matCellDef="let professor" >
-           <button mat-raised-button color="primary" [routerLink]="['/edit/professor', professor.registeredUser.username]">Edit</button>
+           <button mat-raised-button color="primary" routerLink="/professor/{{professor.id}}">Edit</button>
       </mat-cell>
     </ng-container>
 
     <ng-container matColumnDef="actionsDelete">
         <mat-header-cell  *matHeaderCellDef > Delete </mat-header-cell>
-        <mat-cell *matCellDef="let professor" >
-          <button mat-raised-button color="warn" (click)="delete(professor.id)">Delete </button>
+        <mat-cell *matCellDef="let row" >
+             <button mat-raised-button color="warn" >Delete</button>
         </mat-cell>
       </ng-container>
 
-      <!-- <ng-container matColumnDef="actionsDelete">
-        <mat-header-cell  *matHeaderCellDef > Delete </mat-header-cell>
-        <mat-cell *matCellDef="let student"> 
-          <button mat-raised-button color="warn" (click)="delete(student.id)">Delete</button>
-          <button mat-raised-button color="accent" [routerLink]="['/edit/student', student..username]">Edit</button>
-        </mat-cell>
-      </ng-container> -->
   <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
   <mat-row *matRowDef="let row; columns: displayedColumns"></mat-row>
 
 </mat-table>
-<mat-paginator class="student-table" [pageSizeOptions]="[5, 10, 20]" showFirstLastButtons></mat-paginator>
+
 </div>

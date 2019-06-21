@@ -1,0 +1,19 @@
+<div class="flex-container"><br>
+
+    <table matSort>
+    <mat-divider></mat-divider>  
+        <tr>
+            <th mat-sort-header="name">Name</th>
+            <th mat-sort-header="ects">ECTS</th>
+            <th mat-sort-header="grade">Grade</th>
+        </tr>
+
+
+        <tr *ngFor="let exam of listOfExams">
+            <td>{{exam.name}}</td>
+            <td>{{exam.ECTS}}</td>
+            <td>{{exam.grade}}</td>
+        </tr>
+    </table>
+
+</div>

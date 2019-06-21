@@ -34,10 +34,10 @@ import { NewsComponent } from './components/news/news.component';
 import { NewsPageComponent } from './components//news/news-page/news-page.component'
 import { AdministratorStaffComponent } from './components/administrator-staff/administrator-staff.component';
 import { AdministratorStaffAddComponent } from './components/administrator-staff/administrator-staff-add/administrator-staff-add.component';
-import { ProfessorAddComponent } from './components/professors/professor-add/professor-add.component';
-import { StudyCourseAddComponent } from './components/study-course/study-course-add/study-course-add.component';
-import { FacultyAddComponent } from './components/home-faculty/faculty-add/faculty-add.component'
 import { from } from 'rxjs';
+import { StudentPortalComponent } from './components/student-portal/student-portal.component';
+import { StudyHistoryComponent } from './components/student-portal/study-history/study-history.component';
+import { CheckinExamComponent } from './components/student-portal/checkin-exam/checkin-exam.component';
 
 @NgModule({
   declarations: [
@@ -62,9 +62,9 @@ import { from } from 'rxjs';
     NewsPageComponent,
     AdministratorStaffComponent,
     AdministratorStaffAddComponent,
-    ProfessorAddComponent,
-    StudyCourseAddComponent,
-    FacultyAddComponent,
+    StudentPortalComponent,
+    StudyHistoryComponent,
+    CheckinExamComponent
   ],
   imports: [
     BrowserModule,
@@ -76,7 +76,7 @@ import { from } from 'rxjs';
     // NgbModule
 
   ],
-  providers: [{ provide: HTTP_INTERCEPTORS, useClass: AuthInterceptor, multi: true }
+  providers: [ProfessorsService, { provide: HTTP_INTERCEPTORS, useClass: AuthInterceptor, multi: true }
   ],
   bootstrap: [AppComponent]
 })

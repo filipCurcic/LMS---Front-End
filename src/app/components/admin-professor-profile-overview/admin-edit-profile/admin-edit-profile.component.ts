@@ -30,16 +30,16 @@ export class AdminEditProfileComponent implements OnInit {
 
   
 
-  // update(id: string, professor: Professor){
-  //   let teacher:EditTeacherDto = new EditTeacherDto();
-  //   teacher.setAttributes(professor, professor.user);
-  //   alert(teacher.professor.name)
-  //   alert(teacher.user.username);
-  //   this.professorService.updateprofessor(id, professor).subscribe((data: any) => {
-  //     this.getProfessor();
-  //   });
-      // }
-  
+  update(id: string, professor: Professor){
+    let teacher:EditTeacherDto = new EditTeacherDto();
+    teacher.setAttributes(professor, professor.user);
+    alert(teacher.professor.name)
+    alert(teacher.user.username);
+    this.professorService.updateprofessor(id, professor).subscribe((data: any) => {
+      this.getProfessor();
+    });
     
   
+    
+  }
 }

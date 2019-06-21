@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { AuthService } from '../../authorization/auth.service' ;
 import { NgForm } from '@angular/forms';
+import { StudentPortalComponent } from '../student-portal/student-portal.component';
 
 
 @Component({

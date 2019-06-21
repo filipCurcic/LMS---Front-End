@@ -1,5 +1,5 @@
 import Address from './address';
-import { RegisteredUser } from './registeredUser';
+import RegisteredUser from './registeredUser';
 
 export class Student{
     id:number;

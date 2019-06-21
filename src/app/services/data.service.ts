@@ -7,8 +7,7 @@ import * as moment from 'moment';
   providedIn: 'root'
 })
 export class DataService {
-
-  student:Student;
+  
   private messageSource = new BehaviorSubject<moment.Moment>(moment());
   currentMessage = this.messageSource.asObservable();
 
@@ -17,4 +16,7 @@ export class DataService {
   changeMessage(date: moment.Moment){
       this.messageSource.next(date);
   }
+
+
+
 }

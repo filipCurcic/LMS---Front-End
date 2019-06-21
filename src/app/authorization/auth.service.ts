@@ -3,6 +3,9 @@ import { HttpClient } from "@angular/common/http";
 import { Router } from "@angular/router";
 import decode from 'jwt-decode';
 import { Subject } from 'rxjs';
+import { StudentportalService } from '../services/studentportal-service/studentportal.service';
+import { StudentsService } from '../services/students-service/students.service';
+import { DataService } from '../services/data.service';
 
 @Injectable({ providedIn: "root" })
 export class AuthService {
@@ -10,7 +13,7 @@ export class AuthService {
   roleChanged = new Subject<any[]>();
   loggedInStatusChanged = new Subject<boolean>();
 
-  constructor(private http: HttpClient, private router: Router) {}
+  constructor(private http: HttpClient, private router: Router, private studentService: StudentsService, private dataService: DataService) {}
 
   login(username: string, password: string){
     this.http.post<{token: string}>("http://localhost:8080/login/", {username: username, password: password}).subscribe(response =>{
@@ -19,6 +22,7 @@ export class AuthService {
         this.roleChanged.next(this.getCurrentRoles());
         this.router.navigate(['/']);
         this.loggedInStatusChanged.next(true);
+        this.getUserID();
       }
     });
   }
@@ -26,6 +30,7 @@ export class AuthService {
   logout(){
     this.roleChanged.next([]);
     localStorage.removeItem('token');
+    localStorage.removeItem('userID');
     this.router.navigate(['/']);
     this.loggedInStatusChanged.next(false);
   }
@@ -54,6 +59,16 @@ export class AuthService {
       return true;
     }
     return false;
+  }
+
+  getUserID(){
+    const token = localStorage.getItem('token');
+    if(token){
+      let dtoken = decode(token).sub;
+      this.studentService.getLoggedStudent(dtoken).subscribe((data) => {
+        localStorage.setItem('userID', JSON.stringify(data.id));
+      });
+    }
   }
 
 }

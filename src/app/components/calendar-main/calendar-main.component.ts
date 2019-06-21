@@ -47,7 +47,7 @@ export class CalendarMainComponent implements OnInit {
   convertToEvent(){
     this.events = [];
     this.eventsCount.forEach(element => {
-      let e = new Event(moment(element.dateEvent).format(), element.header, element.type, element.info);
+      let e = new Event(moment(element.startEvent).format(), moment(element.endEvent).format(), element.header, element.type, element.info);
       this.events.push(e);
     });
   }
@@ -60,7 +60,7 @@ export class CalendarMainComponent implements OnInit {
     for (const day of this.daysArray) {
       if (day != null) {
         for (const event of this.events) {
-          if (day.isSame(event.date)) {
+          if (day.isSame(event.startEvent)) {
             counter += 1;
           }
         }

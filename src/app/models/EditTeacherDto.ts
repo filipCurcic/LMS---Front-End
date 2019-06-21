@@ -1,12 +1,12 @@
 import Professor from './professor';
-import { RegisteredUser } from './registeredUser';
+import registeredUser from './registeredUser';
 
 export default class EditTeacherDto {
     professor:Professor;
-    registeredUuser: RegisteredUser
+    user:registeredUser;
 
-    setAttributes(pr:Professor, us:RegisteredUser):void {
+    setAttributes(pr:Professor, us:registeredUser):void {
         this.professor = pr;
-        this.registeredUuser = us;
+        this.user = us;
     }
 }

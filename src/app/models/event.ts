@@ -2,13 +2,15 @@ import * as moment from 'moment';
 
 
 export class Event {
-    date: moment.Moment;
+    startEvent: moment.Moment;
+    endEvent: moment.Moment;
     header: String;
     type: String;
     info: String;
 
-    constructor(date, header, type, info){
-        this.date = date;
+    constructor(startEvent, endEvent, header, type, info){
+        this.startEvent = startEvent;
+        this.endEvent = endEvent;
         this.header = header;
         this.type = type;
         this.info = info;
