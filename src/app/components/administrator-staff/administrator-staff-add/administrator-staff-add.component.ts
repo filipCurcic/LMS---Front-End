@@ -62,6 +62,7 @@ addAdminStaff(){
     }else{
       this.administratorStaff = adm;
       this.adminStaffService.addAdminStaff(adm, this.form.get('profileImage').value).subscribe();
+      this.form.reset();
     }
     
   }

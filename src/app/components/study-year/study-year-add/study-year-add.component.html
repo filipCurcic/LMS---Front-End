@@ -1,0 +1,30 @@
+<div class="example-container" [formGroup]="studyYearAdd">
+
+  <mat-form-field>
+    <input matInput type="date" name="startDate" placeholder="Start date" formControlName="startDate">
+  </mat-form-field>
+
+  <mat-form-field>
+    <input matInput type="date" name="endDate" placeholder="End date" formControlName="endDate">
+  </mat-form-field>
+
+  <mat-form-field>
+    <mat-label>Year</mat-label>
+    <mat-select name = "year" formControlName="studyYear" placeholder="Select study year">
+      <mat-option *ngFor="let y of year" [value]="y" >
+        {{y}}
+      </mat-option>
+    </mat-select>
+  </mat-form-field>
+
+  <mat-form-field>
+    <mat-label>Study Course</mat-label>
+    <mat-select name = "studyCourse" formControlName="studyCourse" placeholder="Select study course">
+      <mat-option *ngFor="let studyCourse of studyCourses" [value]="studyCourse" >
+        {{studyCourse.name}}
+      </mat-option>
+    </mat-select>
+  </mat-form-field>
+
+  <button mat-raised-button color="primary" (click)="add()" >Save</button>
+</div>

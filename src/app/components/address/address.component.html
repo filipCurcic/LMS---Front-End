@@ -1,14 +1,25 @@
 <div [formGroup]="addressForm">
-  <div formGroupName="city">
-      <mat-form-field class="address-form">
-        <input matInput type="text" name="city" placeholder="City" formControlName="name">
-        <mat-error>{{formError.mapErrors(addressForm.get('city').get('name'), 'City')}}</mat-error>
-      </mat-form-field><br>
-    <div formGroupName="country">
+  <div >
+    <mat-form-field >
+      <mat-select placeholder="Select country">
+          <mat-option *ngFor="let country of countries" [value]="country" (click)="getCityByCountry(country.id)">
+            {{country.name}}
+          </mat-option>
+        </mat-select> 
+     <!-- <input matInput type="text" name="country" placeholder="Country" formControlName="name">
+    <mat-error>{{formError.mapErrors(addressForm.get('city').get('country').get('name'), 'Country')}}</mat-error>  -->
+  </mat-form-field><br>
+
+    <div >
         <mat-form-field class="address-form">
-          <input matInput type="text" name="country" placeholder="Country" formControlName="name">
-          <mat-error>{{formError.mapErrors(addressForm.get('city').get('country').get('name'), 'Country')}}</mat-error>
-        </mat-form-field><br>
+          <mat-select name = "city" formControlName="city" placeholder="Select city">
+              <mat-option *ngFor="let city of cities" [value]="city">
+                {{city.name}}
+              </mat-option>
+            </mat-select> 
+        <!-- <input matInput type="text" name="city" placeholder="City" formControlName="name">
+        <mat-error>{{formError.mapErrors(addressForm.get('city').get('name'), 'City')}}</mat-error> -->
+      </mat-form-field><br>
    </div>
   </div>
       <mat-form-field class="address-form">

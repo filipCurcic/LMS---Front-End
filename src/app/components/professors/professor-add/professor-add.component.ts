@@ -62,6 +62,7 @@ addProfessor(){
     }else{
       this.professor = prof;
       this.professorService.addProfessor(prof, this.form.get('profileImage').value).subscribe();
+      this.form.reset();
     }
     
   }

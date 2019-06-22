@@ -18,11 +18,16 @@ import { RoleGuard } from './authorization/role.guard';
 import { StudentAddComponent } from './components/students/student-add/student-add.component';
 import { AdministratorStaffAddComponent } from './components/administrator-staff/administrator-staff-add/administrator-staff-add.component';
 import { StudentPortalComponent } from './components/student-portal/student-portal.component';
+import { StudyCourseAddComponent } from './components/study-course/study-course-add/study-course-add.component';
+import { FacultyAddComponent } from './components/home-faculty/faculty-add/faculty-add.component';
+import { StudyYearAddComponent } from './components/study-year/study-year-add/study-year-add.component';
+import { ProfessorAddComponent } from './components/professors/professor-add/professor-add.component';
 
 const routes: Routes = [
-  {path: 'students', component:StudentsComponent},
-  {path:'professors', component:ProfessorsComponent},
-  {path:'professor/:id', component:ProfessorProfileComponent},
+  {path: 'students', component:StudentsComponent, 
+          canActivate: [RoleGuard], data: { expectedRoles: ['ROLE_ADMINISTRATOR', 'ROLE_ADMINISTRATIVE_STAFF']}},
+  {path:'professors', component:ProfessorsComponent,
+          canActivate: [RoleGuard], data: { expectedRoles: ['ROLE_ADMINISTRATOR', 'ROLE_ADMINISTRATIVE_STAFF']}},
   {path:'login', component:LoginComponent},
   {path:'register', component:RegisterComponent},
   {path:'admin_tables', component:AdminComponent},
@@ -36,8 +41,20 @@ const routes: Routes = [
   {path:'day', component:DayComponent},
   {path: 'register-student', component: StudentAddComponent, 
       canActivate: [RoleGuard], data: { expectedRoles: ['ROLE_ADMINISTRATOR', 'ROLE_ADMINISTRATIVE_STAFF']}},
+  {path: 'register-professor', component: ProfessorAddComponent, 
+      canActivate: [RoleGuard], data: { expectedRoles: ['ROLE_ADMINISTRATOR', 'ROLE_ADMINISTRATOR_STAFF']}},
+  { path: 'edit/professor/:username', component: ProfessorAddComponent, 
+      canActivate: [RoleGuard], data: {expectedRoles: ['ROLE_ADMINISTRATOR', 'ROLE_ADMINISTRATOR_STAFF']}},
   {path: 'register-administrator-staff', component: AdministratorStaffAddComponent, 
       canActivate: [RoleGuard], data: { expectedRoles: ['ROLE_ADMINISTRATOR']}},
+  { path: 'edit/student/:username', component: StudentAddComponent, 
+      canActivate: [RoleGuard], data: {expectedRoles: ['ROLE_ADMINISTRATOR', 'ROLE_ADMINISTRATOR_STAFF']}},
+  {path: 'add-study-course', component: StudyCourseAddComponent, 
+      canActivate: [RoleGuard], data: { expectedRoles: ['ROLE_ADMINISTRATOR']}},
+  {path: 'add-faculty', component: FacultyAddComponent, 
+      canActivate: [RoleGuard], data: { expectedRoles: ['ROLE_ADMINISTRATOR']}},
+  {path: 'add-study-year', component: StudyYearAddComponent, 
+      canActivate: [RoleGuard], data: { expectedRoles: ['ROLE_ADMINISTRATOR_STAFF']}},
   
   { path: '', redirectTo: '/uniHome', pathMatch: 'full' }
 

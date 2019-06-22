@@ -34,6 +34,12 @@ import { NewsComponent } from './components/news/news.component';
 import { NewsPageComponent } from './components//news/news-page/news-page.component'
 import { AdministratorStaffComponent } from './components/administrator-staff/administrator-staff.component';
 import { AdministratorStaffAddComponent } from './components/administrator-staff/administrator-staff-add/administrator-staff-add.component';
+import { StudyCourseAddComponent } from './components/study-course/study-course-add/study-course-add.component';
+import { StudyCourseComponent } from './components/study-course/study-course.component';
+import { StudyYearAddComponent } from './components/study-year/study-year-add/study-year-add.component';
+import { StudyYearComponent } from './components/study-year/study-year.component';
+import { FacultyAddComponent } from './components/home-faculty/faculty-add/faculty-add.component';
+import { ProfessorAddComponent } from './components/professors/professor-add/professor-add.component';
 import { from } from 'rxjs';
 import { StudentPortalComponent } from './components/student-portal/student-portal.component';
 import { StudyHistoryComponent } from './components/student-portal/study-history/study-history.component';
@@ -64,7 +70,13 @@ import { CheckinExamComponent } from './components/student-portal/checkin-exam/c
     AdministratorStaffAddComponent,
     StudentPortalComponent,
     StudyHistoryComponent,
-    CheckinExamComponent
+    CheckinExamComponent,
+    StudyCourseAddComponent,
+    StudyCourseComponent,
+    StudyYearAddComponent,
+    StudyYearComponent,
+    FacultyAddComponent,
+    ProfessorAddComponent,
   ],
   imports: [
     BrowserModule,

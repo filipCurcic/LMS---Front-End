@@ -16,8 +16,15 @@
               color="white" style="margin-top: 2vw"mat-button routerLink="/register-student">Add Student</button>
       
       <button *ngIf="(roles.indexOf('ROLE_ADMINISTRATOR') >= 0) || (roles.indexOf('ROLE_ADMINISTRATOR_STAFF') >= 0)" 
-              color="white" style="margin-top: 2vw"mat-button routerLink="/">Add Professor</button>
-        
+              color="white" style="margin-top: 2vw"mat-button routerLink="/register-professor">Add Professor</button>
+      
+      <button *ngIf="(roles.indexOf('ROLE_ADMINISTRATOR') >= 0)"
+                color="white" style="margin-top: 2vw"mat-button routerLink="/admin_panel">Admin panel</button>
+      <button *ngIf="(roles.indexOf('ROLE_ADMINISTRATOR') >= 0)"
+                 color="white" style="margin-top: 2vw"mat-button routerLink="/add-study-course">Study Course</button>
+      <button *ngIf="(roles.indexOf('ROLE_ADMINISTRATOR_STAFF') >= 0)" 
+                  color="white" style="margin-top: 2vw"mat-button routerLink="/add-study-year">Study Year</button>
+      
       <ng-container *ngIf="isLoggedIn; else elseTemplate">
           <button style="margin-top: 2vw" mat-button (click)="onLogout()">Logout</button>
       </ng-container>
@@ -43,11 +50,13 @@
           <button mat-icon-button [matMenuTriggerFor]="menu">
             <mat-icon>more_vert</mat-icon>
           </button>
-          <mat-menu #menu="matMenu">
-            <button mat-menu-item>
-              <mat-icon>publish</mat-icon>
-              <span>Share</span>
-            </button>
+          <mat-menu  #menu="matMenu">
+            <button *ngIf="(roles.indexOf('ROLE_ADMINISTRATOR') >= 0)" mat-menu-item>
+              <mat-icon>add</mat-icon>
+              <button 
+                color="white" mat-button routerLink="/add-faculty">Add Faculty</button>
+   
+              </button>
 
           </mat-menu>
 

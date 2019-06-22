@@ -34,9 +34,9 @@ export class StudentAddComponent implements OnInit {
       profilePicturePath: new FormControl(''),
       profileImage: new FormControl(['', {asyncValidators: [this.mimeTypeValidator]}])
     });
-    if(this.route.snapshot.paramMap.get("id")){
+    if(this.route.snapshot.paramMap.get("username")){
       this.edit = true;
-      this.username = this.route.snapshot.paramMap.get("id");
+      this.username = this.route.snapshot.paramMap.get("username");
       this.studentService.getOneByUsername(this.username).subscribe((data: Student) => {
         this.student = data;
         this.form.patchValue(this.student);
@@ -63,6 +63,7 @@ add(){
     }else{
       this.student = std;
       this.studentService.addStudent(std, this.form.get('profileImage').value).subscribe();
+      this.form.reset();
     }
     
   }

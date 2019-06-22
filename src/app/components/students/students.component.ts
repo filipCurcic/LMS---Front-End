@@ -1,8 +1,11 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import {DataSource} from '@angular/cdk/collections';
 import { Student } from '../../models/student';
 import { StudentsService } from 'src/app/services/students-service/students.service';
 import { Observable } from 'rxjs';
+import { MatPaginator, MatTableDataSource } from '@angular/material';
+import { saveAs } from 'file-saver';
+import { FileService } from 'src/app/services/file-service/file.service';
 
 
 @Component({
@@ -12,35 +15,46 @@ import { Observable } from 'rxjs';
 })
 export class StudentsComponent implements OnInit {
 
-  students: Student[];
- 
-  constructor(private StudentsService:StudentsService) { }
+  students : Student[] = [];
+  student : Student = new Student();
+  displayedColumns: string[] = ['id', 'name', 'lastName', 'jmbg', 'registeredUser.username',  'actionsEdit', 'actionsDelete'];
+  dataSource = new MatTableDataSource<Student>(this.students);
 
-  dataSource = new StudentsDataSource(this.StudentsService);
+  @ViewChild(MatPaginator) paginator: MatPaginator;
+  // @ViewChild(MatSort) sort: MatSort;
 
-  displayedColumns = ['id', 'name', 'jmbg', 'address', 'studentYears', 'actionsEdit', 'actionsDelete'];
+  constructor(private studentService: StudentsService, private fileService: FileService) {
+
+  }
 
   ngOnInit() {
-    this.StudentsService.getStudents().subscribe(students => this.students = students);
+    this.dataSource.paginator = this.paginator;
+    this.getAll();
     
   }
 
-}
-
-export class StudentsDataSource extends DataSource<any> {
-  constructor(private StudentsService: StudentsService) {
-    super();
-  }
- 
-  connect(): Observable<Student[]> {
-    return this.StudentsService.getStudents();
-  }
-  delete(id: string){
-    this.StudentsService.deleteStudent(id).subscribe((data: any) => {
-      this.StudentsService.getStudents();
+  getAll(){
+    this.studentService.getStudents().subscribe((data: Student[]) => {
+      this.students = data;
+      this.dataSource.data = data;
     });
   }
-  disconnect() {
 
+  delete(id: string){
+    this.studentService.deleteStudent(id).subscribe((data: any) => {
+      this.getAll();
+    });
+  }
+
+  update(id: string, student: Student, image: File){
+    this.studentService.updateStudent(id, student, image).subscribe((data: any) => {
+      this.getAll();
+    });
+  }
+
+  exportDataToPDF() {
+    this.fileService.exportDataToPDF({'fileUrl': this.studentService.studentUrl, 'fileName': 'students.pdf'}).subscribe(data => {
+      saveAs(new Blob([data], { type: 'application/pdf' }), 'students.pdf');
+    });
   }
 }

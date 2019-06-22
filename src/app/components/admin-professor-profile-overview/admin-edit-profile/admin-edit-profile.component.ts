@@ -32,7 +32,7 @@ export class AdminEditProfileComponent implements OnInit {
 
   update(id: string, professor: Professor){
     let teacher:EditTeacherDto = new EditTeacherDto();
-    teacher.setAttributes(professor, professor.user);
+    teacher.setAttributes(professor, professor.registeredUser);
     alert(teacher.professor.name)
     alert(teacher.user.username);
     this.professorService.updateprofessor(id, professor).subscribe((data: any) => {

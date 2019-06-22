@@ -18,6 +18,6 @@ export default class Professor {
     studyCourseTeacher:StudyCourseTeacher;
     faculty:Faculty;
     address:Address;
-    user:RegisteredUser;
+    registeredUser:RegisteredUser;
 
 }
