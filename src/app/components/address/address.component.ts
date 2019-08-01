@@ -36,6 +36,7 @@ export class AddressComponent implements OnInit {
 
     this.parrentForm.addControl("address", this.addressForm);
     this.getAllCountries();
+    console.log(this.countries)
   }
 
 

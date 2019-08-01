@@ -13,7 +13,7 @@ export default class Course {
     researchWork:number;
     otherClasses:number;
     courseRealizations:CourseRealization[];
-    yearsOfStudy:StudyYear[];
+    yearsOfStudy:StudyYear;
     syllabus:CourseOutcome[];
     precondition:Course;
     preconditionFor:Course[];

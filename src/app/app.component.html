@@ -3,9 +3,13 @@
     <div class="drawer-content" >
       <img src="assets/logo/logo.png" style="width:10vw; height:auto; border-radius: 15%; margin:0vw;">
       
-      <button *ngIf="(roles.indexOf('ROLE_ADMINISTRATOR') >= 0) || (roles.indexOf('ROLE_ADMINISTRATOR_STAFF') >= 0) || (roles.indexOf('ROLE_PROFESSOR') >=0 ) || (roles.indexOf('ROLE_STUDENT') >=0)"
-               color="white" style="margin-top: 2vw"mat-button routerLink="/">Profile</button>
+      <!-- <button *ngIf="(roles.indexOf('ROLE_ADMINISTRATOR') >= 0) || (roles.indexOf('ROLE_ADMINISTRATOR_STAFF') >= 0) || (roles.indexOf('ROLE_PROFESSOR') >=0 ) || (roles.indexOf('ROLE_STUDENT') >=0)"
+               color="white" style="margin-top: 2vw"mat-button routerLink="/">Profile</button> -->
 
+      <ng-container *ngIf="isLoggedIn">
+        <button mat-button [routerLink]="['edit/'+loggedUserType, loggedUserUsername]" routerLinkActive="active-item">Profile</button>
+      </ng-container>
+                      
       <button  *ngIf="(roles.indexOf('ROLE_STUDENT') >= 0)" 
       color="white" style="margin-top: 2vw"mat-button routerLink="/studentPortal">Student Portal</button>
       

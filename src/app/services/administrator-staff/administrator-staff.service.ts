@@ -49,6 +49,6 @@ export class AdministratorStaffService {
       postData.append("profileImage", image, image.name);
     }
     postData.append("data", JSON.stringify(adminStaff));
-    return this.http.put(this.administratorStaffUrl+`/${username}`, postData)
+    return this.http.put(this.administratorStaffUrl+`/username/${username}`, postData)
   }
 }

@@ -1,0 +1,30 @@
+<div class="example-container" [formGroup]="studentOnYearAdd">
+
+  <mat-form-field>
+    <input matInput type="date" name="enrollmentDate" placeholder="enrollmentDate" formControlName="enrollmentDate">
+  </mat-form-field>
+
+  <mat-form-field>
+    <input matInput type="number" name="indeks" placeholder="Index" formControlName="indeks">
+  </mat-form-field>
+
+  <mat-form-field>
+    <mat-label>Student</mat-label>
+    <mat-select name = "student" formControlName="student" placeholder="Select student">
+      <mat-option *ngFor="let s of students" [value]="s" >
+        {{s.name}} {{s.lastName}}
+      </mat-option>
+    </mat-select>
+  </mat-form-field>
+
+  <mat-form-field>
+    <mat-label>Study Year</mat-label>
+    <mat-select name = "studyYear" formControlName="studyYear" placeholder="Select study year">
+      <mat-option *ngFor="let sy of studyYear" [value]="sy" >
+        {{sy.studyYear}} year, starts:{{sy.startDate}}
+      </mat-option>
+    </mat-select>
+  </mat-form-field>
+
+  <button mat-raised-button color="primary" (click)="save()" >Save</button>
+</div>

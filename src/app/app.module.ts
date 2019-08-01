@@ -44,6 +44,8 @@ import { from } from 'rxjs';
 import { StudentPortalComponent } from './components/student-portal/student-portal.component';
 import { StudyHistoryComponent } from './components/student-portal/study-history/study-history.component';
 import { CheckinExamComponent } from './components/student-portal/checkin-exam/checkin-exam.component';
+import { StudentOnYearComponent } from './components/student-on-year/student-on-year.component';
+import { StudentOnYearAddComponent } from './components/student-on-year/student-on-year-add/student-on-year-add.component';
 
 @NgModule({
   declarations: [
@@ -77,6 +79,8 @@ import { CheckinExamComponent } from './components/student-portal/checkin-exam/c
     StudyYearComponent,
     FacultyAddComponent,
     ProfessorAddComponent,
+    StudentOnYearComponent,
+    StudentOnYearAddComponent,
   ],
   imports: [
     BrowserModule,

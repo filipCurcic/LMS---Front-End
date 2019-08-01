@@ -45,8 +45,8 @@ export class AppComponent implements OnInit, OnDestroy {
         if(role == "ROLE_ADMINISTRATOR"){
           this.loggedUserType = "administrator";
         }
-        else if(role == "ROLE_ADMINISTRATor_STAFF"){
-          this.loggedUserType = "administratorstaff";
+        else if(role == "ROLE_ADMINISTRATOR_STAFF"){
+          this.loggedUserType = "administrator-staff";
         }
         else if(role == "ROLE_PROFESSOR"){
           this.loggedUserType = "professor";

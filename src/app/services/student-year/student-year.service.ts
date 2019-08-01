@@ -8,12 +8,31 @@ import { HttpClient } from '@angular/common/http';
 })
 export class StudentYearService {
 
-  constructor(private http: HttpClient) { }
+  constructor(private httpClient: HttpClient) { }
 
   private studentOnYearUrl = "http://localhost:8080/student-on-year";
 
   getStudentOnYear():Observable<StudentOnYear[]> {
-    return this.http.get<StudentOnYear[]>(this.studentOnYearUrl+`/all`);
+    return this.httpClient.get<StudentOnYear[]>(this.studentOnYearUrl+`/all`);
   }
 
+  getOne(id: String) {
+    return this.httpClient.get<StudentOnYear>(this.studentOnYearUrl + `/${id}`);
+  }
+
+  add(studentOnYear: StudentOnYear) {
+    return this.httpClient.post(this.studentOnYearUrl +`/add`, studentOnYear);
+  }
+
+  addStudentOnYear(soy: StudentOnYear) {
+    return this.httpClient.post(this.studentOnYearUrl + `/add`, soy)
+  }
+
+  delete(id: String) {
+    return this.delete(this.studentOnYearUrl + `/${id}`)
+  }
+
+  edit(id: String, studentOnYear: StudentOnYear) {
+    return this.httpClient.put(this.studentOnYearUrl + `/${id}`, studentOnYear);
+  }
 }
