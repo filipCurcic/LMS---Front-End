@@ -1,6 +1,8 @@
 import { Injectable } from '@angular/core';
 import {HttpClient, HttpHeaders} from '@angular/common/http';
 import  administratorStaff  from '../../models/administratorStaff'
+import { Student } from 'src/app/models/student';
+import StudyYear from 'src/app/models/studyYear';
 
 
 @Injectable({
@@ -51,4 +53,13 @@ export class AdministratorStaffService {
     postData.append("data", JSON.stringify(adminStaff));
     return this.http.put(this.administratorStaffUrl+`/username/${username}`, postData)
   }
+
+  getStudentsForEnrollmentToTheNextYear(studyYearId: number) {
+    return this.http.get<Student[]>(this.administratorStaffUrl+`/enrollment/${studyYearId}`);
+  }
+
+  enrollmentToTheNextYear(student: Student, studyYear: StudyYear){
+    return this.http.put(this.administratorStaffUrl+`/enroll/${student.id}`, studyYear);
+  }
+
 }

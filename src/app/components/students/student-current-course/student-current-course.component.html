@@ -1,0 +1,33 @@
+<button mat-button (click)="exportDataToPDF()">Download PDF</button>
+<div>
+  <mat-table [dataSource]="dataSource">
+    
+  <ng-container matColumnDef="id">
+    <mat-header-cell *matHeaderCellDef>No.</mat-header-cell>
+    <mat-cell *matCellDef="let i = index;"> {{i+1}}</mat-cell>
+  </ng-container>
+  
+  <ng-container matColumnDef="name">
+      <mat-header-cell *matHeaderCellDef>Name</mat-header-cell>
+      <mat-cell *matCellDef="let course">{{course.name}}</mat-cell>
+  </ng-container>
+
+  
+  <ng-container matColumnDef="espb">
+    <mat-header-cell *matHeaderCellDef>ESPB</mat-header-cell>
+    <mat-cell *matCellDef="let course">{{course.espb}}</mat-cell>
+  </ng-container>
+
+  <ng-container matColumnDef="actionsExamRegister">
+      <mat-header-cell  *matHeaderCellDef > Exam Register </mat-header-cell>
+      <mat-cell *matCellDef="let course" >
+           <button mat-raised-button color="primary">Register</button>
+      </mat-cell>
+    </ng-container>
+
+  <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+  <mat-row *matRowDef="let row; columns: displayedColumns"></mat-row>
+
+</mat-table>
+<mat-paginator class="student-table" [pageSizeOptions]="[5, 10, 20]" showFirstLastButtons></mat-paginator>
+</div>

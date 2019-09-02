@@ -1,9 +1,10 @@
 import Professor from './professor';
 import TeachingType from './teachingType';
+import CourseRealization from './courseRealization';
 
 export default class TeacherOnRealization {
     id:number;
     numberOfClasses:number;
-    professor:Professor;
-    teachingType:TeachingType;
+    teacher:Professor;
+    courseRealization: CourseRealization
 }

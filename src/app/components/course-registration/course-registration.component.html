@@ -1,31 +1,41 @@
-<div class="course-registration-flex-container">
+<div class="course-registration-flex-container" [formGroup]="courseAdd" method="POST">
 
   <div>
     <div class="form-container">
       <mat-form-field appearance="outline">
         <mat-label>Course Name</mat-label>
-        <input matInput placeholder="Name" #name maxlength="256" placeholder="Name">
-        <mat-hint align="start"><strong>Names have to be unique</strong> </mat-hint>
+        <input matInput placeholder="Name" formControlName="name" #name maxlength="256" placeholder="Name">
+        <mat-hint align="start"><strong>Characters left</strong> </mat-hint>
         <mat-hint align="end">{{name.value.length}} / 256</mat-hint>
       </mat-form-field>
 
       <mat-form-field appearance="outline">
         <mat-label>Course EPSB </mat-label>
-        <input matInput placeholder="Epsb" type="number">
+        <input matInput placeholder="Epsb" formControlName="espb" type="number">
+      </mat-form-field>
+
+      <mat-form-field appearance="outline">
+        <mat-label>Mandatory </mat-label>
+        <mat-select name = "mandatory" formControlName="mandatory" placeholder="Select mandatory">
+          <mat-option *ngFor="let l of list" [value]="l" >
+            {{l}}
+          </mat-option>
+        </mat-select>
       </mat-form-field>
 
       <mat-form-field appearance="outline">
         <mat-label>Number of Lectures</mat-label>
-        <input matInput placeholder="Lectures" type="number">
+        <input matInput placeholder="Lectures" formControlName="numberOfLectures" type="number">
       </mat-form-field>
 
       <mat-form-field appearance="outline">
-        <mat-label>Number of Exercises</mat-label>
-        <input matInput placeholder="Exercises" type="number">
+        <mat-label>Year of Study </mat-label>
+        <mat-select name = "yearsOfStudy" formControlName="yearsOfStudy" placeholder="Select yearsOfStudy">
+          <mat-option *ngFor="let sy of studyYears" [value]="sy" >
+            {{sy.studyYear}}
+          </mat-option>
+        </mat-select>
       </mat-form-field>
-
-
-
 
     </div>
 
@@ -36,26 +46,34 @@
 
       <mat-form-field appearance="outline">
         <mat-label>Other Types of Teachings</mat-label>
-        <input matInput placeholder="Other Teachings" type="number">
+        <input matInput placeholder="Other Teachings" formControlName="otherTypesOfTeachings" type="number">
       </mat-form-field>
 
       <mat-form-field appearance="outline">
         <mat-label>Research Work Amount</mat-label>
-        <input matInput placeholder="Research work" type="number">
+        <input matInput placeholder="Research work" formControlName="researchWork" type="number">
       </mat-form-field>
 
       <mat-form-field appearance="outline">
         <mat-label>Number Of Other Classes</mat-label>
-        <input matInput placeholder="Other Classes" type="number">
+        <input matInput placeholder="Other Classes"formControlName="otherClasses" type="number">
       </mat-form-field>
 
       <mat-form-field appearance="outline">
+        <mat-label>Number of Exercises</mat-label>
+        <input matInput placeholder="Exercises" formControlName="numberOfExercises" type="number">
+      </mat-form-field>
+
+
+      <!-- <mat-form-field appearance="outline">
         <mat-label>Course Precondition</mat-label>
         <input matInput placeholder="Precondition">
-      </mat-form-field>
+      </mat-form-field> -->
 
     </div>
 
   </div>
+
+  <button mat-raised-button color="primary" (click)="save()" type="submit">Save</button>
 
 </div>

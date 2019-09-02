@@ -1,0 +1,35 @@
+<mat-card>
+  <mat-card-title>Form for adding <br> <b>Professor on realization</b> </mat-card-title>
+  <mat-card-content>
+    <form #loginForm="ngForm" [formGroup]="professorOnRealizationAdd" method="POST">
+      <mat-form-field >
+        <input matInput type="number" formControlName="numberOfClasses" maxlength="256" placeholder="Number Of Classes" required>
+        <mat-hint align="end">Hint: 10-25-2020</mat-hint>
+        <!-- <mat-error *ngIf="usernameInput.invalid">Please enter a valid username.</mat-error> -->
+      </mat-form-field>
+
+      <mat-form-field >
+        <mat-select name = "courseRealization" formControlName="courseRealization" placeholder="Select course realization">
+          <mat-option *ngFor="let cr of courseRealizations" [value]="cr" >
+            Start date: {{cr.startDate }}
+          </mat-option>
+        </mat-select>
+  
+      </mat-form-field>
+      
+      <mat-form-field >
+        <mat-select name = "teacher" formControlName="teacher" placeholder="Select teacher">
+          <mat-option *ngFor="let t of professors" [value]="t" >
+            {{t.name}} {{t.lastName}}
+          </mat-option>
+        </mat-select>
+  
+      </mat-form-field>
+      
+      <mat-card-actions>
+        <button id="log" mat-raised-button color="primary" (click)="add()" type="submit">Create</button>
+      </mat-card-actions>
+    
+    </form>
+  </mat-card-content>
+</mat-card>

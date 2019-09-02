@@ -7,12 +7,18 @@
                color="white" style="margin-top: 2vw"mat-button routerLink="/">Profile</button> -->
 
       <ng-container *ngIf="isLoggedIn">
-        <button mat-button [routerLink]="['edit/'+loggedUserType, loggedUserUsername]" routerLinkActive="active-item">Profile</button>
+        <button mat-button [routerLink]="['edit/'+loggedUserType, loggedUserUsername]" routerLinkActive="active-item">{{loggedUserUsername}}</button>
       </ng-container>
                       
       <button  *ngIf="(roles.indexOf('ROLE_STUDENT') >= 0)" 
       color="white" style="margin-top: 2vw"mat-button routerLink="/studentPortal">Student Portal</button>
       
+      <button  *ngIf="(roles.indexOf('ROLE_STUDENT') >= 0)" 
+        color="white" style="margin-top: 2vw"mat-button routerLink="/current-courses">Current Courses</button>
+      
+      <button  *ngIf="(roles.indexOf('ROLE_STUDENT') >= 0)" 
+        color="white" style="margin-top: 2vw"mat-button routerLink="/past-courses">Past Courses</button>
+        
       <button  *ngIf="(roles.indexOf('ROLE_ADMINISTRATOR') >= 0)" 
                 color="white" style="margin-top: 2vw"mat-button routerLink="/register-administrator-staff">Add Adminstrator Staff</button>
       
@@ -22,13 +28,16 @@
       <button *ngIf="(roles.indexOf('ROLE_ADMINISTRATOR') >= 0) || (roles.indexOf('ROLE_ADMINISTRATOR_STAFF') >= 0)" 
               color="white" style="margin-top: 2vw"mat-button routerLink="/register-professor">Add Professor</button>
       
+      <button *ngIf="(roles.indexOf('ROLE_ADMINISTRATOR_STAFF') >= 0)" 
+              color="white" style="margin-top: 2vw"mat-button routerLink="/enroll-student-to-the-next-year">Enroll student to the next year</button>
+    
       <button *ngIf="(roles.indexOf('ROLE_ADMINISTRATOR') >= 0)"
                 color="white" style="margin-top: 2vw"mat-button routerLink="/admin_panel">Admin panel</button>
       <button *ngIf="(roles.indexOf('ROLE_ADMINISTRATOR') >= 0)"
                  color="white" style="margin-top: 2vw"mat-button routerLink="/add-study-course">Study Course</button>
       <button *ngIf="(roles.indexOf('ROLE_ADMINISTRATOR_STAFF') >= 0)" 
                   color="white" style="margin-top: 2vw"mat-button routerLink="/add-study-year">Study Year</button>
-      
+            
       <ng-container *ngIf="isLoggedIn; else elseTemplate">
           <button style="margin-top: 2vw" mat-button (click)="onLogout()">Logout</button>
       </ng-container>

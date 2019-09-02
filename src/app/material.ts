@@ -10,6 +10,7 @@ import {MatIconModule} from '@angular/material/icon';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatMomentDateModule } from '@angular/material-moment-adapter';
 import { MatGridListModule } from '@angular/material/grid-list';
+import { MatDialogModule } from '@angular/material/dialog';
 
 
 
@@ -58,7 +59,8 @@ import { MatGridListModule } from '@angular/material/grid-list';
         MatTabsModule,
         MatBadgeModule,
         MatIconModule,
-        MatGridListModule
+        MatGridListModule,
+        MatDialogModule
     ],
   })
   export class Material { }

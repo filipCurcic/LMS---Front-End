@@ -11,9 +11,9 @@
       <mat-cell *matCellDef="let course">{{course.name}}</mat-cell>
   </ng-container>
 
-  <ng-container matColumnDef="epsb">
-      <mat-header-cell *matHeaderCellDef>Epsb</mat-header-cell>
-      <mat-cell *matCellDef="let course">{{course.epsb}}</mat-cell>
+  <ng-container matColumnDef="espb">
+      <mat-header-cell *matHeaderCellDef>Espb</mat-header-cell>
+      <mat-cell *matCellDef="let course">{{course.espb}}</mat-cell>
   </ng-container>
 
   <ng-container matColumnDef="mandatory">
@@ -21,7 +21,12 @@
       <mat-cell *matCellDef="let course">{{course.mandatory}}</mat-cell>
   </ng-container>
 
-  <ng-container matColumnDef="numberOfLectures">
+  <ng-container matColumnDef="yearsOfStudy.studyYear">
+    <mat-header-cell *matHeaderCellDef>Study Year</mat-header-cell>
+    <mat-cell *matCellDef="let course">{{course.yearsOfStudy.studyYear}}</mat-cell>
+  </ng-container>
+
+  <!-- <ng-container matColumnDef="numberOfLectures">
       <mat-header-cell  *matHeaderCellDef > Lectures </mat-header-cell>
       <mat-cell *matCellDef="let course"> {{course.numberOfLectures}}</mat-cell>
     </ng-container>
@@ -50,7 +55,7 @@
             <mat-header-cell  *matHeaderCellDef > Precondition </mat-header-cell>
             <mat-cell *matCellDef="let precondition"> {{course.precondition}}</mat-cell>
         </ng-container>
-        
+         -->
 
         <ng-container matColumnDef="actionsEdit">
             <mat-header-cell  *matHeaderCellDef > Edit </mat-header-cell>
@@ -61,8 +66,8 @@
       
           <ng-container matColumnDef="actionsDelete">
               <mat-header-cell  *matHeaderCellDef > Delete </mat-header-cell>
-              <mat-cell *matCellDef="let row" >
-                   <button mat-raised-button color="warn" >Delete</button>
+              <mat-cell *matCellDef="let course" >
+                   <button mat-raised-button color="warn" (click)="delete(course.id)" >Delete</button>
               </mat-cell>
             </ng-container>
 
@@ -70,5 +75,5 @@
   <mat-row *matRowDef="let row; columns: displayedColumns"></mat-row>
 
 </mat-table>
-
+<mat-paginator class="student-table" [pageSizeOptions]="[5, 10, 20]" showFirstLastButtons></mat-paginator>
 </div>

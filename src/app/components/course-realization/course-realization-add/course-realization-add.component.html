@@ -1,0 +1,41 @@
+<mat-card>
+  <mat-card-title>Form for creating <br> <b>COURSE REALIZATION </b> </mat-card-title>
+  <mat-card-content>
+    <form #loginForm="ngForm" [formGroup]="courseRealizationAdd" method="POST">
+      <mat-form-field >
+        <input matInput type="date" formControlName="startDate" maxlength="256" placeholder="Start date" required>
+        <mat-hint align="end">Hint: 10-25-2020</mat-hint>
+        <!-- <mat-error *ngIf="usernameInput.invalid">Please enter a valid username.</mat-error> -->
+      </mat-form-field>
+
+      <mat-form-field >
+        <input matInput type="date" formControlName="endDate" maxlength="256" placeholder="End date" required>
+        <mat-hint align="end">Hint: 10-25-2020</mat-hint>
+        <!-- <mat-error *ngIf="usernameInput.invalid">Please enter a valid username.</mat-error> -->
+      </mat-form-field>
+
+      <mat-form-field >
+        <mat-select name = "course" formControlName="course" placeholder="Select course">
+          <mat-option *ngFor="let c of courses" [value]="c" >
+            {{c.name}}
+          </mat-option>
+        </mat-select>
+  
+      </mat-form-field>
+      
+      <mat-form-field >
+        <mat-select name = "studyYear" formControlName="studyYear" placeholder="Select study year">
+          <mat-option *ngFor="let sy of studyYears" [value]="sy" >
+            {{sy.studyYear}}
+          </mat-option>
+        </mat-select>
+  
+      </mat-form-field>
+      
+      <mat-card-actions>
+        <button id="log" mat-raised-button color="primary" (click)="save()" type="submit">Create</button>
+      </mat-card-actions>
+    
+    </form>
+  </mat-card-content>
+</mat-card>

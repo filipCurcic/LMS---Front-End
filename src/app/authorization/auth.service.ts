@@ -22,7 +22,7 @@ export class AuthService {
         this.roleChanged.next(this.getCurrentRoles());
         this.router.navigate(['/']);
         this.loggedInStatusChanged.next(true);
-        this.getUserID();
+        // this.getUserID();
       }
     });
   }
@@ -30,7 +30,7 @@ export class AuthService {
   logout(){
     this.roleChanged.next([]);
     localStorage.removeItem('token');
-    localStorage.removeItem('userID');
+    // localStorage.removeItem('userID');
     this.router.navigate(['/']);
     this.loggedInStatusChanged.next(false);
   }
@@ -61,14 +61,14 @@ export class AuthService {
     return false;
   }
 
-  getUserID(){
-    const token = localStorage.getItem('token');
-    if(token){
-      let dtoken = decode(token).sub;
-      this.studentService.getLoggedStudent(dtoken).subscribe((data) => {
-        localStorage.setItem('userID', JSON.stringify(data.id));
-      });
-    }
-  }
+  // getUserID(){
+  //   const token = localStorage.getItem('token');
+  //   if(token){
+  //     let dtoken = decode(token).sub;
+  //     this.studentService.getLoggedStudent(dtoken).subscribe((data) => {
+  //       localStorage.setItem('userID', JSON.stringify(data.id));
+  //     });
+  //   }
+  // }
 
 }

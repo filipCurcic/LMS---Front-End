@@ -1,33 +1,53 @@
-<div id="reg">
-  <form [formGroup]="form" method="POST" >
-      <app-user-add [parrentForm]="form"></app-user-add>
+
+<mat-card>
+  <mat-card-title> <b>Personal Data </b> </mat-card-title>
+    <mat-card-content>
+      <form #loginForm="ngForm" [formGroup]="form" method="POST">
+        
+                    
+        
       <mat-form-field>
-          <input matInput type="text" placeholder="Name" name="name" formControlName="name"  required>
-          <!-- <mat-error>{{formError.mapErrors(studentDataForm.get('name'), 'Name')}}</mat-error> -->
+        <input matInput type="text" placeholder="Name" name="name" formControlName="name"  required>
+          <mat-hint align="end">Hint: David</mat-hint>
+          <!-- <mat-error *ngIf="usernameInput.invalid">Please enter a valid username.</mat-error> -->
       </mat-form-field>
-      <br>
-      <mat-form-field>
-          <input matInput type="text" placeholder="Surname" name="lastName" formControlName="lastName"  required>
-          <!-- <mat-error>{{formError.mapErrors(studentDataForm.get('lastName'), 'Last Name')}}</mat-error> -->
+                  
+      <mat-form-field >
+       <input matInput type="text" placeholder="Surname" name="lastName" formControlName="lastName"  required>
+         <mat-hint align="end">Hint: Beckham</mat-hint>
       </mat-form-field>
-      <br>
-      <mat-form-field>
+                    
+      <mat-form-field >
         <input matInput type="text" placeholder="Biography" name="biography" formControlName="biography"  required>
-        <!-- <mat-error>{{formError.mapErrors(studentDataForm.get('lastName'), 'Last Name')}}</mat-error> -->
+          <mat-hint align="end">Hint: Information about selfe</mat-hint>
       </mat-form-field>
-      <mat-form-field>
-        <input matInput type="text" placeholder="Umcn" name="umcn" formControlName="umcn"  required>
-        <!-- <mat-error>{{formError.mapErrors(studentDataForm.get('lastName'), 'Last Name')}}</mat-error> -->
-      </mat-form-field>
-      <br>
-      <div>
-          <button mat-stroked-button type="button" (click)="filePicker.click()">Profile picture</button>
-          <input hidden type="file" #filePicker (change)="onImagePicked($event)">
-          <!-- <mat-error>{{formError.mapErrors(studentDataForm.get('profileImage'), 'First name')}}</mat-error> -->
-      </div>
+                     
+      <mat-form-field >
+          <input matInput type="number" placeholder="UMCN" name="umcn" formControlName="umcn"  required>
+           <mat-hint align="end">Hint: 0-10</mat-hint>
+       </mat-form-field>
+   
+       <mat-card-actions>
+        <button id="image" mat-raised-button color="primary" (click)="filePicker.click()" type="button">Profile picture</button>
+        <input hidden type="file" #filePicker (change)="onImagePicked($event)">
+      </mat-card-actions>
+                    
       <div class="image-preview" 
           *ngIf="imagePreview && imagePreview !== '' && form.get('profileImage').valid">
-          <img [src]="imagePreview" alt="Can't dispaly picture">
+        <img [src]="imagePreview" alt="Can't dispaly picture">
       </div>
+   
+      <app-user-add [parrentForm]="form"></app-user-add>
       <app-address [parrentForm]="form"></app-address>
-      <button mat-raised-button color="primary" (click)="addProfessor()" type="submit">Save</button>
+        
+      <mat-card-actions>
+        <button id="log" mat-raised-button color="primary" (click)="addProfessor()" type="submit">Save</button>
+      </mat-card-actions>
+                  
+    </form>
+  </mat-card-content>
+</mat-card>
+        
+        
+        
+            

@@ -1,4 +1,4 @@
-<div [formGroup]="addressForm">
+<!-- <div [formGroup]="addressForm">
   <div >
     <mat-form-field >
       <mat-select placeholder="Select country">
@@ -6,9 +6,7 @@
             {{country.name}}
           </mat-option>
         </mat-select> 
-     <!-- <input matInput type="text" name="country" placeholder="Country" formControlName="name">
-    <mat-error>{{formError.mapErrors(addressForm.get('city').get('country').get('name'), 'Country')}}</mat-error>  -->
-  </mat-form-field><br>
+    </mat-form-field><br>
 
     <div >
         <mat-form-field class="address-form">
@@ -17,8 +15,6 @@
                 {{city.name}}
               </mat-option>
             </mat-select> 
-        <!-- <input matInput type="text" name="city" placeholder="City" formControlName="name">
-        <mat-error>{{formError.mapErrors(addressForm.get('city').get('name'), 'City')}}</mat-error> -->
       </mat-form-field><br>
    </div>
   </div>
@@ -30,4 +26,41 @@
         <input matInput type="text" name="streetNumber" placeholder="Street number" formControlName="streetNumber">
         <mat-error>{{formError.mapErrors(addressForm.get('streetNumber'), 'Street number')}}</mat-error>
       </mat-form-field>
-</div>
+</div> -->
+
+
+<mat-card>
+    <mat-card-title><b>Address form </b> </mat-card-title>
+        <mat-card-content>
+           <form #loginForm="ngForm" [formGroup]="addressForm" method="POST">
+
+            <mat-form-field >
+                <mat-select placeholder="Select country">
+                    <mat-option *ngFor="let country of countries" [value]="country" (click)="getCityByCountry(country.id)">
+                      {{country.name}}
+                    </mat-option>
+                </mat-select>
+             </mat-form-field>
+            
+            <mat-form-field >
+                <mat-select name = "city" formControlName="city" placeholder="Select city">
+                    <mat-option *ngFor="let city of cities" [value]="city">
+                      {{city.name}}
+                    </mat-option>
+                </mat-select>
+             </mat-form-field>
+          
+             <mat-form-field >
+                <input matInput type="text" name="text" placeholder="street" formControlName="street">
+                  <mat-error>{{formError.mapErrors(addressForm.get('street'), 'Street')}}</mat-error>
+             </mat-form-field>
+            
+             <mat-form-field >
+                <input matInput type="text" name="streetNumber" placeholder="Street number" formControlName="streetNumber">
+                  <mat-error>{{formError.mapErrors(addressForm.get('streetNumber'), 'Street number')}}</mat-error>
+             </mat-form-field>
+             
+            
+            </form>
+        </mat-card-content>
+</mat-card>

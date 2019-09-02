@@ -46,6 +46,18 @@ import { StudyHistoryComponent } from './components/student-portal/study-history
 import { CheckinExamComponent } from './components/student-portal/checkin-exam/checkin-exam.component';
 import { StudentOnYearComponent } from './components/student-on-year/student-on-year.component';
 import { StudentOnYearAddComponent } from './components/student-on-year/student-on-year-add/student-on-year-add.component';
+import { CourseRegistrationComponent } from './components/course-registration/course-registration.component';
+import { ProfessorOnRealizationAddComponent } from './components/professors/professor-on-realization-add/professor-on-realization-add.component';
+import { CourseRealizationComponent } from './components/course-realization/course-realization.component';
+import { CourseRealizationAddComponent } from './components/course-realization/course-realization-add/course-realization-add.component';
+import { CoursesComponent } from './components/courses/courses.component';
+import { CourseAttendingComponent } from './components/course-attending/course-attending.component';
+import { StudentCurrentCourseComponent } from './components/students/student-current-course/student-current-course.component';
+import { StudentPastCourseComponent } from './components/students/student-past-course/student-past-course.component';
+import { StudentExamComponent } from './components/students/student-exam/student-exam.component';
+import { EnrollComponent } from './components/administrator-staff/enroll/enroll.component';
+import { ConfirmationDialogComponent } from './components/utils/confirmation-dialog/confirmation-dialog.component';
+
 
 @NgModule({
   declarations: [
@@ -81,6 +93,17 @@ import { StudentOnYearAddComponent } from './components/student-on-year/student-
     ProfessorAddComponent,
     StudentOnYearComponent,
     StudentOnYearAddComponent,
+    CourseRegistrationComponent,
+    ProfessorOnRealizationAddComponent,
+    CourseRealizationComponent,
+    CourseRealizationAddComponent,
+    CoursesComponent,
+    CourseAttendingComponent,
+    StudentCurrentCourseComponent,
+    StudentPastCourseComponent,
+    StudentExamComponent,
+    EnrollComponent,
+    ConfirmationDialogComponent,
   ],
   imports: [
     BrowserModule,
