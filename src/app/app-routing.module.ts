@@ -31,6 +31,9 @@ import { StudentCurrentCourseComponent } from './components/students/student-cur
 import { StudentExamComponent } from './components/students/student-exam/student-exam.component';
 import { StudentPastCourseComponent } from './components/students/student-past-course/student-past-course.component';
 import { EnrollComponent } from './components/administrator-staff/enroll/enroll.component';
+import { NewsPageComponent } from './components/news/news-page/news-page.component';
+import { ExamsComponent } from './components/exams/exams.component';
+import { NewsAddComponent } from './components/news/news-add/news-add.component';
 
 const routes: Routes = [
   {path: 'students', component:StudentsComponent, 
@@ -49,7 +52,9 @@ const routes: Routes = [
   {path:'map', component:OsmComponent},
   {path:'day', component:DayComponent},
   {path:'course', component:CoursesComponent},
-  
+  {path:'exams', component:ExamsComponent},
+  {path: 'news/:id', component: NewsPageComponent},
+  {path: 'news_add', component: NewsAddComponent},
   {path: 'register-student', component: StudentAddComponent, 
       canActivate: [RoleGuard], data: { expectedRoles: ['ROLE_ADMINISTRATOR', 'ROLE_ADMINISTRATOR_STAFF']}},
   {path: 'register-professor', component: ProfessorAddComponent, 

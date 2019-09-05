@@ -1,0 +1,45 @@
+<mat-card>
+  <mat-card-title> <b>Write News </b> </mat-card-title>
+    <mat-card-content>
+      <form #loginForm="ngForm" [formGroup]="form" method="POST">
+        
+                    
+        
+      <mat-form-field>
+        <input matInput type="text" placeholder="Headline" name="Headline" formControlName="headline"  required>
+          
+      </mat-form-field>
+                  
+      <mat-form-field >
+       <input matInput type="text" placeholder="Body" name="Body" formControlName="body"  required>
+    
+      </mat-form-field>
+
+
+      <mat-form-field >
+        <input matInput type="text" placeholder="Full Name" name="Name" formControlName="name"  required>
+     
+       </mat-form-field>
+       
+      
+   
+       <mat-card-actions>
+        <button id="image" mat-raised-button color="primary" (click)="filePicker.click()" type="button">Pick a picture</button>
+        <input hidden type="file" #filePicker (change)="onImagePicked($event)">
+      </mat-card-actions>
+                    
+      <div class="image-preview" 
+          *ngIf="imagePreview && imagePreview !== '' && form.get('profileImage').valid">
+        <img [src]="imagePreview" alt="Can't dispaly picture">
+      </div>
+   
+  
+      
+        
+      <mat-card-actions>
+        <button id="log" mat-raised-button color="primary" (click)="addNews()" type="submit">Save</button>
+      </mat-card-actions>
+                  
+    </form>
+  </mat-card-content>
+</mat-card>

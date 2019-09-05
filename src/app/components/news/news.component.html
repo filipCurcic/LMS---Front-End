@@ -1,10 +1,11 @@
-<!-- 
 
 <cdk-virtual-scroll-viewport itemSize="150" class="example-viewport">
     <div *cdkVirtualFor="let item of ds" class="example-item">
       <div class="headline">
-        <img class="photoComponent" src="assets/img/philosophy.jpg" alt="philosophy" width="70" height="70">
+        <img class="photoComponent" src={{item.profilePicturePath}} alt="philosophy" width="70" height="70">
         <a routerLink="/news/{{item.id}}" class="name"><h2>{{item.headline}}</h2></a>
+        
+        
         <div class="date">{{item.date}}</div>
       </div>
 
@@ -14,4 +15,3 @@
     </div>
 </cdk-virtual-scroll-viewport>
 
- -->

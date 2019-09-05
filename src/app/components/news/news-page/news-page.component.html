@@ -1,23 +1,27 @@
 <div>
 
-    <div style="margin-bottom: 0%;"><img src="assets/img/students.jpg" class="photo" alt="students"></div>
-  
-    <mat-card>
-      <mat-card-title>
-        {{news.headline}}
-      </mat-card-title>
-      <mat-card-content>
-        <div class="date">{{news.date}}</div>
+  <div style="margin-bottom: 0%;"><img src="assets/img/students.jpg" class="photo" alt="students"></div>
+
+  <mat-card>
+    <mat-card-title>
+        
+      {{news.headline}}
+    </mat-card-title>
+    <mat-card-content>
+      <div class="date">{{news.date}}</div>
+      <div class="content">
+        <img class="photoComponent" src={{news.profilePicturePath}} alt="philosophy" width="2" height="2">
         <div class="body">{{news.body}}</div>
+      </div>
+      <p class="author">Author: {{news.name}}</p>
+    </mat-card-content>
+    
+  </mat-card>
 
-      </mat-card-content>
-    </mat-card>
 
-  
-    <div class="footer">FOOTER</div>
-    <div class="end">CREDITS</div>
-  
-  </div>
-  
-  
-  
+  <div class="footer">FOOTER</div>
+  <div class="end">CREDITS</div>
+
+</div>
+
+

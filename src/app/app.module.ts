@@ -11,6 +11,8 @@ import { HTTP_INTERCEPTORS } from '@angular/common/http';
 import { AuthInterceptor } from './authorization/auth-interceptor'
 //Services
 import { ProfessorsService } from 'src/app/services/professors-service/professors.service';
+import { ScrollDispatchModule} from '@angular/cdk/scrolling';
+
 //Components
 import { ProfessorsComponent } from './components/professors/professors.component';
 import { StudentsComponent } from './components/students/students.component';
@@ -40,7 +42,7 @@ import { StudyYearAddComponent } from './components/study-year/study-year-add/st
 import { StudyYearComponent } from './components/study-year/study-year.component';
 import { FacultyAddComponent } from './components/home-faculty/faculty-add/faculty-add.component';
 import { ProfessorAddComponent } from './components/professors/professor-add/professor-add.component';
-import { from } from 'rxjs';
+import { from, fromEventPattern } from 'rxjs';
 import { StudentPortalComponent } from './components/student-portal/student-portal.component';
 import { StudyHistoryComponent } from './components/student-portal/study-history/study-history.component';
 import { CheckinExamComponent } from './components/student-portal/checkin-exam/checkin-exam.component';
@@ -57,6 +59,8 @@ import { StudentPastCourseComponent } from './components/students/student-past-c
 import { StudentExamComponent } from './components/students/student-exam/student-exam.component';
 import { EnrollComponent } from './components/administrator-staff/enroll/enroll.component';
 import { ConfirmationDialogComponent } from './components/utils/confirmation-dialog/confirmation-dialog.component';
+import { NewsAddComponent } from './components/news/news-add/news-add.component';
+import {ExamsComponent} from './components/exams/exams.component'
 
 
 @NgModule({
@@ -91,6 +95,7 @@ import { ConfirmationDialogComponent } from './components/utils/confirmation-dia
     StudyYearComponent,
     FacultyAddComponent,
     ProfessorAddComponent,
+    ExamsComponent,
     StudentOnYearComponent,
     StudentOnYearAddComponent,
     CourseRegistrationComponent,
@@ -104,6 +109,7 @@ import { ConfirmationDialogComponent } from './components/utils/confirmation-dia
     StudentExamComponent,
     EnrollComponent,
     ConfirmationDialogComponent,
+    NewsAddComponent,
   ],
   imports: [
     BrowserModule,
@@ -111,6 +117,7 @@ import { ConfirmationDialogComponent } from './components/utils/confirmation-dia
     AppRoutingModule,
     HttpClientModule,
     ReactiveFormsModule,
+    ScrollDispatchModule,
     Material // Material file with all dependencies
     // NgbModule
 

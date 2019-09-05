@@ -28,12 +28,20 @@ export class NewsService {
     return this.http.get<News[]>(this.newsUrl+`/${id}`);
   }
 
+  /*
   addNews(news:News, image:File) {
     const postData = new FormData();
-    postData.append("profileImage", image, image.name);
-    postData.append("data", JSON.stringify(news));
+    if(image) {
+      postData.append("profileImage", image, image.name); 
+    } postData.append("data", JSON.stringify(news));
     return this.http.post(this.newsUrl+'/add', postData);
-  }
+}
+ */
+
+
+addNews(news: News):Observable<News>{
+  return this.http.post<News>(this.newsUrl + `/add`, news, httpOptions);
+}
 
   deleteNews(id: number) {
     return this.http.delete(this.newsUrl+`/${id}`);

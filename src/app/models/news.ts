@@ -3,5 +3,7 @@ export default class News{
     headline:String;
     date:Date;
     body:String;
+    name:String;
+    profilePicturePath:String;
 
 }
